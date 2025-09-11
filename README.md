@@ -51,10 +51,6 @@
           <td style="padding: 8px; border-bottom: 1px solid #ccc;">Código</td>
           <td style="padding: 8px; border-bottom: 1px solid #ccc;">Nombre</td>
         </tr>
-        <tr>
-          <td style="padding: 8px;">u202213143</td>
-          <td style="padding: 8px;">Yen Cerna, Lucio Heli</td>
-        </tr>
       </tbody>
     </table>
 </div>
