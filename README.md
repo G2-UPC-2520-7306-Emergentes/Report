@@ -1,6 +1,3 @@
-
-<div align="center">
-
 <p align="center">
     <img src="https://www.upc.edu.pe/static/img/logo_upc_red.png" width="120px" alt="Logo UPC"><br><br>
     <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
@@ -18,7 +15,7 @@
 
 <h2>Informe de Trabajo Final</h2>
 
-<div style="width: 80%; margin: 0 auto; text-align: center; border: 1px solid #ddd; padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
+<div style="width: 80%; margin: 0 auto;border: 1px solid #ddd; padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
     <h3><strong>Startup:</strong> ProdChain</h3>
     <p><em>"Chaining you to the products you love"</em></p>
     <br>
