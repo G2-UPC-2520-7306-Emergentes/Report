@@ -45,8 +45,8 @@
           <td style="padding: 8px; border-bottom: 1px solid #ccc;">Nombre</td>
         </tr>
         <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Código</td>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Nombre</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ccc;">u202022387</td>
+          <td style="padding: 8px; border-bottom: 1px solid #ccc;">ANGELO MARCIO CURI MARCELO</td>
         </tr>
       </tbody>
     </table>
