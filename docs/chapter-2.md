@@ -1,4 +1,4 @@
-<img width="1050" height="1570" alt="EmpathyMapMaria" src="https://github.com/user-attachments/assets/bfafcbc5-e4d9-4358-9b44-d54d242da9b9" /># Capítulo II: Requirements Elicitation & Analysis
+# Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1 Competidores
 
