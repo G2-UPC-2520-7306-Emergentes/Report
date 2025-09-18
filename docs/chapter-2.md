@@ -1,4 +1,4 @@
-# Capítulo II: Requirements Elicitation & Analysis
+<img width="1050" height="1570" alt="EmpathyMapMaria" src="https://github.com/user-attachments/assets/bfafcbc5-e4d9-4358-9b44-d54d242da9b9" /># Capítulo II: Requirements Elicitation & Analysis
 
 ## 2.1 Competidores
 
@@ -275,14 +275,28 @@ En esta sección presentamos los User Journey Maps As-Is para cada uno de nuestr
 ###### Figura *
 *User Journey map de nuestro segmento de Productores*
 
- <img src="/assets/img/JourneyMapMaria.png" alt="UP1" width="400" height="850">
+ <img src="/assets/img/JourneyMapCarlos.png" alt="USM1" width="400" height="850">
 
 ###### Figura *
 *User Journey map de nuestro segmento de Usuarios Finales*
 
- <img src="/assets/img/JourneyMapCarlos.png" alt="UP2" width="400" height="850">
+ <img src="/assets/img/JourneyMapMaria.png" alt="USM2" width="400" height="850">
 
 ### 2.3.4. Empathy Mapping
+
+En esta sección presentamos los Empathy Maps desarrollados para nuestros dos User Personas: el Productor (caficultor) y el Usuario Final (consumidor consciente). Cada mapa organiza la información en torno a seis dimensiones clave: qué ve, dice, hace, escucha, piensa y siente el usuario.
+
+A partir de este análisis, identificamos sus principales frustraciones y obstáculos (Pains), así como sus motivaciones y expectativas (Gains). Esto nos ayuda a comprender mejor su experiencia frente a la trazabilidad alimentaria y a diseñar soluciones más acordes a sus necesidades reales.
+
+###### Figura *
+*Empathy map de nuestro segmento de Productores*
+
+ <img src="/assets/img/EmpathyMapCarlos.png" alt="EP1" width="400" height="850">
+
+###### Figura *
+*Empathy map de nuestro segmento de Usuarios Finales*
+
+ <img src="/assets/img/EmpathyMapMaria.png" alt="EP2" width="400" height="850">
 
 
 ### 2.3.5. As-is Scenario Mapping
