@@ -1,20 +1,99 @@
 # Capítulo II: Requirements Elicitation & Analysis
 
+## 2.1 Competidores
 
-## 2.1. Competidores
+#### IBM Food Trust
+**Qué hace:** Plataforma empresarial de trazabilidad y transparencia para alimentos; integra productores, procesadores, retailers y consumidores.  
+**Cómo funciona:** Incluye módulos que permiten registrar cada etapa del lote (desde cosecha hasta venta), gestionar certificados, generar reportes verificables, y mostrar al consumidor final el historial completo del producto al escanear un código QR.  
+**Por qué nos importa:** Porque demuestra que es posible lograr trazabilidad extremo a extremo con tiempos de rastreo muy cortos, lo cual valida la viabilidad de nuestro pasaporte digital por lote con blockchain.
+
+#### VeChain ToolChain
+**Qué hace:** Servicio de trazabilidad que conecta blockchain, IoT y códigos QR/NFC para registrar eventos en la cadena de suministro, permitiendo a marcas y agricultores certificar origen, calidad y autenticidad del producto.  
+**Cómo funciona:** Permite capturar datos del campo, incorporar certificaciones digitales, registrar eventos en blockchain, proporcionar herramientas de verificación al consumidor, y realizar auditorías sobre condiciones de transporte o almacenamiento.  
+**Por qué nos importa:** Es un buen referente de cómo manejar el equilibrio entre seguridad, costo y experiencia del usuario, especialmente en entornos donde la cadena productiva es extensa.
+
+#### Connecting Food (LiveAudit / LiveTrack / LiveScan)
+**Qué hace:** Suite centrada en trazabilidad alimentaria con auditoría continua y visibilidad, permitiendo que los lotes sean rastreados, verificados contra estándares de calidad, y mostrados al consumidor mediante QR.  
+**Cómo funciona:** Compara automáticamente los datos del lote con certificaciones o reglas de calidad, alerta cuando hay discrepancias, permite seguimiento completo del lote y ofrece al usuario final un historial claro con certificados, fotos o registros de inspecciones.  
+**Por qué nos importa:** Añade una capa de compliance muy valiosa (verificación constante de afirmaciones como "orgánico" o denominación de origen), lo que puede diferenciar a FoodChain si lo integramos desde el inicio.
+
+## 2.2 Análisis competitivo
+
+A continuación, se presenta la tabla de competidores para analizar cada punto específico de algunos referentes globales en **trazabilidad alimentaria basada en blockchain**. Con esto alinearemos la propuesta de **FoodChain** al valor que nuestro segmento objetivo (productores, logística, procesadores, retailers y consumidores) realmente requiere.
 
 
-### 2.1.1. Análisis competitivo
+| **Competitive Analysis Landscape** |  |
+| --- | --- |
+| **¿Por qué llevar a cabo este análisis?** | **Definir con evidencia cómo FoodChain se posiciona frente a soluciones consolidadas (IBM Food Trust, VeChain ToolChain, Connecting Food) en: alcance de trazabilidad, integridad y auditoría, velocidad de rastreo, facilidad de integración y adecuación al mercado LATAM.** |
+|  | **Objetivo: priorizar funcionalidades del MVP, drivers arquitectónicos (rendimiento, seguridad, escalabilidad) y tácticas comerciales B2B/SaaS, manteniendo la consulta gratuita para el consumidor.** |
 
+| ***Competidor*** |  | FoodChain (Startup) | IBM Food Trust | VeChain ToolChain | Connecting Food |
+| --- | --- | --- | --- | --- | --- |
+| ***Logo*** |  | — | — | — | — |
+| ***Perfil*** | Overview | Plataforma **SaaS** de **trazabilidad alimentaria** con **pasaporte digital por lote** (QR/NFC). Cada evento (cosecha, transporte, procesamiento, empaque) queda **registrado** y anclado en **blockchain**; aplicaciones móviles y web para registrar y auditar; el **consumidor** escanea **QR** y ve historia, mapa de ruta, fechas y **certificados**. Enfoque en **América Latina** con servicio gratuito para el consumidor. | Plataforma empresarial de trazabilidad multi-actor con módulos **Trace**, **Consumer**, **Documents** e **Insights**; probada en grandes retailers y sus redes de proveedores; reducción del tiempo de rastreo de **días a segundos** en casos emblemáticos. | Plataforma **blockchain-as-a-service** sobre **VeChainThor** con **QR/NFC** e **IoT**; adoptada por retail para exponer al consumidor origen, rutas y resultados de inspecciones por **lote**. | Suite de **trazabilidad con auditoría digital continua** por lote (**LiveAudit/LiveTrack/LiveScan**); verifica especificaciones en tiempo real y muestra al consumidor la historia **batch-level** vía QR. |
+|  | ***Ventaja competitiva – ¿Qué valor ofrece a los clientes?*** | **Transparencia de extremo a extremo** con **registro inmutable**, **validación de certificaciones** en cadena y **gestión de crisis** (recall por lote) en minutos; **UX simple** (QR) para el **consumidor** y acompañamiento a **productores** de LATAM. | **Madurez y escala**; módulos integrales para trazabilidad, certificados y analítica; referencia operativa de rastreo “en segundos”. | **Ecosistema** con SDK/QR/NFC e integración IoT; enfoque de **transparencia al consumidor** con despliegues en retail. | **Compliance continuo** con alertas tempranas; alto valor para asegurar **claims** (orgánico, DO, libre de X) y reducir retiros. |
+| ***Perfil de Marketing*** | ***Mercado objetivo*** | **Productores** (B2B pagantes) y **consumidor final** (consulta gratuita). | Grandes **retailers/fabricantes** y su red de **proveedores**; también orientado a compartir datos con **consumidores** vía módulo Consumer. | **Retail y marcas** con foco en categorías frescas/de riesgo y **consumidores** que escanean para ver datos del lote. | **Marcas/procesadores** que requieren **auditoría por lote** y **consumidores** que escanean QR para ver la historia real del producto. |
+|  | ***Estrategias de marketing*** | **Pilotos** con productores, co-branding con **QR** al consumidor, narrativa de **confianza/seguridad** y **suscripción B2B**; consumidor **gratis**. | Venta **enterprise**, alianzas con retailers e integradores; guías de adopción por categoría. | Partnerships con retailers/consultoras; comunicación de **transparencia** al consumidor y casos por vertical. | Casos de éxito en **auditoría continua** y reducción de recalls; mensajes a **Calidad/QA** y prueba de **claims**. |
+| ***Perfil de Producto*** | ***Productos & Servicios*** | Apps móviles/web para registrar eventos de lote; **API** y contratos/“anclaje” en blockchain; tablero de **auditoría** y **página QR** para el consumidor (historia, mapa, certificados). | **Trace/Consumer/Documents/Insights**: *track & trace*, certificados y analítica cercana al tiempo real. | **ToolChain** con SDK + QR/NFC/IoT; registro on-chain y portales de verificación para consumidor. | **LiveAudit** (auditoría continua), **LiveTrack** (trazabilidad por lote), **LiveScan** (vista consumidor vía QR). |
+|  | ***Precios & Costos*** | **SaaS B2B** por suscripción (productores y marcas registran productos); **consumidor gratis**. | Suscripción **enterprise** por módulos/escala. | **BaaS** con costos operativos/on-chain según uso e integración. | **SaaS** por volumen/auditorías/QR, con soporte de integración. |
+|  | ***Canales de distribución (Web y/o Móvil)*** | Web y apps móviles. | Web y apps móviles. | Web y apps móviles. | Web y apps móviles. |
+| ***Análisis SWOT*** | ***Fortalezas*** | **Pasaporte digital por lote**, registro **inmutable**, **validación de certificaciones**, **recall eficiente**, UX de **escaneo QR** y foco en **productores** y **consumidor** en LATAM. | Escala global, confianza de grandes marcas, módulos integrales y rastreo **en segundos**. | Ecosistema con herramientas listas, adopción en retail y **exposición directa** al consumidor. | Auditoría continua y alertas, transparencia **batch-level** y énfasis en cumplimiento de calidad. |
+|  | ***Debilidades*** | **Marca nueva** y necesidad de **onboarding** multi-actor; requiere tracción y casos de referencia. | Barrera de entrada para pymes; posible rigidez de personalización. | Percepción de cadena **pública** en entornos regulados; dependencia de tarifas on-chain/gobernanza. | Menor foco en LATAM; dependencia de **calidad de datos** de proveedores. |
+|  | ***Oportunidades*** | Regulaciones de trazabilidad en **LATAM**, diferenciación de marca mediante QR, interés del **consumidor** por origen y **certificaciones**. | Expansión sectorial/geográfica y presión por seguridad alimentaria. | Extender categorías y adopción en retail; integración con IoT. | Mayor presión regulatoria sobre **claims** y demanda de auditoría continua. |
+|  | ***Amenazas*** | Adopción lenta en pymes, cambios regulatorios, presión de precios y competencia de suites globales. | Competencia de otras suites especializadas y cambios regulatorios. | Volatilidad de percepción sobre blockchain pública y barreras regulatorias. | Fricción de adopción multi-actor si la **calidad de datos** es heterogénea. |
 
+## 2.3 Estrategias y tácticas frente a competidores
 
-### 2.1.2. Estrategias y tácticas frente a competidores
+A continuación, la **Matriz FODA y C.A.M.E** específica para **FoodChain** (trazabilidad alimentaria con blockchain + QR/NFC, modelo SaaS B2B para productores; consulta gratuita para el consumidor).  
+Interpretación de acciones:
+- **Explotar/Mantener** = usar la fortaleza para capturar la oportunidad.
+- **Afrontar/Mantener** = usar la fortaleza para defendernos de la amenaza.
+- **Corregir/Explotar** = resolver la debilidad aprovechando la oportunidad.
+- **Corregir/Afrontar** = mitigar la debilidad para resistir la amenaza.
 
+| **MATRIZ FODA y C.A.M.E** | **Oportunidades: crecimiento de exigencias de trazabilidad en LATAM; interés del consumidor por origen/certificaciones; adopción de QR/NFC; digitalización agro y acuerdos con retailers locales.** | **Amenazas: resistencia al cambio y calidad de datos heterogénea; presión de suites globales; sensibilidad a costos; cambios regulatorios y percepción escéptica de “blockchain”.** |
+|---|---|---|
+| **Fortalezas: pasaporte digital por lote; registro inmutable en blockchain; validación de certificaciones; recall por lote en minutos; UX de escaneo QR; foco LATAM.** | **Explotar/Mantener**  \n- Lanzar **pilotos con productores** y supermercados (lotes reales) midiendo *time-to-trace* y *time-to-recall*; publicar métricas en casos de éxito.  \n- **Co-branding con QR** en góndola: historia del producto, mapa y certificados para elevar confianza del consumidor.  \n- Paquetes **SaaS por niveles** (micro, pyme, enterprise) y **onboarding guiado** para acelerar adopción.  \n- Integrar **sellos/certificaciones** (orgánico, DO, comercio justo) en el pasaporte digital para diferenciar marca. | **Afrontar/Mantener**  \n- **Gobernanza de datos** y acuerdos de rol/responsabilidad por actor; **SLA/SLO** de consulta (p.ej., p95 ≤ 3 s) y disponibilidad.  \n- **Validaciones en origen** (formularios con reglas, fotos georreferenciadas, firmas) y **auditoría** de cambios para mejorar calidad de datos.  \n- **Guías regulatorias** y plantillas de cumplimiento (etiquetado, privacidad, interoperabilidad) para reducir fricción legal.  \n- Mensajería clara: “blockchain como **prueba de integridad**”, no como cripto; foco en **seguridad alimentaria y confianza**. |
+| **Debilidades: marca nueva; sin casos masivos; dependencia del onboarding multi-actor; recursos limitados frente a competidores globales.** | **Corregir/Explotar**  \n- Programa de **Design Partners** (3–5 productores ancla) a cambio de precio preferente y *roadmap* compartido.  \n- **Kits de despliegue**: plantillas de datos por cultivo, manuales de captura, video-demo para personal operativo.  \n- **Integraciones ligeras** (API/CSV) y conectores con ERP/WMS para reducir costo de entrada.  \n- Métricas de **ROI**: reducción de días de investigación a minutos; impacto en **ventas por confianza** (escaneos/visitas a página QR). | **Corregir/Afrontar**  \n- **Plan de adopción por etapas** (productor → procesador → retail) con hitos medibles y soporte remoto.  \n- **Pricing transparente** y TCO comparativo frente a suites globales; opción de **piloto** de 60–90 días.  \n- **Acuerdos con cámaras/consorcios** agro y universidades para credibilidad y acceso a red.  \n- **Backups y exportación** (evitar lock-in), y política de salida para confianza de clientes. |
 
-## 2.2. Entrevistas
+## 2.4 Entrevistas
 
+Para asegurar que **FoodChain** responda a necesidades reales, se realizarán **entrevistas breves y semiestructuradas** a dos actores clave:
 
-### 2.2.1. Diseño de entrevistas
+- **Productores**: quienes registrarán la información de cada lote en la plataforma para garantizar trazabilidad y certificaciones.
+- **Consumidores finales**: quienes escanearán el QR/NFC para conocer origen, ruta y certificaciones del producto.
+
+Estas entrevistas permitirán:
+- Identificar requerimientos funcionales y de experiencia de usuario.
+- Conocer hábitos de uso de tecnología y nivel de confianza en la cadena alimentaria.
+- Generar insumos para artefactos como **User Personas**, **User Journey Maps** y **Empathy Maps**.
+
+Los hallazgos alimentarán la definición del **MVP** y de la arquitectura de FoodChain, asegurando que la solución sea clara, segura y útil para ambos segmentos.
+
+### 2.4.1 Diseño de entrevistas
+
+Para conocer el perfil básico de cada participante se incluirán las siguientes preguntas demográficas, diferenciando a los dos públicos clave de **FoodChain**:
+
+#### Segmento objetivo #1: Productores
+
+**Preguntas demográficas:**
+- ¿Cuál es su nombre?
+- ¿Cuál es su edad?
+- ¿En qué región o localidad se encuentra su centro de producción?
+- ¿A qué tipo de cultivo o actividad alimentaria se dedica?
+- ¿Cuántos años de experiencia tiene en la producción y distribución de alimentos?
+- ¿Cuántas personas conforman su equipo de trabajo?
+
+#### Segmento objetivo #2: Consumidor final
+
+**Preguntas demográficas:**
+- ¿Cuál es tu nombre?
+- ¿Cuál es tu edad?
+- ¿Dónde vives?
+- ¿A qué te dedicas?
+- ¿Con qué frecuencia compras productos alimenticios frescos o procesados?
+- ¿Sueles preferir productos con certificaciones como orgánico o comercio justo?
+
 
 
 ### 2.2.2. Registro de entrevistas
