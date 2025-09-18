@@ -191,7 +191,17 @@ Tanto los **usuarios finales** como los **productores** coinciden en ciertas tar
 
 ### 2.3.3. User Journey Mapping
 
+En esta sección presentamos los User Journey Maps As-Is para cada uno de nuestros User Personas, ilustrando el recorrido completo que realizan actualmente para verificar la trazabilidad y autenticidad de los productos alimentarios, desde la identificación de la necesidad hasta la toma de decisión de compra informada. Iniciaremos con una descripción general del viaje end-to-end, resaltando los momentos clave de descubrimiento, interacción y evaluación, así como los principales puntos de dolor y oportunidades para optimizar la experiencia. Luego, mostraremos los diagramas elaborados en la herramienta correspondiente, vinculando cada mapa con el User Persona respectivo para evidenciar cómo sus metas, frustraciones y comportamientos influyen en cada fase del proceso.
 
+###### Figura *
+*User Journey map de nuestro segmento de Productores*
+
+ <img src="/assets/img/JourneyMapMaria.png" alt="UP1" width="400" height="850">
+
+###### Figura *
+*User Journey map de nuestro segmento de Usuarios Finales*
+
+ <img src="/assets/img/JourneyMapCarlos.png" alt="UP2" width="400" height="850">
 
 ### 2.3.4. Empathy Mapping
 
