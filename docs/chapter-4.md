@@ -175,3 +175,77 @@ Los escenarios refinados especifican **estímulo, ambiente, artefacto, respuesta
 
 | Questions: | Cifrado local (WebCrypto/Android Keystore) y política de borrado seguro. |
 | Issues: | Resolución de conflictos (último write vs. merge); reloj lógico para ordenación. |
+
+## **4.3. Software Architecture**
+
+La visión general de la arquitectura describe la estructura fundamental de un sistema, abarcando sus componentes principales y la interacción entre ellos. Para FoodChain, una plataforma de confianza digital, una arquitectura sólida es el pilar fundamental para garantizar que el sistema sea seguro, escalable y auditable. Este enfoque permite una implementación ordenada, donde cada componente tiene una responsabilidad clara y bien definida, facilitando la integración de nuevas funcionalidades sin comprometer la integridad de la trazabilidad (Richards & Ford, 2021).
+
+El diseño arquitectónico de FoodChain se basa en una arquitectura de microservicios distribuida, donde cada componente está desacoplado y se comunica a través de APIs bien definidas. Para el backend, se ha seleccionado el framework **SpringBoot (Java)**, conocido por su robustez para aplicaciones empresariales. La separación de preocupaciones se logra mediante patrones de diseño como el **Modelo-Vista-Controlador (MVC)** y la **Inyección de Dependencias**. El sistema se integra con servicios externos clave: una **blockchain pública (Polygon)** para el anclaje de hashes y un proveedor de almacenamiento de archivos para los comprobantes.
+
+La seguridad es un aspecto central de nuestra arquitectura. Se implementa en múltiples capas: desde el cifrado de datos en tránsito (HTTPS) y en reposo, hasta la validación de firmas digitales para los códigos QR y la gestión de identidades y accesos (IAM). La arquitectura está diseñada para ser resiliente, manejando fallos de conexión con la blockchain y garantizando que ningún dato de trazabilidad se pierda.
+
+De acuerdo con Brown (2023), el **modelo C4** para la diagramación de la arquitectura de software ofrece un enfoque estructurado que permite describir el sistema en diferentes niveles de abstracción. Al dividir la arquitectura en cuatro niveles —**Contexto, Contenedores, Componentes y Código**—, se facilita una comprensión clara tanto para el equipo técnico como para los stakeholders no técnicos. Utilizaremos este modelo para visualizar y comunicar el diseño de FoodChain de manera efectiva.
+
+### **4.3.1. Software Architecture System Landscape Diagram**
+
+El diagrama de paisaje (*landscape*), correspondiente al nivel más alto del modelo C4, ofrece una visión integral de FoodChain dentro de su ecosistema tecnológico. Este diagrama mapea los sistemas de software internos y externos, así como los flujos de información que los conectan, lo cual es clave para entender cómo nuestra plataforma crea valor al interactuar con el mundo exterior (Brown, 2023).
+
+En el caso de FoodChain, el diagrama de paisaje ilustra la interacción entre nuestra plataforma central y los sistemas de los diversos actores de la cadena de suministro, así como con sistemas externos críticos como la **red blockchain de Polygon** y APIs de certificación de terceros.
+
+###### **Figura 1**
+*_Diagrama de Paisaje del Sistema FoodChain_*
+![Diagrama de Paisaje del Sistema FoodChain](../assets/img/chapter-4/c4/structurizr-106397-SystemLandscape.png)
+
+###### **Figura 2**
+*_Leyenda para el Diagrama de Paisaje_*
+![Leyenda para el Diagrama de Paisaje](../assets/img/chapter-4/c4/structurizr-106397-SystemLandscape-key.png)
+
+### **4.3.2. Software Architecture Context Level Diagram**
+
+El diagrama de contexto clarifica los límites del sistema FoodChain, mostrando cómo interactúa con sus usuarios y con otros sistemas de software. Este nivel de abstracción del modelo C4 es fundamental para definir el alcance del proyecto, identificando quién usa el sistema y qué dependencias externas son críticas para su funcionamiento (Brown, 2023).
+
+Para FoodChain, el diagrama de contexto muestra a los actores principales (Usuario de Empresa, Consumidor) y las interacciones con sistemas externos clave como la Red Blockchain de Polygon, un Servicio de Email y una API de Mapas.
+
+###### **Figura 3**
+*_Diagrama de Contexto de la Plataforma FoodChain_*
+![Diagrama de Contexto de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106397-SystemContext.png)
+
+### **4.3.3. Software Architecture Container Level Diagram**
+
+El diagrama de contenedores descompone el sistema FoodChain en sus principales bloques ejecutables o "contenedores". Este nivel del modelo C4 ofrece una visión de la arquitectura de alto nivel, mostrando las responsabilidades de cada parte del sistema (la SPA en Angular, la PWA del consumidor, el Backend en SpringBoot y la base de datos en SQL Server) y cómo se comunican entre sí (Brown, 2023).
+
+###### **Figura 4**
+*_Diagrama de Contenedores de la Plataforma FoodChain_*
+![Diagrama de Contenedores de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106397-Containers.png)
+
+#### **4.3.3.1. Software Architecture Component Level Diagrams**
+
+Este nivel hace zoom en los contenedores individuales para mostrar sus componentes internos. Estos diagramas son cruciales para que el equipo de desarrollo entienda la estructura interna de cada aplicación y cómo se dividen las responsabilidades.
+
+**API Backend Components**
+
+El diagrama de componentes para el API Backend ilustra la estructura interna de nuestra aplicación SpringBoot. Se organiza en Bounded Contexts, siguiendo principios de Domain-Driven Design (DDD), para separar claramente el dominio central de la trazabilidad de las funcionalidades genéricas como la gestión de identidades (IAM).
+
+###### **Figura 5**
+*_Diagrama de Componentes del API Backend_*
+![Diagrama de Componentes del API Backend](../assets/img/chapter-4/c4/structurizr-106397-BackendComponents.png)
+
+###### **Figura 6**
+*_Leyenda para el Diagrama de Componentes del Backend_*
+![Leyenda para el Diagrama de Componentes del Backend](../assets/img/chapter-4/c4/structurizr-106397-BackendComponents-key.png)
+
+**Consumer PWA Components**
+
+Este diagrama muestra los componentes simples que conforman la aplicación web progresiva para el consumidor. Su responsabilidad principal es escanear y mostrar el historial de un producto.
+
+###### **Figura 7**
+*_Diagrama de Componentes de la PWA del Consumidor_*
+![Diagrama de Componentes de la PWA del Consumidor](../assets/img/chapter-4/c4/structurizr-106397-ConsumerPWAComponents.png)
+
+### **4.3.4. Software Architecture Deployment Diagram**
+
+El diagrama de despliegue ilustra cómo se mapean los contenedores de software a la infraestructura de hardware en un entorno de producción. Este diagrama es esencial para entender cómo se ejecutará el sistema, considerando aspectos como la escalabilidad, la disponibilidad y la seguridad de la red en un entorno cloud.
+
+###### **Figura 8**
+*_Diagrama de Despliegue de la Plataforma FoodChain_*
+![Diagrama de Despliegue de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106397-Deployment-001.png)
