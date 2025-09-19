@@ -275,19 +275,55 @@ En esta sección presentamos los User Journey Maps As-Is para cada uno de nuestr
 ###### Figura *
 *User Journey map de nuestro segmento de Productores*
 
- <img src="/assets/img/JourneyMapMaria.png" alt="UP1" width="400" height="850">
+ <img src="/assets/img/JourneyMapCarlos.png" alt="USM1" width="400" height="850">
 
 ###### Figura *
 *User Journey map de nuestro segmento de Usuarios Finales*
 
- <img src="/assets/img/JourneyMapCarlos.png" alt="UP2" width="400" height="850">
+ <img src="/assets/img/JourneyMapMaria.png" alt="USM2" width="400" height="850">
 
 ### 2.3.4. Empathy Mapping
+
+En esta sección presentamos los Empathy Maps desarrollados para nuestros dos User Personas: el Productor (caficultor) y el Usuario Final (consumidor consciente). Cada mapa organiza la información en torno a seis dimensiones clave: qué ve, dice, hace, escucha, piensa y siente el usuario.
+
+A partir de este análisis, identificamos sus principales frustraciones y obstáculos (Pains), así como sus motivaciones y expectativas (Gains). Esto nos ayuda a comprender mejor su experiencia frente a la trazabilidad alimentaria y a diseñar soluciones más acordes a sus necesidades reales.
+
+###### Figura *
+*Empathy map de nuestro segmento de Productores*
+
+ <img src="/assets/img/EmpathyMapCarlos.png" alt="EP1" width="400" height="850">
+
+###### Figura *
+*Empathy map de nuestro segmento de Usuarios Finales*
+
+ <img src="/assets/img/EmpathyMapMaria.png" alt="EP2" width="400" height="850">
 
 
 ### 2.3.5. As-is Scenario Mapping
 
+El As‑Is Scenario Mapping es una herramienta clave para analizar cómo interactúan actualmente nuestros usuarios con procesos relacionados a la trazabilidad alimentaria. En esta sección se descompone paso a paso la experiencia real tanto del Productor como del Usuario Final, desde sus acciones cotidianas hasta sus pensamientos y emociones durante el proceso.
 
+Cada escenario se estructura en torno a cuatro dimensiones principales:
+
+- Phases (Fases del proceso)
+
+- Doing (Qué hace el usuario)
+
+- Thinking (Qué piensa en cada paso)
+
+- Feeling (Qué emociones experimenta)
+
+Este enfoque nos permite detectar con claridad puntos de dolor, frustraciones, necesidades no resueltas y áreas de oportunidad, incluso antes de plantear soluciones digitales.
+
+###### Figura *
+*As-Is Scenario Mapping de nuestro segmento de Productores*
+
+ <img src="/assets/img/As-IsScenarioMapCarlos.png" alt="AI2" width="400" height="850">
+
+###### Figura *
+*As-Is Scenario Mapping de nuestro segmento de Usuarios Finales*
+
+ <img src="/assets/img/As-IsScenarioMapMaria.png" alt="AI2" width="400" height="850">
 
 ## 2.4. Ubiquitous Language
 
