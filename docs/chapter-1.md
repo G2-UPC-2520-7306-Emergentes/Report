@@ -53,7 +53,7 @@ _Listado de integrantes del equipo de SevenSync a cargo de Macetech_
 | Mi nombre es **nombre y apellido**...    | <img src="/assets/img/chapter-1/profiles/---" alt="Foto de Integrante" width="350" height="100"> |
 | Me conocen como **nombre y apellido**... | <img src="/assets/img/chapter-1/profiles/---" alt="Foto de Integrante">                          |
 | Me dicen **nombre y apellido**...        | <img src="/assets/img/chapter-1/profiles/---" alt="Foto de Integrante" width="300" height="110"> |
-| Mi nombre es **nombre y apellido**...    | <img src="/assets/img/chapter-1/profiles/---" alt="Foto de Integrante" width="300" height="110"> |
+| Soy Angelo Curi Marcelo, estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC), con conocimientos en lenguajes de programación como C++ y Python. Además, manejo herramientas que apoyan el desarrollo eficiente de proyectos de software. Siempre me esfuerzo por adquirir nuevas habilidades y mejorar mis competencias técnicas para afrontar los desafíos del desarrollo de software. Me considero una persona responsable, comprometida y enfocada en la calidad del trabajo. Tengo la capacidad de adaptarme rápidamente a nuevas tecnologías y entornos. Cumplo con los plazos establecidos y tengo una gran disposición para aprender y colaborar en equipo    | <img src="/assets/images/Angelo.png" alt="Foto de Integrante" width="300" height="110"> |
 
 ## **1.2. Solution Profile**
 
