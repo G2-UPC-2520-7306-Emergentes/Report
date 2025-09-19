@@ -301,7 +301,29 @@ A partir de este análisis, identificamos sus principales frustraciones y obstá
 
 ### 2.3.5. As-is Scenario Mapping
 
+El As‑Is Scenario Mapping es una herramienta clave para analizar cómo interactúan actualmente nuestros usuarios con procesos relacionados a la trazabilidad alimentaria. En esta sección se descompone paso a paso la experiencia real tanto del Productor como del Usuario Final, desde sus acciones cotidianas hasta sus pensamientos y emociones durante el proceso.
 
+Cada escenario se estructura en torno a cuatro dimensiones principales:
+
+- Phases (Fases del proceso)
+
+- Doing (Qué hace el usuario)
+
+- Thinking (Qué piensa en cada paso)
+
+- Feeling (Qué emociones experimenta)
+
+Este enfoque nos permite detectar con claridad puntos de dolor, frustraciones, necesidades no resueltas y áreas de oportunidad, incluso antes de plantear soluciones digitales.
+
+###### Figura *
+*As-Is Scenario Mapping de nuestro segmento de Productores*
+
+ <img src="/assets/img/As-IsScenarioMapCarlos.png" alt="AI2" width="400" height="850">
+
+###### Figura *
+*As-Is Scenario Mapping de nuestro segmento de Usuarios Finales*
+
+ <img src="/assets/img/As-IsScenarioMapMaria.png" alt="AI2" width="400" height="850">
 
 ## 2.4. Ubiquitous Language
 
