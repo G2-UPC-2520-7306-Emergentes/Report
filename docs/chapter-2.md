@@ -327,3 +327,32 @@ Este enfoque nos permite detectar con claridad puntos de dolor, frustraciones, n
 
 ## 2.4. Ubiquitous Language
 
+Este glosario de Ubiquitous Language reúne los términos clave del dominio de la trazabilidad alimentaria en FoodChain. Cada entrada aparece en inglés, con su equivalente en español y una definición clara. Su propósito es asegurar un entendimiento común entre todos los miembros del equipo y stakeholders, evitando ambigüedades y mejorando la comunicación. El glosario incluye solo términos propios del business domain y excluye jerga técnica de software.
+
+| Term (Término)                              | Definición                                                                                                                                                                            |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Attachment (Adjunto)                        | Documento o evidencia digital asociada a un evento (ej. certificado, guía de transporte, factura).                                                                                    |
+| Audit (Auditoría)                           | Proceso de revisión de un lote y sus eventos, realizado por un auditor o por la plataforma.                                                                                           |
+| Audit Status (Estado de auditoría)          | Estado resultante de la revisión de un lote (aprobado, rechazado, pendiente).                                                                                                         |
+| Authentication (Autenticación)              | Proceso de acceso a la plataforma mediante credenciales válidas (usuario y contraseña).                                                                                               |
+| BlockchainRecord (Registro en blockchain)   | Registro inmutable en blockchain que asegura la trazabilidad y la autenticidad de la información de un evento o documento adjunto.                                                    |
+| Consumer (Consumidor)                       | Usuario final que consulta la información de un lote escaneando su código QR, sin capacidad de modificar datos.                                                                       |
+| Dashboard (Tablero de control)              | Interfaz gráfica que muestra métricas clave (ej. cantidad de lotes activos, eventos registrados, auditorías realizadas).                                                              |
+| Event (Evento)                              | Acción registrada sobre un lote (ej. siembra, procesamiento, transporte, venta). Cada evento incluye fecha, ubicación y responsable.                                                  |
+| GPS Location (Ubicación GPS)                | Ubicación geográfica capturada automáticamente al registrar un evento.                                                                                                                |
+| Hash (Hash)                                 | Código único generado para garantizar la integridad de un evento o adjunto en blockchain.                                                                                             |
+| History (Historial)                         | Registro completo y cronológico de todos los eventos y cambios de estado de un lote.                                                                                                  |
+| Lot (Lote)                                  | Unidad de producción o conjunto de productos rastreado a lo largo de toda la cadena de suministro.                                                                                    |
+| Lot Closure (Cierre de lote)                | Acción que finaliza un lote, bloqueando la posibilidad de añadir nuevos eventos.                                                                                                      |
+| Lot Duplication (Duplicación de lote)       | Creación de un nuevo lote a partir de uno ya existente, heredando su información inicial.                                                                                             |
+| Lot Status (Estado del lote)                | Condición actual del lote: Activo (abierto a registros), En Revisión (bajo auditoría o verificación) o Cerrado (finalizado, sin nuevas modificaciones).                               |
+| Notification (Notificación)                 | Mensaje enviado al Producer sobre eventos relevantes (ej. cambios de estado, validaciones, revisiones).                                                                               |
+| Permissions (Permisos)                      | Reglas que definen las acciones que puede ejecutar el Producer en la gestión de sus lotes.                                                                                            |
+| Predefined Location (Ubicación predefinida) | Ubicación seleccionada de un catálogo cuando no se usa GPS.                                                                                                                           |
+| Producer (Productor)                        | Usuario que gestiona lotes dentro de la plataforma. Puede crear, editar, cerrar, duplicar o eliminar lotes, así como registrar eventos, adjuntar documentos y responder a auditorías. |
+| QR Code (Código QR)                         | Código único generado para identificar un lote y permitir su consulta por cualquier usuario.                                                                                          |
+| Role (Rol)                                  | Categoría de usuario que determina permisos (en este caso, Producer o Consumer).                                                                                                      |
+| Session (Sesión)                            | Periodo autorizado en el que un Producer interactúa con la plataforma tras autenticarse.                                                                                              |
+
+
+
