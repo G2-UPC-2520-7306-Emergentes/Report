@@ -318,12 +318,12 @@ Este enfoque nos permite detectar con claridad puntos de dolor, frustraciones, n
 ###### Figura *
 *As-Is Scenario Mapping de nuestro segmento de Productores*
 
- <img src="/assets/img/As-IsScenarioMapCarlos.png" alt="AI2" width="400" height="850">
+ <img src="/assets/img/As-IsScenarioMapCarlos.jpg" alt="AI2" width="400" height="850">
 
 ###### Figura *
 *As-Is Scenario Mapping de nuestro segmento de Usuarios Finales*
 
- <img src="/assets/img/As-IsScenarioMapMaria.png" alt="AI2" width="400" height="850">
+ <img src="/assets/img/As-IsScenarioMapMaria.jpg" alt="AI2" width="400" height="850">
 
 ## 2.4. Ubiquitous Language
 
