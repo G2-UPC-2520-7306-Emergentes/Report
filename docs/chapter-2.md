@@ -113,12 +113,12 @@ En esta sección describimos la construcción de las fichas de User Persona para
 ###### Figura *
 *User persona de nuestro segmento de Productores*
 
- <img src="/assets/img/UserPersonaCarlos.png" alt="UP1" width="400" height="850">
+ <img src="/assets/img/UserPersonaCarlos.png" alt="UP1">
 
 ###### Figura *
 *User persona de nuestro segmento de Usuarios Finales*
 
- <img src="/assets/img/UserPersonaMaria.png" alt="UP2" width="400" height="850">
+ <img src="/assets/img/UserPersonaMaria.png" alt="UP2">
 
 ### 2.3.2. User Task Matrix
 
@@ -275,12 +275,12 @@ En esta sección presentamos los User Journey Maps As-Is para cada uno de nuestr
 ###### Figura *
 *User Journey map de nuestro segmento de Productores*
 
- <img src="/assets/img/JourneyMapCarlos.png" alt="USM1" width="400" height="850">
+ <img src="/assets/img/JourneyMapCarlos.png" alt="USM1">
 
 ###### Figura *
 *User Journey map de nuestro segmento de Usuarios Finales*
 
- <img src="/assets/img/JourneyMapMaria.png" alt="USM2" width="400" height="850">
+ <img src="/assets/img/JourneyMapMaria.png" alt="USM2">
 
 ### 2.3.4. Empathy Mapping
 
@@ -291,12 +291,12 @@ A partir de este análisis, identificamos sus principales frustraciones y obstá
 ###### Figura *
 *Empathy map de nuestro segmento de Productores*
 
- <img src="/assets/img/EmpathyMapCarlos.png" alt="EP1" width="400" height="850">
+ <img src="/assets/img/EmpathyMapCarlos.png" alt="EP1">
 
 ###### Figura *
 *Empathy map de nuestro segmento de Usuarios Finales*
 
- <img src="/assets/img/EmpathyMapMaria.png" alt="EP2" width="400" height="850">
+ <img src="/assets/img/EmpathyMapMaria.png" alt="EP2">
 
 
 ### 2.3.5. As-is Scenario Mapping
@@ -318,12 +318,12 @@ Este enfoque nos permite detectar con claridad puntos de dolor, frustraciones, n
 ###### Figura *
 *As-Is Scenario Mapping de nuestro segmento de Productores*
 
- <img src="/assets/img/As-IsScenarioMapCarlos.jpg" alt="AI2" width="400" height="850">
+ <img src="/assets/img/As-IsScenarioMapCarlos.jpg" alt="AI2">
 
 ###### Figura *
 *As-Is Scenario Mapping de nuestro segmento de Usuarios Finales*
 
- <img src="/assets/img/As-IsScenarioMapMaria.jpg" alt="AI2" width="400" height="850">
+ <img src="/assets/img/As-IsScenarioMapMaria.jpg" alt="AI2">
 
 ## 2.4. Ubiquitous Language
 
