@@ -134,6 +134,56 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 
 ### 2.2.3. Análisis de entrevistas
 
+**Productores**
+
+### Entevista 1
+**Entrevistado:**
+<br>
+**Entrevistador:**
+<br>
+**Sexo:**
+<br>
+**Edad:**
+<br>
+
+### Entevista 2
+**Entrevistado:**
+<br>
+**Entrevistador:**
+<br>
+**Sexo:**
+<br>
+**Edad:**
+<br>
+
+---
+
+**Consumidores**
+
+### Entevista 1
+
+ <img src="/assets/img/entrevista-consumidor1.png" alt="entrevista1">
+
+**Entrevistado:** Andrea Ramirez
+<br>
+**Entrevistador:** Brenda Gamio
+<br>
+**Sexo:** Femenino
+<br>
+**Edad:** 21 años
+<br>
+[Link de entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201500225_upc_edu_pe/EQb9gem5T9NPgXwQ_FV652UBRtYuMs3WIJZrZrZ_LUfrFw?e=Lwr2vd&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+### Entevista 2
+**Entrevistado:**
+<br>
+**Entrevistador:** Brenda Gamio
+<br>
+**Sexo:**
+<br>
+**Edad:**
+<br>
+
 
 ## 2.3. Needfinding
 
