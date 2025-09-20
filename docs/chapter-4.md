@@ -180,11 +180,15 @@ Los escenarios refinados especifican **estímulo, ambiente, artefacto, respuesta
 
 ### **4.2.1. EvenStorming**
 
+https://miro.com/welcomeonboard/SlZKNUJTTEJBcTZRMGNDYmFqOXR4OEh6aTlMTE83amYxVjRlMUQxTWRUdE56QkplZUpUOHp6V1NhNkUxU04xSjNzSXpNL1VUUzl5NUUxT1dqTTBITW5uZW9sQlAvMVluZDlJd0NHZ0U5SDlzcWUvSnUvYWdKdUZ4dWRzOFY1c2tzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=353989808784
+
 ### **4.2.2. Candidate Context Discovery**
 
 ### **4.2.3. Domain Message Flows Modeling**
 
 ### **4.2.4. Bounded Context Canvases**
+
+https://miro.com/welcomeonboard/ZTZMcy9zWURYSjNrZ1FSK3lnRjZLZU1OUzdIT2VrT3VFN21RSGc2ZEtFeExHNWVCRlBoaEZQSjBPTkJUN09NTmt4VEQ4WVdBUEFJY2tkenNRTGhlbkhuZW9sQlAvMVluZDlJd0NHZ0U5SDgzRDBxSUNRcWF4RXlCU1FtcktJSGtQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=605140937332
 
 ### **4.2.5. Context Mapping**
 
