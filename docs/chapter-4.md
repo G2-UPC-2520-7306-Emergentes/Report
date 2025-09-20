@@ -176,6 +176,18 @@ Los escenarios refinados especifican **estímulo, ambiente, artefacto, respuesta
 | Questions: | Cifrado local (WebCrypto/Android Keystore) y política de borrado seguro. |
 | Issues: | Resolución de conflictos (último write vs. merge); reloj lógico para ordenación. |
 
+## **4.2. Strategic-Level Domain-Drive Design**
+
+### **4.2.1. EvenStorming**
+
+### **4.2.2. Candidate Context Discovery**
+
+### **4.2.3. Domain Message Flows Modeling**
+
+### **4.2.4. Bounded Context Canvases**
+
+### **4.2.5. Context Mapping**
+
 ## **4.3. Software Architecture**
 
 La visión general de la arquitectura describe la estructura fundamental de un sistema, abarcando sus componentes principales y la interacción entre ellos. Para FoodChain, una plataforma de confianza digital, una arquitectura sólida es el pilar fundamental para garantizar que el sistema sea seguro, escalable y auditable. Este enfoque permite una implementación ordenada, donde cada componente tiene una responsabilidad clara y bien definida, facilitando la integración de nuevas funcionalidades sin comprometer la integridad de la trazabilidad (Richards & Ford, 2021).
@@ -249,3 +261,4 @@ El diagrama de despliegue ilustra cómo se mapean los contenedores de software a
 ###### **Figura 8**
 *_Diagrama de Despliegue de la Plataforma FoodChain_*
 ![Diagrama de Despliegue de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106397-Deployment-001.png)
+
