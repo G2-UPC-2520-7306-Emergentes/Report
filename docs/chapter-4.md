@@ -180,6 +180,10 @@ Los escenarios refinados especifican **estímulo, ambiente, artefacto, respuesta
 
 ### **4.2.1. EvenStorming**
 
+En esta sección se muestra el EventStorming aplicado al dominio de la trazabilidad alimentaria para construir una visión compartida y elaborar una primera versión del modelo del sistema FoodChain. Esta técnica permite identificar y organizar eventos de negocio en una secuencia lógica, descubrir puntos críticos y dependencias ocultas, y vincularlos con decisiones de arquitectura orientadas a garantizar transparencia, confianza e integridad de los datos en la cadena alimentaria.
+
+![EventStorming del Sistema FoodChain](../assets/img/chapter-4/c4/EventFood.jpg)
+
 https://miro.com/welcomeonboard/SlZKNUJTTEJBcTZRMGNDYmFqOXR4OEh6aTlMTE83amYxVjRlMUQxTWRUdE56QkplZUpUOHp6V1NhNkUxU04xSjNzSXpNL1VUUzl5NUUxT1dqTTBITW5uZW9sQlAvMVluZDlJd0NHZ0U5SDlzcWUvSnUvYWdKdUZ4dWRzOFY1c2tzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=353989808784
 
 ### **4.2.2. Candidate Context Discovery**
