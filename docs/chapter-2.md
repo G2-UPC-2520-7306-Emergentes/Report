@@ -84,6 +84,24 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 - ¿Cuántos años de experiencia tiene en la producción y distribución de alimentos?
 - ¿Cuántas personas conforman su equipo de trabajo?
 
+#### Preguntas principales – Productores
+
+- ¿Con qué frecuencia necesitas crear nuevos lotes de productos y qué datos consideras indispensables registrar desde el inicio?
+- ¿Cómo gestionas actualmente la identificación y seguimiento de los lotes (por ejemplo, uso de códigos, documentos u otras herramientas)?
+- ¿Qué importancia le das a que cada paso del proceso (cosecha, empaque, transporte) quede validado digitalmente para asegurar su autenticidad?
+- ¿Qué tan relevante es para ti contar con un sistema que garantice la coherencia de fechas y horas entre los pasos de la cadena de producción?
+- ¿Qué nivel de detalle consideras necesario en los reportes o paneles de control para administrar y supervisar los lotes?
+- ¿Qué tan útil te resultaría recibir alertas automáticas cuando se detecten errores o inconsistencias en los datos de un lote?
+- ¿Qué funciones de permisos y roles (por ejemplo, productores, transportistas, auditores) crees que son esenciales para proteger la información de cada lote?
+- ¿Cómo ves la idea de registrar cada acción de la cadena (cosecha, transporte, venta) de forma inmutable en una tecnología como blockchain?
+
+#### Preguntas complementarias
+- ¿Qué dificultades enfrentas hoy para llevar el control de los lotes y su historial de pasos?
+- ¿Qué funcionalidades te ayudarían a mantener la coherencia temporal de los registros de cada paso?
+- ¿Qué tan importante es para ti que los roles y permisos de cada usuario estén claramente definidos para evitar errores o accesos no autorizados?
+- ¿Qué métricas o reportes serían más valiosos para ti en un dashboard de administración de lotes?
+- ¿Qué mecanismos te darían más seguridad a la hora de corregir o rectificar datos en un paso sin perder trazabilidad?
+
 #### Segmento objetivo #2: Consumidor final
 
 **Preguntas demográficas:**
@@ -94,7 +112,22 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 - ¿Con qué frecuencia compras productos alimenticios frescos o procesados?
 - ¿Sueles preferir productos con certificaciones como orgánico o comercio justo?
 
+#### Preguntas principales
+- ¿Con qué frecuencia escaneas códigos QR de productos para conocer su origen o trazabilidad?
+- ¿Qué información esperas encontrar primero al escanear un código QR (por ejemplo, historial de pasos, certificaciones, estado de verificación)?
+- ¿Qué tan importante es para ti que la aplicación muestre de inmediato si la información está verificada en blockchain?
+- ¿Cómo valoras la visualización del historial en línea de tiempo y qué datos consideras esenciales en cada paso?
+- ¿Qué utilidad le encuentras a ver el recorrido del producto en un mapa interactivo?
+- ¿Qué esperarías que ocurra si la aplicación detecta inconsistencias o encuentra datos no verificados?
+- ¿Qué tan importante es para ti que la carga de la información sea rápida, incluso si el lote tiene muchos eventos?
+- ¿Cómo influye la trazabilidad verificada en tu decisión de compra?
 
+#### Preguntas complementarias
+- ¿Qué problemas sueles encontrar al intentar conocer el origen o la autenticidad de un producto que compras?
+- ¿Qué te generaría más confianza al momento de comprar: certificaciones, historial de transporte, o pruebas de control de calidad?
+- ¿Qué tipo de información adicional te gustaría consultar sobre las empresas que participan en la cadena de producción?
+- ¿Qué formatos o visualizaciones te ayudarían a comprender mejor la trazabilidad de un producto?
+- ¿Qué aspectos harían que una aplicación de este tipo te resulte más fácil y rápida de usar en tu día a día?
 
 ### 2.2.2. Registro de entrevistas
 
