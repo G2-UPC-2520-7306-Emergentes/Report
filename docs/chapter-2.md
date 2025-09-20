@@ -84,7 +84,7 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 - ¿Cuántos años de experiencia tiene en la producción y distribución de alimentos?
 - ¿Cuántas personas conforman su equipo de trabajo?
 
-#### Preguntas principales – Productores
+#### Preguntas principales
 
 - ¿Con qué frecuencia necesitas crear nuevos lotes de productos y qué datos consideras indispensables registrar desde el inicio?
 - ¿Cómo gestionas actualmente la identificación y seguimiento de los lotes (por ejemplo, uso de códigos, documentos u otras herramientas)?
