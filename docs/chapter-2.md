@@ -131,58 +131,87 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 
 ### 2.2.2. Registro de entrevistas
 
+### Segmento objetivo – Consumidores
+
+#### Entrevista 1 
+
+| Campo | Detalle                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Imagen** | ![entrevista-consumidor1](../assets/img/entrevista-consumidor1.png)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| **Entrevistado** | Andrea Ramirez                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Entrevistador** | Brenda Gamio                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Sexo** | Femenino                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Edad** | 21 años                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| **Link de entrevista** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u201500225_upc_edu_pe/EQb9gem5T9NPgXwQ_FV652UBRtYuMs3WIJZrZrZ_LUfrFw?e=Lwr2vd&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Resumen** | La entrevistada no ha utilizado aplicaciones de **trazabilidad alimentaria** con QR y blockchain, pero muestra interés creciente en **productos saludables y con certificaciones**. En sus **compras familiares semanales**, valora la **verificación de la información**, la **facilidad de uso** y la **rapidez** al escanear. Prefiere visualizar datos mediante **líneas de tiempo** y **mapas interactivos** que detallen el recorrido del producto, las certificaciones obtenidas y las empresas involucradas. Además, **está dispuesta a pagar un precio mayor** por productos con trazabilidad verificada, pues la **transparencia** influye directamente en su decisión de compra. El **prototipo presentado fue bien recibido**, aunque sugirió **mejoras en elementos visuales** para facilitar la comprensión de la información. |
+
+#### Entrevista 2
+
+| Campo | Detalle                                             |
+|-------|-----------------------------------------------------|
+| **Imagen** | ![entrevista2.jpeg](../assets/img/entrevista2.jpeg) |
+| **Entrevistado** | Alexandra Teves                                     |
+| **Entrevistador** | Diego Soto                                          |
+| **Sexo** | Femenino                                            |
+| **Edad** | 21 años                                             |
+| **Link de entrevista** |     https://upcedupe-my.sharepoint.com/:v:/g/personal/u202214477_upc_edu_pe/EYBvQODrYrJCpzmjP_GLM0MBJ57Xly85cfcU-TdvuCiRrw?e=FqiwCG&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D                                                |
+| **Resumen** |    Consumidora limeña de 21 años, analista de marketing digital. Compra alimentos frescos y procesados 4–5 veces por semana, priorizando certificaciones y trazabilidad verificada. Escanea códigos QR con frecuencia para comprobar origen, fechas, certificaciones y validación en blockchain, valorando que la información sea rápida, clara y visual (línea de tiempo y mapa interactivo). Considera decisivo que los datos estén validados en blockchain, incluso si el producto es más costoso. Pide alertas ante inconsistencias, datos de sostenibilidad y control de calidad, y una app simple e intuitiva que muestre la información en menos de dos segundos.                                                 |
+
+#### Entrevista 3
+
+| Campo | Detalle |
+|-------|--------|
+| **Imagen** |  |
+| **Entrevistado** |  |
+| **Entrevistador** |  |
+| **Sexo** |  |
+| **Edad** |  |
+| **Link de entrevista** |  |
+| **Resumen** |  |
+
+
+### Segmento objetivo – Productores
+
+
+#### Entrevista 1
+
+| Campo | Detalle |
+|-------|--------|
+| **Imagen** |  |
+| **Entrevistado** |  |
+| **Entrevistador** |  |
+| **Sexo** |  |
+| **Edad** |  |
+| **Link de entrevista** |  |
+| **Resumen** |  |
+
+
+#### Entrevista 2
+
+| Campo | Detalle |
+|-------|--------|
+| **Imagen** |  |
+| **Entrevistado** |  |
+| **Entrevistador** |  |
+| **Sexo** |  |
+| **Edad** |  |
+| **Link de entrevista** |  |
+| **Resumen** |  |
+
+#### Entrevista 3
+
+| Campo | Detalle |
+|-------|--------|
+| **Imagen** |  |
+| **Entrevistado** |  |
+| **Entrevistador** |  |
+| **Sexo** |  |
+| **Edad** |  |
+| **Link de entrevista** |  |
+| **Resumen** |  |
 
 ### 2.2.3. Análisis de entrevistas
 
-**Productores**
-
-### Entevista 1
-**Entrevistado:**
-<br>
-**Entrevistador:**
-<br>
-**Sexo:**
-<br>
-**Edad:**
-<br>
-
-### Entevista 2
-**Entrevistado:**
-<br>
-**Entrevistador:**
-<br>
-**Sexo:**
-<br>
-**Edad:**
-<br>
-
----
-
-**Consumidores**
-
-### Entevista 1
-
- <img src="../assets/img/entrevista-consumidor1.png" alt="entrevista1">
-
-**Entrevistado:** Andrea Ramirez
-<br>
-**Entrevistador:** Brenda Gamio
-<br>
-**Sexo:** Femenino
-<br>
-**Edad:** 21 años
-<br>
-[Link de entrevista](https://upcedupe-my.sharepoint.com/:v:/g/personal/u201500225_upc_edu_pe/EQb9gem5T9NPgXwQ_FV652UBRtYuMs3WIJZrZrZ_LUfrFw?e=Lwr2vd&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
-
-### Entevista 2
-**Entrevistado:**
-<br>
-**Entrevistador:** Brenda Gamio
-<br>
-**Sexo:**
-<br>
-**Edad:**
-<br>
 
 
 ## 2.3. Needfinding
