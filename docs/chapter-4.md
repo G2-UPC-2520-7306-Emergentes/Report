@@ -233,11 +233,15 @@ Finalmente, con base en este análisis, se delimitaron los siguientes cuatro Bou
 
 ### **4.2.3. Domain Message Flows Modeling**
 
+https://miro.com/welcomeonboard/akd6K1RSbzd4aWdzcmxxZDljMjllUWoyMTNoL1FTK2c0VXFPUTQ5OEF4dU1ZbVJJWDhTaEhESU15TVNIQXN1Q2VGeDllT3p0SU9tY3E4dHFaeHJUSUtFZG9pQ2xTVjlSTlVSdVBpd29nSTRtUmFxUmhYL1VrTW05b29SekwxeE1Bd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=421523459845
+
 ### **4.2.4. Bounded Context Canvases**
 
 https://miro.com/welcomeonboard/ZTZMcy9zWURYSjNrZ1FSK3lnRjZLZU1OUzdIT2VrT3VFN21RSGc2ZEtFeExHNWVCRlBoaEZQSjBPTkJUN09NTmt4VEQ4WVdBUEFJY2tkenNRTGhlbkhuZW9sQlAvMVluZDlJd0NHZ0U5SDgzRDBxSUNRcWF4RXlCU1FtcktJSGtQdGo1ZEV3bUdPQWRZUHQzSGl6V2NBPT0hdjE=?share_link_id=605140937332
 
 ### **4.2.5. Context Mapping**
+
+
 
 ## **4.3. Software Architecture**
 
