@@ -97,6 +97,18 @@ Enlace de la elaboracion del To-be Scenario Mapping: https://miro.com/welcomeonb
 
 ### 3.3 Impact Mapping
 
+### Impact Mapping – Segmento Consumidor Final
+
+El Impact Map para el segmento **Consumidor Final** se orienta a incrementar la confianza y la transparencia sobre el origen y recorrido de los alimentos, de modo que en un plazo de seis meses **al menos el 90 % de las consultas** al historial de productos carguen en **menos de dos segundos**, que **85 % de los usuarios** comprendan el estado y recorrido en la primera vista y que la trazabilidad verificada aumente la intención de compra en **10–15 %**. La persona objetivo es el cliente que escanea el código QR o NFC en el punto de venta para conocer el historial del producto. Los impactos definidos se centran en facilitar un acceso inmediato y comprensible a la historia completa del producto, así como en reforzar la percepción de seguridad y autenticidad mediante verificación pública. Para lograrlo, la solución incluye una línea de tiempo cronológica con fechas, lugares y responsables, un mapa interactivo del recorrido geográfico, un sello “Verificado con FoodChain” enlazado a los hashes de blockchain y una sección de información de las empresas participantes con certificaciones de calidad verificables. Con estos entregables, el consumidor puede validar con rapidez la autenticidad de cada paso de la cadena, fortalecer su confianza de compra y contribuir a la reputación de la marca.
+
+![mapping1.png](../assets/img/mapping1.png)
+
+
+### Impact Mapping – Segmento Productor
+
+El Impact Map para el segmento **Productor** de FoodChain define como objetivo de negocio optimizar la trazabilidad y la gestión de los lotes de origen en la cadena alimentaria, garantizando datos confiables y reduciendo en un **60 %** el tiempo de gestión de cada lote, así como los errores de registro en un **50 %**, durante los próximos seis meses. La persona objetivo es el productor u operario encargado de crear, actualizar y cerrar los lotes. Los impactos clave son mejorar la eficiencia y exactitud en la creación y cierre de lotes, y asegurar la trazabilidad verificable de cada evento con evidencia de ubicación y anclaje en blockchain. Para provocar estos impactos, la solución contempla un módulo de creación y edición de lotes con validaciones automáticas, una funcionalidad de cierre con registro inmutable, generación de códigos QR únicos firmados digitalmente y registro seguro de pasos críticos cosecha, empaque, transporte con captura automática de GPS y confirmación visual por rol. Esta arquitectura permite reducir drásticamente los tiempos de auditoría, aumentar la confiabilidad de los datos y fortalecer el control operativo en tiempo real.
+
+![mapping2.png](../assets/img/mapping2.png)
 
 ### 3.4 Product Backlog
 
