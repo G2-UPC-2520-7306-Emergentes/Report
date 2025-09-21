@@ -188,6 +188,49 @@ https://miro.com/welcomeonboard/SlZKNUJTTEJBcTZRMGNDYmFqOXR4OEh6aTlMTE83amYxVjRl
 
 ### **4.2.2. Candidate Context Discovery**
 
+Con base en los resultados de la sesión de EventStorming, se desarrolló una sesión adicional de Candidate Context Discovery, enfocada en identificar y delimitar los Bounded Contexts del sistema FoodChain. Se aplicaron las siguientes técnicas:
+
+- Start-With-Value
+Se identificaron las áreas con mayor impacto en la propuesta de valor del negocio, que es "reconstruir la confianza en la cadena de suministro alimentaria". Las capacidades clave son:
+
+ - Garantizar la inmutabilidad y verificabilidad de la historia de un producto. Esto es el corazón de la confianza que se quiere generar.
+
+ - Empoderar al consumidor con acceso transparente y directo a la información del origen de sus alimentos.
+
+ - Proveer una plataforma segura y eficiente para que los productores demuestren la autenticidad de sus productos.
+
+Este análisis permitió priorizar los contextos de Trazabilidad, Gestión del Lote y Consulta Pública como los núcleos funcionales de más alto valor para el negocio.
+
+- Look-For-Pivotal-Events
+
+Se utilizaron eventos clave del dominio como indicadores de fronteras naturales entre contextos. Eventos como:
+
+ - “Lote Creado”: Marca el inicio del ciclo de vida de un producto y es el evento central del contexto de Gestión de Lotes.
+
+ - “Evento Registrado”: Es el punto de transferencia de responsabilidad entre actores. Es el evento principal del contexto de Trazabilidad.
+
+ - “Hash Anclado en Blockchain”: Es un evento de frontera claro. El contexto de Trazabilidad solicita el anclaje, y un servicio externo lo ejecuta, creando una prueba inmutable.
+
+ - “Código QR Escaneado”: Es el evento que inicia la interacción del consumidor y sirve como puente entre el mundo físico y el contexto de Consulta Pública.
+
+ - “Incidente Reportado”: Activa lógicas de negocio completamente diferentes a las operaciones normales, centradas en la corrección y la auditoría, justificando un contexto separado de Auditoría.
+
+- Start-With-Simple
+
+Se descompusieron las líneas de tiempo de los eventos en pasos secuenciales, revelando una alta cohesión interna en ciertos grupos. Por ejemplo, la secuencia de eventos Lote Creado → Lote Editado → Lote Cerrado comparte un lenguaje, reglas de estado y entidades comunes (el agregado Lote). Esta cohesión justifica plenamente la delimitación del contexto Gestión de Lotes. De igual manera, todos los eventos relacionados con el registro de pasos están altamente cohesionados en el contexto de Trazabilidad.
+
+
+
+Finalmente, con base en este análisis, se delimitaron los siguientes cuatro Bounded Contexts:
+
+ - Identidad y Acceso (Identity & Access): Gestión de cuentas para todos los actores de la cadena (productores, transportistas, etc.), manejo de credenciales, roles y permisos de acceso a la plataforma.
+
+ - Gestión de Lotes (Batch Management): Es el Core Domain. Se encarga de la creación, gestión, edición y cierre de los lotes de productos.
+
+ - Trazabilidad del Lote (Batch Traceability): También un Core Domain. Su única responsabilidad es registrar y validar cada paso (evento) en el historial de un lote, así como gestionar la lógica de auditoría y cumplimiento.
+
+ - Consulta del Consumidor (Consumer Inquiry): Se encarga de la experiencia del consumidor final. Responde al escaneo de un código QR, valida su autenticidad y presenta el historial completo y verificado del producto de una manera clara y comprensible.
+
 ### **4.2.3. Domain Message Flows Modeling**
 
 ### **4.2.4. Bounded Context Canvases**
