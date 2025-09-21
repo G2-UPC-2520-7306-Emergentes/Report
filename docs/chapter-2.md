@@ -170,6 +170,19 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 | **Resumen** |   Mamá de 56 años en Lima, profesora de primaria. Hace una compra grande cada semana y completa con compras pequeñas. Prefiere productos con certificaciones cuando el precio no se dispara. Escanea códigos QR una o dos veces por semana, sobre todo en huevos, leche y miel. Al hacerlo, quiere ver un resumen corto con origen, fecha, lote y un aviso claro de verificación. Le gustan las presentaciones simples: una tarjeta con los datos esenciales y una línea de tiempo con íconos; el mapa le parece útil, pero no indispensable. Si hay errores, espera un aviso en rojo, una recomendación y un botón para reportar. Valora que todo cargue en uno o dos segundos. La trazabilidad confiable le da seguridad y está dispuesta a pagar un poco más. Pide letra grande, botones claros y que no exija registro.                                            |
 
 
+#### Entrevista 4
+
+| Campo | Detalle |
+|-------|--------|
+| **Imagen** | <img src="../assets/img/entrevista4.png" alt="entrevista2" width="350"/> |
+| **Entrevistado** | Isabel Osorio |
+| **Entrevistador** | Angelo Curi |
+| **Sexo** | Femenino |
+| **Edad** | 60 años |
+| **Link de entrevista** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202022387_upc_edu_pe/EdnoOyfnMeFCrq9gwYy-G2IBbV6KFZ8gG6M_OSlo_djzng?e=BgRco2&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
+| **Resumen** | <span style="font-size:15px;">La señora Isabel Osorio, una profesora de 60 años que vive en el distrito de Chorrillos, compra productos alimenticios frescos y procesados casi todos los días. Ella prefiere productos que cuenten con certificaciones. Aunque no suele escanéar códigos QR con frecuencia, si lo hiciera, buscaría información sobre cómo y dónde se elaboraron los productos. Considera que una aplicación que muestre estos datos sería muy importante y valiosa.</span> |
+
+
 ### Segmento objetivo – Productores
 
 
