@@ -159,15 +159,15 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 
 #### Entrevista 3
 
-| Campo | Detalle |
-|-------|--------|
-| **Imagen** |  |
-| **Entrevistado** |  |
-| **Entrevistador** |  |
-| **Sexo** |  |
-| **Edad** |  |
-| **Link de entrevista** |  |
-| **Resumen** |  |
+| Campo | Detalle                                        |
+|-------|------------------------------------------------|
+| **Imagen** |<img src="../assets/img/entrevista3-consumidora.png" alt="entrevista3" width="300"/>|
+| **Entrevistado** | Rosa Gutiérrez                                 |
+| **Entrevistador** | Gustavo Huanca                                 |
+| **Sexo** | Femenino                                       |
+| **Edad** | 56                                             |
+| **Link de entrevista** |      https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215285_upc_edu_pe/EbQwl13e2wBImSbaa1T8wLsBLsKtuximA69_yWKKVYaBEQ?e=KP3gL7&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D                                         |
+| **Resumen** |   Mamá de 56 años en Lima, profesora de primaria. Hace una compra grande cada semana y completa con compras pequeñas. Prefiere productos con certificaciones cuando el precio no se dispara. Escanea códigos QR una o dos veces por semana, sobre todo en huevos, leche y miel. Al hacerlo, quiere ver un resumen corto con origen, fecha, lote y un aviso claro de verificación. Le gustan las presentaciones simples: una tarjeta con los datos esenciales y una línea de tiempo con íconos; el mapa le parece útil, pero no indispensable. Si hay errores, espera un aviso en rojo, una recomendación y un botón para reportar. Valora que todo cargue en uno o dos segundos. La trazabilidad confiable le da seguridad y está dispuesta a pagar un poco más. Pide letra grande, botones claros y que no exija registro.                                            |
 
 
 ### Segmento objetivo – Productores
