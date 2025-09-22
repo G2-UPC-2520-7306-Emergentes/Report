@@ -247,10 +247,6 @@ En el segmento consumidor final, la demanda se centra en transparencia, velocida
 
 En conjunto, ambos segmentos respaldan el enfoque de FoodChain como plataforma de trazabilidad alimentaria en tiempo real, capaz de conectar seguridad, eficiencia y transparencia a lo largo de toda la cadena de suministro.
 
-### Entrevista completa
-
-Link de las entrevistas completas:  
-
 ### Análisis por medio de herramientas estadísticas
 
 **Segmento objetivo #1: Productores**  
