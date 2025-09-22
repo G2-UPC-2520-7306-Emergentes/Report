@@ -1,314 +1,93 @@
+# **COURSE PROJECT**
+
 <p align="center">
-    <img src="https://www.upc.edu.pe/static/img/logo_upc_red.png" width="120px" alt="Logo UPC"><br><br>
-    <strong>Universidad Peruana de Ciencias Aplicadas</strong><br>
-    <strong>Carrera de Ingeniería de Software</strong>
+  <img src="https://www.upc.edu.pe/static/img/logo_upc_red.png" alt="Logo de la UPC" />
 </p>
 
-<hr>
+<p align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></p>
 
-<p>
-    <strong>CURSO:</strong> SI728 - Arquitecturas de Software Emergentes<br>
-    <strong>CICLO ACADÉMICO:</strong> 202520<br>
-    <strong>NRC:</strong> 7306 <br>
-    <strong>PROFESOR:</strong> Ocampo Tello, Ernesto
-</p>
+<p align="center"><strong>Ingeniería de Software</strong><br>
+SI728 - Arquitecturas de Software Emergentes - NRC: 7306 <br>
+Ciclo Académico: 202520 <br>
+<strong>Profesor:</strong> Ernesto Ocampo Tello</p>
 
-<h2>Informe de Trabajo Final</h2>
+<h2 align="center">INFORME DE TRABAJO FINAL</h2>
 
-<div style="width: 80%; margin: 0 auto;border: 1px solid #ddd; padding: 20px; border-radius: 8px; background-color: #f9f9f9;">
-    <h3><strong>Startup:</strong> ProdChain</h3>
-    <p><em>"Chaining you to the products you love"</em></p>
-    <br>
-    <h4>Equipo de Desarrollo</h4>
-    <table style="width:80%; margin: 0 auto; text-align: left; border-collapse: collapse;">
-      <thead>
-        <tr>
-          <th style="padding: 8px; border-bottom: 2px solid #333;">Código</th>
-          <th style="padding: 8px; border-bottom: 2px solid #333;">Nombre</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">U20221C936</td>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">JUAN FABRITZZIO PESCORAN ANGULO</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Código</td>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Nombre</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Código</td>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Nombre</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Código</td>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">Nombre</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">u202022387</td>
-          <td style="padding: 8px; border-bottom: 1px solid #ccc;">ANGELO MARCIO CURI MARCELO</td>
-        </tr>
-      </tbody>
-    </table>
+<h3 align="center">Startup: ProdChain</h3>
+<p align="center"><em>"Chaining you to the products you love"</em></p>
+
+<h3 align="center">Equipo de Desarrollo</h3>
+
+<div align="center">
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Código</strong></th>
+      <th><strong>Nombre</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>U20221C936</td>
+      <td>JUAN FABRITZZIO PESCORAN ANGULO</td>
+    </tr>
+    <tr>
+      <td>U202022387</td>
+      <td>ANGELO MARCIO CURI MARCELO</td>
+    </tr>
+    <tr>
+      <td>[Código de Brenda]</td>
+      <td>BRENDA LUCÍA GAMIO UPIACHIHUA</td>
+    </tr>
+    <tr>
+      <td>[Código de Gustavo]</td>
+      <td>GUSTAVO ESAU HUANCA NAVARRO</td>
+    </tr>
+    <tr>
+      <td>U202214477</td>
+      <td>DIEGO ULISES SOTO QUISPE</td>
+    </tr>
+  </tbody>
+</table>
+
 </div>
 
-<p style="text-align: center;"><br><strong>Noviembre 2025</strong></p>
+<p align="center"><strong>Noviembre 2025</strong></p>
 
 # Registro de Versiones del Informe
 
-<style>
-    .historial-versiones {
-        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-        font-size: 10pt; color: #333; line-height: 1.5;
-    }
-    .historial-versiones table {
-        width: 100%; border-collapse: collapse; margin-bottom: 2em; table-layout: fixed;
-    }
-    .historial-versiones th {
-        background-color: #4A5568; color: white; font-weight: bold; padding: 10px;
-        text-align: left; text-transform: uppercase; font-size: 9pt;
-    }
-    .historial-versiones td {
-        border: 1px solid #e2e8f0; padding: 8px 10px; vertical-align: top; word-wrap: break-word;
-    }
-    .historial-versiones h3 {
-        border-bottom: 2px solid #4A5568; padding-bottom: 5px; margin-top: 1.5em;
-        margin-bottom: 1em; font-size: 14pt;
-    }
-    .entrega-principal td {
-        background-color: #edf2f7; font-weight: bold;
-    }
-</style>
+| Versión | Fecha       | Autor(es)                                                                                                                                                                                                                   | Descripción de la modificación                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|---------|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TB1     | 21/09/2025 | Juan Fabritzzio Pescoran Angulo <br><br> Angelo Marcio Curi Marcelo <br><br> Brenda Lucía Gamio Upiachihua <br><br> Gustavo Esau Huanca Navarro <br><br> Diego Ulises Soto Quispe                                   | Se agregó el contenido completo del **Capítulo 1 (Introducción)**, incluyendo los apartados 1.1 Startup Profile (1.1.1 Descripción de la Startup, 1.1.2 Perfiles de integrantes del equipo), 1.2 Solution Profile (1.2.1 Antecedentes y problemática, 1.2.2 Lean UX Process con los subapartados 1.2.2.1 Problem Statements, 1.2.2.2 Assumptions, 1.2.2.3 Hypothesis Statements, 1.2.2.4 Lean UX Canvas) y 1.3 Segmentos objetivo. También se incorporó el **Capítulo 2 (Requirements Elicitation & Analysis)**, abarcando 2.1 Competidores (2.1.1 Análisis competitivo, 2.1.2 Estrategias y tácticas), 2.2 Entrevistas (2.2.1 Diseño, 2.2.2 Registro, 2.2.3 Análisis), 2.3 Needfinding (2.3.1 User Personas, 2.3.2 User Task Matrix, 2.3.3 Empathy Mapping, 2.3.4 As-is Scenario Mapping) y 2.4 Ubiquitous Language. Asimismo se completó el **Capítulo 3 (Requirements Specification)** con los apartados 3.1 To-Be Scenario Mapping, 3.2 User Stories, 3.3 Impact Mapping y 3.4 Product Backlog; y el **Capítulo 4 (Strategic-Level Software Design)**, incluyendo 4.1 Strategic-Level Attribute-Driven Design (4.1.1 Design Purpose, 4.1.2 Attribute-Driven Design Inputs con sus subapartados 4.1.2.1 Primary Functionality, 4.1.2.2 Quality Attribute Scenarios, 4.1.2.3 Constraints, 4.1.3 Architectural Drivers Backlog, 4.1.4 Architectural Design Decisions, 4.1.5 Quality Attribute Scenario Refinements), 4.2 Strategic-Level Domain-Driven Design (4.2.1 EventStorming, 4.2.2 Candidate Context Discovery, 4.2.3 Domain Message Flows Modeling, 4.2.4 Bounded Context Canvases, 4.2.5 Context Mapping) y 4.3 Software Architecture (4.3.1 System Landscape Diagram, 4.3.2 Context Level Diagrams, 4.3.3 Container Level Diagrams, 4.3.4 Deployment Diagrams). |
 
-<div class="historial-versiones">
-    <h3>Hito 1: Entrega Base (TB1)</h3>
-    <table>
-        <colgroup>
-            <col style="width: 15%;"><col style="width: 15%;"><col style="width: 20%;"><col style="width: 50%;">
-        </colgroup>
-        <thead>
-            <tr><th>Versión</th><th>Fecha</th><th>Autores</th><th>Descripción del Cambio</th></tr>
-        </thead>
-        <tbody>
-            <tr class="entrega-principal">
-                <td>1.0 - TB1</td>
-                <td>[Fecha de Entrega]</td>
-                <td>ProdChain Team</td>
-                <td>Entrega inicial con el desarrollo de los Capítulos 1, 2, 3 y 4.</td>
-            </tr>
-            <tr>
-                <td>1.1</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>1.2</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>1.3</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>1.4</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-        </tbody>
-    </table>
-    <h3>Hito 2: Entrega Parcial (TP1)</h3>
-    <table>
-        <colgroup>
-            <col style="width: 15%;"><col style="width: 15%;"><col style="width: 20%;"><col style="width: 50%;">
-        </colgroup>
-        <thead>
-            <tr><th>Versión</th><th>Fecha</th><th>Autores</th><th>Descripción del Cambio</th></tr>
-        </thead>
-        <tbody>
-            <tr class="entrega-principal">
-                <td>2.0 - TP1</td>
-                <td>[Fecha de Entrega]</td>
-                <td>ProdChain Team</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>2.1</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>2.2</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>2.3</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-        </tbody>
-    </table>
-    <h3>Hito 3: Entrega Base 2 (TB2)</h3>
-    <table>
-        <colgroup>
-            <col style="width: 15%;"><col style="width: 15%;"><col style="width: 20%;"><col style="width: 50%;">
-        </colgroup>
-        <thead>
-            <tr><th>Versión</th><th>Fecha</th><th>Autores</th><th>Descripción del Cambio</th></tr>
-        </thead>
-        <tbody>
-            <tr class="entrega-principal">
-                <td>3.0 - TB2</td>
-                <td>[Fecha de Entrega]</td>
-                <td>ProdChain Team</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>3.1</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-             <tr>
-                <td>3.2</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>3.3</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-        </tbody>
-    </table>
-    <h3>Hito 4: Entrega Final (TF1)</h3>
-    <table>
-        <colgroup>
-            <col style="width: 15%;"><col style="width: 15%;"><col style="width: 20%;"><col style="width: 50%;">
-        </colgroup>
-        <thead>
-            <tr><th>Versión</th><th>Fecha</th><th>Autores</th><th>Descripción del Cambio</th></tr>
-        </thead>
-        <tbody>
-            <tr class="entrega-principal">
-                <td>4.0 - TF1</td>
-                <td>[Fecha de Entrega]</td>
-                <td>ProdChain Team</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>4.1</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>4.2</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-            <tr>
-                <td>4.3</td>
-                <td>[Fecha]</td>
-                <td>[Nombre(s)]</td>
-                <td>...</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+## Project Report Collaboration Insights
 
-# Project Report Collaboration Insights
+TB1: Las tareas asignadas para la entrega **TB1** han sido completadas y están documentadas en el siguiente repositorio de GitHub perteneciente a la organización del equipo:
 
-En esta sección se detalla el proceso colaborativo del equipo para la elaboración de este informe. Todos los miembros han participado activamente, utilizando un repositorio centralizado en GitHub para gestionar versiones y contribuciones.
+Repositorio del proyecto: [https://github.com/G2-UPC-2520-7306-Emergentes](https://github.com/G2-UPC-2520-7306-Emergentes)
 
-**[Repositorio del Informe del Proyecto](https://github.com/tu-usuario/prodchain-final-report)**
+Durante la preparación del informe, se llevaron a cabo las siguientes actividades:
 
-A continuación, se presenta el resumen de actividades, métricas y conclusiones de colaboración para cada hito de entrega.
+- Se escribieron y diagramaron los contenidos asignados a cada miembro en formato Markdown,  
+  con commits frecuentes para asegurar el progreso continuo en la rama `develop`.
+- Se desarrollaron los **capítulos 1, 2, 3 y 4 del informe**, abarcando desde la presentación de la startup *FoodChain*  
+  hasta el diseño estratégico de la solución, aplicando las técnicas revisadas en clase como **Lean UX**,  
+  entrevistas, análisis de usuarios y **Domain-Driven Design**.
+- Los artefactos necesarios (diagramas, mapas, matrices) fueron elaborados con herramientas recomendadas  
+  y almacenados en la carpeta `Assets` dentro de la rama `develop`, facilitando su referencia directa en el informe.
+- Se organizaron reuniones virtuales para coordinar los avances, distribuir las secciones  
+  y garantizar el desarrollo coherente del contenido teórico–práctico.
 
----
+Esta entrega representa una evidencia del **trabajo colaborativo del equipo**, permitiendo cumplir con el **Student Outcome 3 (ABET – EAC)**, que establece la capacidad para **comunicarse efectivamente con un rango de audiencias**.  
+En particular, el grupo demostró que puede:
 
-### **Hito 1 (TB1) - Project Report Collaboration Insights**
+- Comunicar de manera clara y objetiva las ideas y resultados de ingeniería, tanto en forma oral como escrita,  
+  a público de distintas especialidades y niveles jerárquicos.
+- Integrar conocimientos y metodologías de arquitectura de software emergente en un documento técnico bien estructurado.
+- Documentar procesos, decisiones y resultados en un entorno ágil, asegurando trazabilidad y calidad en cada hito.
 
-Para esta entrega, el equipo estableció las bases del proyecto, definiendo el problema, la solución y realizando el análisis inicial de requisitos y diseño estratégico.
-
-_Vista general de las contribuciones del equipo (TB1)_
-![Captura de las contribuciones generales del equipo para TB1](assets/img/insights/tb1-contributions.png) <!-- Reemplazar con la imagen real -->
-
-_Diagrama de red de ramas (TB1)_
-![Captura del gráfico de red de ramas para TB1](assets/img/insights/tb1-network.png) <!-- Reemplazar con la imagen real -->
-
-**Conclusiones de la Colaboración (TB1):**
-- **Total de Commits:** Se realizaron **[Número]** commits para este hito.
-- **Foco de Trabajo:** La mayor actividad se centró en los Capítulos I y II, sentando las bases conceptuales de ProdChain.
-- **Estrategia de Ramas:** Se implementó GitFlow, usando la rama `develop` para integración y `feature/capitulo-X` para el trabajo aislado en cada sección del informe.
-- **Desafíos y Aprendizajes:** El principal desafío fue acotar el alcance del problema de la trazabilidad. Se aprendió la importancia de definir un **Lenguaje Ubicuo** desde el inicio para alinear al equipo.
-
----
-
-### **Hito 2 (TP1) - Project Report Collaboration Insights**
-
-En esta fase, se profundizó en el diseño táctico y de experiencia de usuario, aplicando el feedback recibido y detallando la arquitectura a nivel de componentes.
-
-_Vista general de las contribuciones del equipo (TP1)_
-![Captura de las contribuciones generales del equipo para TP1](assets/img/insights/tp1-contributions.png) <!-- Reemplazar con la imagen real -->
-
-_Diagrama de red de ramas (TP1)_
-![Captura del gráfico de red de ramas para TP1](assets/img/insights/tp1-network.png) <!-- Reemplazar con la imagen real -->
-
-**Conclusiones de la Colaboración (TP1):**
-- **Total de Commits:** Se realizaron **[Número]** commits.
-- **Foco de Trabajo:** La actividad se concentró en los Capítulos V (Diseño Táctico DDD) y VI (Diseño UX), donde se definieron los Bounded Contexts y se crearon los wireframes iniciales.
-- **Estrategia de Ramas:** Se adoptó el uso de **Pull Requests** como mecanismo de revisión obligatorio antes de integrar las ramas de `feature` a `develop`, mejorando la calidad del informe.
-- **Desafíos y Aprendizajes:** El reto fue modelar los Bounded Contexts de forma cohesiva. Se fortaleció la comunicación para asegurar que el diseño táctico estuviera alineado con la estrategia.
-
----
-
-### **Hito 3 (TB2) - Project Report Collaboration Insights**
-
-Esta entrega se centró en la implementación del primer ciclo de desarrollo (Sprint 1), el despliegue de un prototipo funcional y la documentación de las evidencias técnicas.
-
-_Vista general de las contribuciones del equipo (TB2)_
-![Captura de las contribuciones generales del equipo para TB2](assets/img/insights/tb2-contributions.png) <!-- Reemplazar con la imagen real -->
-
-_Diagrama de red de ramas (TB2)_
-![Captura del gráfico de red de ramas para TB2](assets/img/insights/tb2-network.png) <!-- Reemplazar con la imagen real -->
-
-**Conclusiones de la Colaboración (TB2):**
-- **Total de Commits:** Se realizaron **[Número]** commits.
-- **Foco de Trabajo:** El esfuerzo principal se dedicó al Capítulo VII, documentando la configuración del entorno, la gestión del código fuente de la aplicación y todas las fases del Sprint 1.
-- **Estrategia de Ramas:** El flujo de trabajo en Git se mantuvo estable, con una alta actividad en los repositorios de código de la aplicación, además del repositorio del informe.
-- **Desafíos y Aprendizajes:** El mayor desafío fue la integración del backend (blockchain) con la aplicación móvil por primera vez. Se aprendió a documentar evidencias de desarrollo y despliegue de manera sistemática.
-
----
-
-### **Hito 4 (TF1) - Project Report Collaboration Insights**
-
-La fase final consistió en completar el desarrollo (Sprint 2), realizar la validación con usuarios, y consolidar toda la documentación en la versión final del informe.
-
-_Vista general de las contribuciones del equipo (TF1)_
-![Captura de las contribuciones generales del equipo para TF1](assets/img/insights/tf1-contributions.png) <!-- Reemplazar con la imagen real -->
-
-_Diagrama de red de ramas (TF1)_
-![Captura del gráfico de red de ramas para TF1](assets/img/insights/tf1-network.png) <!-- Reemplazar con la imagen real -->
-
-**Conclusiones de la Colaboración (TF1):**
-- **Total de Commits:** Se realizaron **[Número]** commits para la entrega final.
-- **Foco de Trabajo:** La actividad se distribuyó entre la finalización del Capítulo VII (Sprint 2, Validación), la redacción de Conclusiones y la revisión integral de todo el documento para asegurar la coherencia y calidad.
-- **Estrategia de Ramas:** Se utilizaron ramas `hotfix` para corregir errores detectados durante las pruebas de validación. Todo el trabajo fue finalmente integrado en `main` para la entrega final.
-- **Desafíos y Aprendizajes:** El principal reto fue gestionar el tiempo para completar el desarrollo, las pruebas y la documentación simultáneamente. El equipo consolidó su habilidad para trabajar de forma ágil y coordinada bajo presión.
-
+En conjunto, la entrega **TB1** evidencia la apropiación de metodologías de diseño, la correcta aplicación de herramientas de colaboración en GitHub y la capacidad del equipo para producir documentación técnica de alta calidad alineada con los objetivos del proyecto **FoodChain**.
 
 # Contenido
 
@@ -430,78 +209,22 @@ _Diagrama de red de ramas (TF1)_
 
 - [**Anexos**](#anexos)
 
----
-
 # Student Outcome
 
-El curso SI728 Arquitecturas de Software Emergentes contribuye al cumplimiento del Student Outcome ABET:
+El curso contribuye al cumplimiento del Student Outcome ABET:  
+**ABET – EAC – Student Outcome 3**
 
-**ABET – EAC - Student Outcome 3: Capacidad de comunicarse efectivamente con un rango de audiencias.**
+**Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias.**  
+En el siguiente cuadro se describen las acciones realizadas y las conclusiones por parte del grupo, que permiten sustentar el logro del ABET – EAC – Student Outcome 3 en la entrega **TB1**.
 
-En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC – Student Outcome 3.
+El curso contribuye al cumplimiento del Student Outcome ABET:  
+**ABET – EAC – Student Outcome 3**
 
-<br>
+**Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias.**  
+En el siguiente cuadro se describen las acciones realizadas y las conclusiones por parte del grupo, que permiten sustentar el logro del ABET – EAC – Student Outcome 3 en la entrega **TB1**.
 
-<table border="1" style="width:100%; border-collapse: collapse; text-align:left;">
-  <thead style="background-color:#4A5568; color:white;">
-    <tr>
-      <th style="padding:10px; width:25%;">Criterio Específico</th>
-      <th style="padding:10px; width:45%;">Acciones Realizadas</th>
-      <th style="padding:10px; width:30%;">Conclusiones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding:8px; vertical-align:top;">
-        <strong>Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.</strong>
-      </td>
-      <td style="padding:8px; vertical-align:top;">
-        <!-- Plantilla para completar por cada integrante y entrega -->
-        <strong>TB1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Participé en la exposición del video del Hito 1, explicando la sección de [Nombre de la sección], donde presenté [Breve descripción de lo expuesto].</em><br><br>
-        <strong>TP1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Durante la sustentación sincrónica, respondí a las preguntas del profesor sobre [Tema específico], argumentando nuestras decisiones de diseño táctico.</em><br><br>
-        <!-- Continuar para cada integrante y cada hito (TB2, TF1) -->
-      </td>
-      <td style="padding:8px; vertical-align:top;">
-        <!-- Plantilla para completar por cada integrante y entrega -->
-        <strong>TB1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Aprendí a estructurar una presentación técnica de forma clara y concisa, adaptando el lenguaje para una audiencia que evalúa tanto el aspecto técnico como el de negocio.</em><br><br>
-        <strong>TP1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Mejoré mi capacidad para defender decisiones de arquitectura bajo presión, comunicando conceptos complejos como Bounded Contexts de manera comprensible.</em><br><br>
-        <!-- Continuar para cada integrante y cada hito (TB2, TF1) -->
-      </td>
-    </tr>
-    <tr>
-      <td style="padding:8px; vertical-align:top;">
-        <strong>Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.</strong>
-      </td>
-      <td style="padding:8px; vertical-align:top;">
-        <!-- Plantilla para completar por cada integrante y entrega -->
-        <strong>TB1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Redacté la sección [Número de sección] del informe, correspondiente a [Tema de la sección], asegurando que la documentación fuera precisa y estuviera alineada con los requerimientos del enunciado.</em><br><br>
-        <strong>TP1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Documenté los diagramas de [Tipo de diagrama] en el Capítulo V, explicando las decisiones de diseño y las interacciones entre componentes, utilizando el Lenguaje Ubicuo definido.</em><br><br>
-        <!-- Continuar para cada integrante y cada hito (TB2, TF1) -->
-      </td>
-      <td style="padding:8px; vertical-align:top;">
-        <!-- Plantilla para completar por cada integrante y entrega -->
-        <strong>TB1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Comprendí la importancia de la redacción técnica clara para justificar las decisiones de diseño iniciales y cómo esto impacta en la coherencia del resto del proyecto.</em><br><br>
-        <strong>TP1</strong><br>
-        <u>[Nombre del Integrante]</u><br>
-        <em>Fortalecí mi habilidad para traducir un diseño visual (diagrama) en una explicación escrita que es comprensible tanto para desarrolladores como para stakeholders no técnicos.</em><br><br>
-        <!-- Continuar para cada integrante y cada hito (TB2, TF1) -->
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Criterio específico | Acciones realizadas | Conclusiones |
+|--------------------|--------------------|--------------|
+| **Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.** | **TB1**<br><br>- **Juan Fabritzzio Pescoran Angulo:** Expuso la presentación de la startup *FoodChain* y la problemática (Capítulo 1), explicando la propuesta de valor y el enfoque de trazabilidad.<br><br>- **Angelo Marcio Curi Marcelo:** Presentó el proceso de entrevistas y análisis de usuarios (Capítulo 2), detallando los hallazgos y su impacto en la definición de requisitos.<br><br>- **Brenda Lucía Gamio Upiachihua:** Explicó el desarrollo de Needfinding y User Personas (Capítulo 2.3), mostrando cómo se identificaron los perfiles y necesidades de los consumidores finales.<br><br>- **Gustavo Esau Huanca Navarro:** Explicó el diseño estratégico de la solución (Capítulo 4), describiendo el EventStorming, los Bounded Contexts y la arquitectura de software propuesta.<br><br>- **Diego Ulises Soto Quispe:** Moderó la presentación global y expuso el Capítulo 3 (Requirements Specification), asegurando coherencia en los mensajes y la integración entre capítulos. | **TB1**<br>El equipo demostró una comunicación oral clara y efectiva. Cada integrante expuso su sección de manera precisa y ordenada, adaptando el lenguaje a una audiencia diversa (profesor evaluador y compañeros). Se fortalecieron las habilidades de presentación técnica, argumentando decisiones de diseño y garantizando una narrativa coherente en todo el proyecto. |
+| **Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería.** | **TB1**<br><br>- **Juan Fabritzzio Pescoran Angulo:** Redactó el Capítulo 1 (Startup Profile, antecedentes y problemática), presentando de forma ordenada el contexto, las motivaciones y la propuesta de FoodChain.<br><br>- **Angelo Marcio Curi Marcelo:** Documentó el diseño, registro y análisis de entrevistas (Capítulo 2.2), empleando un lenguaje técnico preciso y estructurado.<br><br>- **Brenda Lucía Gamio Upiachihua:** Elaboró la sección de Needfinding y User Personas (Capítulo 2.3), incorporando mapas de empatía y escenarios actuales con redacción clara y consistente.<br><br>- **Gustavo Esau Huanca Navarro:** Redactó el Capítulo 4 (Strategic-Level Software Design), incluyendo EventStorming, Context Mapping y diagramas de arquitectura con terminología especializada y bien explicada.<br><br>- **Diego Ulises Soto Quispe:** Desarrolló el Capítulo 3 (Requirements Specification), integrando To-Be Scenarios, User Stories, Impact Mapping y Product Backlog, y revisó la coherencia general del documento. | **TB1**<br>El equipo alcanzó un alto nivel de redacción técnica, clara y organizada, que permitió transmitir conceptos complejos (Lean UX, Domain-Driven Design, especificación de requisitos y diseño estratégico) de forma comprensible para audiencias técnicas y no técnicas. La calidad del informe aseguró la uniformidad en el estilo y la coherencia de todo el documento. |
 
----
