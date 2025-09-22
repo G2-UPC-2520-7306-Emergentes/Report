@@ -13,8 +13,8 @@ Ciclo Académico: 202520 <br>
 
 <h2 align="center">INFORME DE TRABAJO FINAL</h2>
 
-<h3 align="center">Startup: ProdChain</h3>
-<p align="center"><em>"Chaining you to the products you love"</em></p>
+<h3 align="center">Startup: FoodChain</h3>
+<p align="center"><em>"Chaining you to the food you love"</em></p>
 
 <h3 align="center">Equipo de Desarrollo</h3>
 
