@@ -269,8 +269,42 @@ Finalmente, con base en este análisis, se delimitaron los siguientes cuatro Bou
 
 ### **4.2.3. Domain Message Flows Modeling**
 
+En esta sección se describe el proceso mediante el cual el equipo de desarrollo modeló las interacciones y colaboraciones entre los distintos Bounded Contexts del sistema FoodChain. El objetivo principal fue visualizar cómo estos contextos trabajan en conjunto para resolver los escenarios clave del negocio, asegurando una integración coherente y bien definida entre comandos, eventos, reglas, agregados, vistas y sistemas externos.
 
-Miro: https://miro.com/welcomeonboard/akd6K1RSbzd4aWdzcmxxZDljMjllUWoyMTNoL1FTK2c0VXFPUTQ5OEF4dU1ZbVJJWDhTaEhESU15TVNIQXN1Q2VGeDllT3p0SU9tY3E4dHFaeHJUSUtFZG9pQ2xTVjlSTlVSdVBpd29nSTRtUmFxUmhYL1VrTW05b29SekwxeE1Bd044SHFHaVlWYWk0d3NxeHNmeG9BPT0hdjE=?share_link_id=421523459845
+Para llevar a cabo este modelado, se aplicó la técnica de Domain Storytelling, que permite representar las acciones de los actores del sistema y cómo estas desencadenan flujos de mensajes dentro del dominio. A través de esta técnica, se identificaron no solo las tareas que realiza cada Bounded Context, sino también cómo se comunican entre sí y qué reglas o restricciones rigen estas interacciones.
+
+Enfoque Utilizado
+
+- Se partió del modelo general construido en el EventStorming.
+
+- Se seleccionaron los casos de uso más relevantes del negocio, como la creación de un nuevo lote, el registro de un paso de trazabilidad y la consulta de un producto por el consumidor.
+
+- Se describieron los pasos que sigue el sistema en cada flujo, detallando:
+
+ - Actores involucrados: productores, transportistas, consumidores, y los procesos automáticos del sistema.
+
+ - Bounded Contexts que colaboran en cada historia (Gestión de Lotes, Trazabilidad, Consulta del Consumidor, etc.).
+
+ - Los comandos disparados por los actores (ej: "crear lote", "registrar paso").
+
+ - Los eventos de dominio generados (ej: "Lote Creado", "Paso Registrado").
+
+ - Las reglas de negocio que se validan (ej: "validar que el lote esté activo para registrar un paso").
+
+ - Las vistas que presentan la información resultante.
+
+ - La interacción con sistemas externos en los casos que corresponde (ej: la blockchain pública para la notarización).
+
+Este enfoque permitió identificar claramente las fronteras de responsabilidad de cada contexto, así como definir los contratos de colaboración entre ellos. Además, contribuyó a reducir el acoplamiento entre componentes del sistema, facilitando así su evolución, mantenimiento y escalabilidad.
+
+Resultados
+
+- Se elaboraron múltiples Domain Storytelling, uno por cada flujo representativo del sistema, cubriendo los principales Bounded Contexts del sistema: Gestión de Lotes, Trazabilidad del Lote, e Identidad y Acceso.
+
+- Cada narrativa detalló el camino completo desde la acción del actor hasta la generación del valor de negocio.
+
+- Se identificaron puntos críticos de integración y validación que servirán de base para futuras etapas del diseño arquitectónico, como la definición de APIs, contratos de eventos y pruebas de integración.
+
 
 ### **4.2.4. Bounded Context Canvases**
 
