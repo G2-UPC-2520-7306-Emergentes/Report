@@ -223,7 +223,73 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 | **Link de entrevista** |  |
 | **Resumen** |  |
 
-### 2.2.3. Análisis de entrevistas
+## 2.2.3. Análisis de entrevistas
+
+De acuerdo con la información recopilada de las entrevistas, realizamos el siguiente análisis segmentado:
+
+### Segmento objetivo #1: Productores
+
+**Hallazgos:**
+
+Los productores entrevistados, dedicados a cultivos, ganadería y procesamiento de alimentos, crean nuevos lotes de manera frecuente, en su mayoría de forma diaria o varias veces por semana, lo que exige un control continuo y preciso. Actualmente, una gran parte gestiona la trazabilidad de forma manual o en planillas de Excel, lo que deriva en errores humanos, pérdida de información y dificultad para responder rápidamente a auditorías.
+
+Todos los entrevistados coincidieron en la necesidad de una plataforma que digitalice y automatice el registro de cada paso, desde la creación de lotes y las operaciones de cosecha, empaque y transporte, hasta el cierre final, garantizando coherencia temporal, validación automática y alertas inmediatas ante inconsistencias. La captura de ubicación GPS en tiempo real es vista como esencial para asegurar la autenticidad de la información, mientras que la verificación inmutable en blockchain genera confianza tanto para auditorías internas como para sus clientes B2B.
+
+Los productores manifestaron un gran interés en dashboards de control con métricas en tiempo real, filtros avanzados y reportes exportables (CSV/PDF) que permitan una gestión más eficiente y transparente. Además, consideran imprescindible una definición clara de roles y permisos para proteger los datos y evitar accesos no autorizados.
+
+Las principales frustraciones detectadas incluyen la falta de alertas automáticas, los problemas de conectividad en campo y las dificultades para corregir datos sin perder trazabilidad. La mayoría expresó disposición a invertir en una solución SaaS si esta reduce significativamente los errores de registro y acelera las auditorías y procesos de control de calidad.
+
+### Segmento objetivo #2: Consumidores finales
+
+**Hallazgos:**
+
+Los consumidores entrevistados, que incluyen jóvenes adultos y amas de casa entre 21 y 60 años, realizan compras frecuentes de alimentos frescos o procesados (4 a 5 veces por semana en promedio) y prefieren productos con certificaciones orgánicas o de comercio justo. Aproximadamente 60 % escanea códigos QR al menos dos veces por semana, buscando principalmente origen, fecha de producción, certificaciones y verificación en blockchain.
+
+La verificación inmediata en blockchain es un requisito crítico: cerca del 85 % espera que la aplicación confirme la autenticidad en segundos. Asimismo, la línea de tiempo cronológica y los mapas interactivos son considerados muy útiles (≈80 %) para visualizar el recorrido completo del producto. La velocidad de carga es un factor determinante, ya que 9 de cada 10 usuarios esperan que la información aparezca en menos de dos segundos.
+
+Entre las frustraciones más comunes se encuentran la falta de información completa, la dificultad para validar certificaciones en otras plataformas y la lentitud en la carga de datos. Además, los consumidores valoran la posibilidad de recibir alertas inmediatas ante inconsistencias y desean conocer información sobre sostenibilidad y responsabilidad social de las empresas involucradas en la cadena de producción.
+
+La trazabilidad verificada influye directamente en la decisión de compra (≈85 %), y alrededor del 60 % está dispuesto a pagar hasta un 10 % adicional por productos auditados y con certificaciones verificables. La facilidad de uso y la claridad en la interfaz, con botones visibles, textos legibles y acceso sin necesidad de registro, también fueron señaladas como indispensables.
+
+### Conclusiones generales
+
+Los hallazgos del segmento productor confirman la urgencia de una solución digital que automatice la captura de datos, garantice la inmutabilidad en blockchain, provea reportes claros y alertas automáticas, reduciendo errores humanos y acelerando los procesos de control y auditoría.
+
+En el segmento consumidor final, la demanda se centra en transparencia, velocidad y confianza: requieren verificación inmediata en blockchain, presentación visual clara (línea de tiempo, mapa interactivo) y notificaciones de inconsistencias, así como información sobre la sostenibilidad de los productos.
+
+En conjunto, ambos segmentos respaldan el enfoque de FoodChain como plataforma de trazabilidad alimentaria en tiempo real, capaz de conectar seguridad, eficiencia y transparencia a lo largo de toda la cadena de suministro.
+
+### Entrevista completa
+
+Link de las entrevistas completas:  
+
+### Análisis por medio de herramientas estadísticas
+
+**Segmento objetivo #1: Productores**  
+
+Enlace: https://forms.gle/Lvdai8xSNk41KTWDA
+
+![img7.jpeg](../assets/img/img7.jpeg)
+
+![img8.jpeg](../assets/img/img8.jpeg)
+
+![img9.jpeg](../assets/img/img9.jpeg)
+
+**Segmento objetivo #2: Consumidores finales**  
+
+Enlace: https://forms.gle/SXtQtRzKza5CD9Ns8
+
+![img1.jpeg](../assets/img/img1.jpeg)
+
+![img2.jpeg](../assets/img/img2.jpeg)
+
+![img3.jpeg](../assets/img/img3.jpeg)
+
+![img4.jpeg](../assets/img/img4.jpeg)
+
+![img5.jpeg](../assets/img/img5.jpeg)
+
+![img6.jpeg](../assets/img/img6.jpeg)
 
 
 
