@@ -188,40 +188,28 @@ Para conocer el perfil básico de cada participante se incluirán las siguientes
 
 #### Entrevista 1
 
-| Campo | Detalle |
-|-------|--------|
-| **Imagen** |  |
-| **Entrevistado** |  |
-| **Entrevistador** |  |
-| **Sexo** |  |
-| **Edad** |  |
-| **Link de entrevista** |  |
-| **Resumen** |  |
+| Campo                  | Detalle                                                                                                                                                                                                                                                                                                                |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Imagen**             | <img src="../assets/img/entrevita6.png" alt="entrevista2" width="350"/>                                                                                                                                                                                                                                               |
+| **Entrevistado**       | Jorge                                                                                                                                                                                                                                                                                                                  |
+| **Entrevistador**      | Juan Pescoran                                                                                                                                                                                                                                                                                                          |
+| **Sexo**               | Masculino                                                                                                                                                                                                                                                                                                              |
+| **Edad**               | 28                                                                                                                                                                                                                                                                                                                     |
+| **Link de entrevista** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c936_upc_edu_pe/ESybPOGgCLlDtPTP8IlIP8cB8OfuDqgFRqXKMlQ3Cn3YdQ?e=lVjz5H&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
+| **Resumen**            | Los dolores del entrevistado no son teóricos, sino operativos y con consecuencias financieras directas (lotes rechazados). La solución propuesta fue comprendida no por su tecnología, sino por sus beneficios directos: orden, detección de errores y, sobre todo, la capacidad de generar confianza verificable ante sus clientes exigentes.                                                                                                                                                                                                                                                                                                                       |
 
 
 #### Entrevista 2
 
-| Campo | Detalle |
-|-------|--------|
-| **Imagen** |  |
-| **Entrevistado** |  |
-| **Entrevistador** |  |
-| **Sexo** |  |
-| **Edad** |  |
-| **Link de entrevista** |  |
-| **Resumen** |  |
-
-#### Entrevista 3
-
-| Campo | Detalle |
-|-------|--------|
-| **Imagen** |  |
-| **Entrevistado** |  |
-| **Entrevistador** |  |
-| **Sexo** |  |
-| **Edad** |  |
-| **Link de entrevista** |  |
-| **Resumen** |  |
+| Campo                  | Detalle                                                                                                                                                                                                                                                                                                                |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Imagen**             | <img src="../assets/img/entrevista5.png" alt="entrevista2" width="350"/>                                                                                                                                                                                                                                               |
+| **Entrevistado**       | Adrian Torres                                                                                                                                                                                                                                                                                                          |
+| **Entrevistador**      | Juan Pescoran                                                                                                                                                                                                                                                                                                          |
+| **Sexo**               | Masculino                                                                                                                                                                                                                                                                                                              |
+| **Edad**               | 25                                                                                                                                                                                                                                                                                                                     |
+| **Link de entrevista** | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221c936_upc_edu_pe/EawJ44YfLbhBvB53l4j_ukcB5wycgDdULezhcJiC3KEwwA?e=2iIM5J&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
+| **Resumen**            |  La entrevista valida que para un cliente de gran escala como Backus, la trazabilidad no es un problema de falta de datos, sino de silos de información y falta de visibilidad externa. Su sistema interno (SAP) es robusto, pero la confianza se rompe en cuanto el producto interactúa con terceros (distribuidores, minoristas).                                                                                                                                                                                                                                                                                                                      |
 
 ## 2.2.3. Análisis de entrevistas
 
