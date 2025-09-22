@@ -37,11 +37,11 @@ Ciclo Académico: 202520 <br>
       <td>ANGELO MARCIO CURI MARCELO</td>
     </tr>
     <tr>
-      <td>[Código de Brenda]</td>
+      <td>U202102344</td>
       <td>BRENDA LUCÍA GAMIO UPIACHIHUA</td>
     </tr>
     <tr>
-      <td>[Código de Gustavo]</td>
+      <td>u202215285</td>
       <td>GUSTAVO ESAU HUANCA NAVARRO</td>
     </tr>
     <tr>
@@ -86,6 +86,8 @@ En particular, el grupo demostró que puede:
   a público de distintas especialidades y niveles jerárquicos.
 - Integrar conocimientos y metodologías de arquitectura de software emergente en un documento técnico bien estructurado.
 - Documentar procesos, decisiones y resultados en un entorno ágil, asegurando trazabilidad y calidad en cada hito.
+
+![ramas.jpeg](assets/images/ramas.jpeg)
 
 En conjunto, la entrega **TB1** evidencia la apropiación de metodologías de diseño, la correcta aplicación de herramientas de colaboración en GitHub y la capacidad del equipo para producir documentación técnica de alta calidad alineada con los objetivos del proyecto **FoodChain**.
 
