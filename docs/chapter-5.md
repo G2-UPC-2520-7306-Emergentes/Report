@@ -201,12 +201,13 @@ La capa de dominio del contexto Trazabilidad define las clases centrales que mod
 
 | <<Aggregate>> LoteDeTrazabilidad             |
 |----------------------------------------------|
+|Atributos:                                    |
 | loteId: String                               |
 | identificadorQR: IdentificadorQR             |
 | estadoActual: String                         |
 | producto: Producto                           |
 | historialEventos: List<EventoDeTrazabilidad> |
-|----------------------------------------------|
+|Métodos:                                       |
 | LoteDeTrazabilidad(CrearLoteCommand)         |
 | registrarEvento(RegistrarEventoCommand)      |
 | verificarIntegridad()                        |
@@ -215,22 +216,24 @@ La capa de dominio del contexto Trazabilidad define las clases centrales que mod
 
 | <<Entity>> EventoDeTrazabilidad              |
 |----------------------------------------------|
+|Atributos:                                    |
 | eventoId: String                             |
 | tipoEvento: String                           |
 | fechaHora: DateTime                          |
 | actorResponsable: Actor                      |
 | ubicacion: Ubicacion                         |
 | hashTransaccion: String                      |
-|----------------------------------------------|
+|Métodos:                                       |
 | EventoDeTrazabilidad(RegistrarEventoCommand) |
 | asociarHashBlockchain(String hash)           |
 | obtenerActorResponsable()                    |
 
 | <<ValueObject>> Ubicacion         |
 |-----------------------------------|
+|Atributos:                                    |
 | latitud: Double                   |
 | longitud: Double                  |
-|-----------------------------------|
+|Métodos:                           |
 | Ubicacion(Double lat, Double lon) |
 | getCoordenadasGPS()               |
 | equals(Object)                    |
@@ -238,7 +241,7 @@ La capa de dominio del contexto Trazabilidad define las clases centrales que mod
 | <<DomainService>> ServicioDeAnclajeBlockchain |
 |-----------------------------------------------|
 |                                               |
-|-----------------------------------------------|
+|Métodos:                                       |
 | anclarEvento(EventoDeTrazabilidad): Hash      |
 | obtenerTransaccion(String hash)               |
 | verificarHash(String hash)                    |
@@ -246,7 +249,7 @@ La capa de dominio del contexto Trazabilidad define las clases centrales que mod
 | <<Repository>> LoteDeTrazabilidadRepository |
 |---------------------------------------------|
 |                                             |
-|---------------------------------------------|
+|Métodos:                                     |
 | save(LoteDeTrazabilidad)                    |
 | findById(String loteId): LoteDeTrazabilidad |
 | delete(LoteDeTrazabilidad)                  | 
