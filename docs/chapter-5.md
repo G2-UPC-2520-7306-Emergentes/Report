@@ -256,6 +256,31 @@ La capa de dominio del contexto Trazabilidad define las clases centrales que mod
 
 ### 5.1.2. Interface Layer
 
+La capa de interfaces contiene los Controladores REST que exponen los servicios del contexto Trazabilidad hacia el exterior. Estos puntos de entrada permiten a los actores de la cadena registrar eventos y a los consumidores consultar el historial completo de un producto mediante un QR.
+
+| LoteController                                                                                                       |
+|----------------------------------------------------------------------------------------------------------------------|
+| +crearLoteOrigen(crearLoteResource: CrearLoteResource): ResponseEntity<LoteIdResponse>                               |
+| +registrarEvento(loteId: String, registrarEventoResource: RegistrarEventoResource): ResponseEntity<EventoIdResponse> |
+| +actualizarEstadoLote(loteId: String, nuevoEstado: String): ResponseEntity<Void>                                     |
+| +obtenerEventosPendientes(actorId: String): ResponseEntity<List<EventoDeTrazabilidad>>                 |
+
+| ConsultaTrazabilidadController                                                  |
+|---------------------------------------------------------------------------------|
+| +consultarPorQR(identificadorQR: String): ResponseEntity<HistorialLoteResponse> |
+| +obtenerDetalleEvento(eventoId: String): ResponseEntity<DetalleEventoResponse>  |
+| +verificarHash(hashTransaccion: String): ResponseEntity<VerificacionResponse>   |
+
+| Resource DTOs (Objetos de Petición/Respuesta)                                          |
+|----------------------------------------------------------------------------------------|
+| CrearLoteResource (Request DTO para crear el lote inicial)                             |
+| RegistrarEventoResource (Request DTO para un nuevo paso en la cadena)                  |
+| HistorialLoteResponse (Response DTO que contiene toda la cadena de eventos para un QR) |
+| EventoIdResponse (Response DTO simple con el ID del evento recién creado)              |
+
+
+
+
 ### 5.1.3. Application Layer
 
 ### 5.1.4. Infrastructure Layer
