@@ -197,6 +197,60 @@ El diccionario de clases del Bounded Context Trazabilidad detalla la estructura 
 
 ### 5.1.1. Domain Layer
 
+La capa de dominio del contexto Trazabilidad define las clases centrales que modelan el comportamiento y los datos fundamentales del sistema relacionados con el registro inmutable de eventos y la auditoría del producto a lo largo de la cadena de suministro. Esta capa agrupa Aggregate, Entidades, Value Objects y Servicios de Dominio que encapsulan las reglas de negocio, garantizando una lógica coherente para la verificación de la integridad del producto mediante la blockchain en la solución FoodChain.
+
+| <<Aggregate>> LoteDeTrazabilidad             |
+|----------------------------------------------|
+| loteId: String                               |
+| identificadorQR: IdentificadorQR             |
+| estadoActual: String                         |
+| producto: Producto                           |
+| historialEventos: List<EventoDeTrazabilidad> |
+|----------------------------------------------|
+| LoteDeTrazabilidad(CrearLoteCommand)         |
+| registrarEvento(RegistrarEventoCommand)      |
+| verificarIntegridad()                        |
+| actualizarEstado(String)                     |
+
+
+| <<Entity>> EventoDeTrazabilidad              |
+|----------------------------------------------|
+| eventoId: String                             |
+| tipoEvento: String                           |
+| fechaHora: DateTime                          |
+| actorResponsable: Actor                      |
+| ubicacion: Ubicacion                         |
+| hashTransaccion: String                      |
+|----------------------------------------------|
+| EventoDeTrazabilidad(RegistrarEventoCommand) |
+| asociarHashBlockchain(String hash)           |
+| obtenerActorResponsable()                    |
+
+| <<ValueObject>> Ubicacion         |
+|-----------------------------------|
+| latitud: Double                   |
+| longitud: Double                  |
+|-----------------------------------|
+| Ubicacion(Double lat, Double lon) |
+| getCoordenadasGPS()               |
+| equals(Object)                    |
+
+| <<DomainService>> ServicioDeAnclajeBlockchain |
+|-----------------------------------------------|
+|                                               |
+|-----------------------------------------------|
+| anclarEvento(EventoDeTrazabilidad): Hash      |
+| obtenerTransaccion(String hash)               |
+| verificarHash(String hash)                    |
+
+| <<Repository>> LoteDeTrazabilidadRepository |
+|---------------------------------------------|
+|                                             |
+|---------------------------------------------|
+| save(LoteDeTrazabilidad)                    |
+| findById(String loteId): LoteDeTrazabilidad |
+| delete(LoteDeTrazabilidad)                  | 
+
 ### 5.1.2. Interface Layer
 
 ### 5.1.3. Application Layer
