@@ -283,6 +283,26 @@ La capa de interfaces contiene los Controladores REST que exponen los servicios 
 
 ### 5.1.3. Application Layer
 
+En esta capa se definen los Servicios de Aplicación que modelan los Casos de Uso Command/Query del contexto Trazabilidad. Su rol principal es orquestar la ejecución transaccional. Reciben comandos de la interfaz, utilizan los Repositorios como el LoteDeTrazabilidadRepository para cargar y guardar los Aggregate Roots del Dominio, y coordinan la secuencia de la tarea completa, incluyendo la llamada al Servicio de Anclaje a Blockchain. Esto asegura la coherencia de los datos en FoodChain.
+
+| LoteCommandServiceImpl                             |
+|----------------------------------------------------|
+| loteRepository: LoteDeTrazabilidadRepository       |
+| blockchainService: ServicioDeAnclajeBlockchain     |
+|                                                    |
+| +handle(command: CrearLoteCommand): LoteId         |
+| +handle(command: RegistrarEventoCommand): EventoId |
+| +handle(command: ActualizarEstadoCommand): void    |
+
+
+| ConsultaTrazabilidadQueryServiceImpl            |
+|-------------------------------------------------------------------|
+| loteRepository: LoteDeTrazabilidadRepository                       |
+|                                                                    |
+| +handle(query: ObtenerHistorialPorQRQuery): HistorialLoteResponse  |
+| +handle(query: ConsultarEventoPorHashQuery): DetalleEventoResponse |
+| +handle(query: VerificarIntegridadLoteQuery): VerificacionResponse |
+
 ### 5.1.4. Infrastructure Layer
 
 ### 5.1.5. Bounded Context Software Architecture Component Level Diagrams 
