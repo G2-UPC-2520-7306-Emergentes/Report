@@ -108,7 +108,7 @@ En esta sección, se presenta el Component Diagram del modelo C4 para el contene
 
 ###### **Figura [N°]: Diagrama de Componentes del Batch Management Service**
 *Diagrama de Componentes del Batch Management Service*
-`../assets/img/chapter-4/c4/structurizr-106906-BatchManagementService_Components.svg`
+![Diagrama de Componentes del Batch Management](../assets/img/chapter-5/c4/structurizr-106906-BatchManagementService_Components.svg)
 
 ### **5.1.6. Bounded Context Software Architecture Code Level Diagrams**
 
@@ -130,7 +130,7 @@ En esta sección se presenta y explica el Database Diagram que incluye los objet
 
 ## **5.2. Bounded Context: Traceability**
 
-Este Bounded Context tiene una única y crucial responsabilidad: **registrar los eventos inmutables** que ocurren a lo largo de la cadena de suministro para un lote específico. Actúa como un libro de registro (`ledger`) auditable. Su principal función es crear una entrada por cada paso (`TraceabilityEvent`), persistirla y, fundamentalmente, **publicar un evento de dominio** para notificar al resto del sistema que un nuevo paso ha sido registrado. No tiene conocimiento del ciclo de vida del lote, solo de la secuencia de eventos que le pertenecen.
+Este Bounded Context tiene una única y crucial responsabilidad: **registrar los eventos inmutables** que ocurren a lo lo largo de la cadena de suministro para un lote específico. Actúa como un libro de registro (`ledger`) auditable. Su principal función es crear una entrada por cada paso (`TraceabilityEvent`), persistirla y, fundamentalmente, **publicar un evento de dominio** para notificar al resto del sistema que un nuevo paso ha sido registrado. No tiene conocimiento del ciclo de vida del lote, solo de la secuencia de eventos que le pertenecen.
 
 ### **5.2.1. Domain Layer**
 
@@ -169,6 +169,7 @@ La capa de dominio de este contexto se centra en la entidad `TraceabilityEvent`.
 | **Métodos:** |
 | `+ save(event: TraceabilityEvent): void` |
 | `+ findByBatchId(batchId: BatchId): List<TraceabilityEvent>` |
+| `+ findById(eventId: EventId): Optional<TraceabilityEvent>` |
 | `+ nextIdentity(): EventId` |
 
 ### **5.2.2. Interface Layer**
@@ -189,9 +190,16 @@ La capa de interfaces expone el endpoint para que los actores de la cadena regis
 | `RegisterStepResource (Request)` |
 | `TraceabilityHistoryResponse (Response)` |
 
+| <<Anti-Corruption Layer>> IAMAntiCorruptionLayer |
+|---|
+| **Descripción:** Implementación del cliente que protege el Bounded Context de los detalles del `Identity Service`. Realiza una llamada HTTP REST al endpoint de validación de tokens del `Identity Service` y traduce la respuesta en un objeto de valor simple y local (`AuthorizedActor`) que el dominio puede entender sin conocer los detalles de JWT. |
+| **Dependencias:** `RestTemplate` o `WebClient` (Spring) |
+| **Métodos Implementados:** |
+| `+ validateAndTranslate(token: String): AuthorizedActor` |
+
 ### **5.2.3. Application Layer**
 
-La capa de aplicación orquesta el caso de uso de registrar un nuevo evento. Su responsabilidad más importante es, tras persistir el evento en su propia base de datos, **publicar un evento de dominio** para que el `Blockchain Worker` pueda actuar de forma asíncrona.
+La capa de aplicación orquesta el caso de uso de registrar un nuevo evento. Su responsabilidad más importante es, tras persistir el evento en su propia base de datos, **publicar un evento de dominio** para que el `Blockchain Worker` pueda actuar de forma asíncrona. Se separa la lógica de comandos (escritura) de la de consultas (lectura) para seguir el patrón CQRS.
 
 | <<Application Service>> TraceabilityService |
 |---|
@@ -212,3 +220,263 @@ La capa de aplicación orquesta el caso de uso de registrar un nuevo evento. Su 
 | **Descripción:** Objetos que representan la intención de una operación. `RegisterStepCommand` encapsula todos los datos para crear un nuevo evento. |
 | `RegisterStepCommand` |
 | `GetHistoryByBatchIdQuery` |
+
+### **5.2.4. Infrastructure Layer**
+
+La capa de infraestructura contiene las implementaciones concretas de las interfaces definidas en otras capas (principalmente, los repositorios y los publicadores de eventos). Es la capa más externa y volátil, ya que depende de tecnologías y APIs específicas. Su objetivo es adaptar estas tecnologías al lenguaje del dominio.
+
+| <<Repository Implementation>> TraceabilityRepositoryImpl |
+|---|
+| **Descripción:** Implementación concreta de la interfaz `ITraceabilityRepository`. Utiliza un ORM como **JPA/Hibernate** para traducir las operaciones sobre la entidad `TraceabilityEvent` a sentencias SQL que se ejecutan contra la `TraceabilityDatabase`. |
+| **Dependencias:** `EntityManager` (JPA), `DataSource` |
+| **Métodos Implementados:** |
+| `+ save(event: TraceabilityEvent): void` |
+| `+ findByBatchId(batchId: BatchId): List<TraceabilityEvent>` |
+| `+ findById(eventId: EventId): Optional<TraceabilityEvent>` |
+| `+ nextIdentity(): EventId` |
+
+| <<Domain Event Publisher>> DomainEventPublisherImpl |
+|---|
+| **Descripción:** Implementación concreta de la interfaz `IDomainEventPublisher`. Se encarga de serializar el objeto de evento de dominio (ej. `StepRegisteredEvent`) a un formato de mensaje estándar (como **JSON**) y enviarlo a la `Message Queue`. |
+| **Dependencias:** `RabbitTemplate` (Spring AMQP) o `SqsTemplate` (AWS SDK) |
+| **Métodos Implementados:** |
+| `+ publish(domainEvent: IDomainEvent): void` |
+
+### **5.2.5. Bounded Context Software Architecture Component Level Diagrams**
+
+En esta sección se presenta el Component Diagram del modelo C4 para el contenedor `Traceability Service`. Este diagrama refleja cómo un comando para registrar un nuevo evento fluye a través del sistema: desde el `Step Controller`, pasando por la validación en la capa `ACL`, la orquestación en el `Application Service`, la persistencia a través del `Step Repository` y, crucialmente, la publicación del evento de dominio mediante el `Event Publisher`, que inicia el flujo asíncrono.
+
+###### **Figura [N°]: Diagrama de Componentes del Traceability Service**
+![Diagrama de Componentes del Traceability Service](../assets/img/chapter-5/c4/structurizr-106906-TraceabilityService_Components.svg)
+
+### **5.2.6. Bounded Context Software Architecture Code Level Diagrams**
+
+En esta sección, se presentan y explican los diagramas que ofrecen un mayor detalle sobre la implementación de los componentes en el Bounded Context. Aquí se incluye como secciones internas los diagramas de clases del Dominio y el diagrama de la Base de Datos.
+
+#### **5.2.6.1. Bounded Context Domain Layer Class Diagrams**
+
+El siguiente diagrama de clases UML modela las clases del Domain Layer para el `Traceability Context`. El foco principal es la entidad `TraceabilityEvent`, que es inmutable una vez creada. Se detallan sus atributos y los `Value Objects` que la componen, como `Location` y `EventId`. También se muestra la interfaz del `ITraceabilityRepository`, que define el contrato de persistencia y desacopla el dominio de la infraestructura.
+
+###### **Figura [N°]: Diagrama de Clases del Dominio de Traceability**
+*(Placeholder para el diagrama de clases UML)*
+
+#### **5.2.6.2. Bounded Context Database Design Diagram**
+
+Este diagrama de base de datos ilustra el esquema para la persistencia del `Traceability Context`. La tabla principal, `traceability_events`, almacena cada evento como un registro inmutable. Se especifican sus columnas (que se mapean a los atributos de la entidad `TraceabilityEvent`), los tipos de datos, la clave primaria (`event_id`), y una clave foránea (`batch_id`) que la vincula lógicamente con la información del `Batch Management Context`. También se incluye una columna `blockchain_status` para gestionar el estado del anclaje asíncrono.
+
+###### **Figura [N°]: Diagrama de Base de Datos de Traceability**
+*(Placeholder para el diagrama de la base de datos)*
+
+## **5.3. Bounded Context: Blockchain Worker**
+
+Este Bounded Context es un servicio de fondo (background service) puramente asíncrono. Su única responsabilidad es **reaccionar a los eventos de dominio `StepRegisteredEvent`**, procesarlos y ejecutar la lógica de infraestructura necesaria para el anclaje en la blockchain.
+
+A diferencia de los otros Core Domains, este contexto tiene una capa de dominio "anémica" o muy delgada, ya que su propósito no es modelar lógica de negocio compleja, sino orquestar una tarea técnica de larga duración. No posee sus propios agregados, sino que actúa sobre los datos recibidos en los eventos.
+
+### **5.3.1. Domain Layer**
+
+La capa de dominio es mínima. Se centra en el contrato del evento que consume y en las interfaces que definen las operaciones que debe realizar, aplicando el Principio de Inversión de Dependencias.
+
+| <<Domain Event>> StepRegisteredEvent |
+|---|
+| **Descripción:** Representa el evento de dominio que este servicio consume. Es un DTO inmutable que contiene toda la información necesaria para el anclaje. |
+| **Atributos:** |
+| `- eventId: UUID` |
+| `- eventDataHash: String` |
+| `- timestamp: DateTime` |
+
+| <<Domain Service Interface>> IAnchoringService |
+|---|
+| **Descripción:** Define el contrato para el caso de uso principal de este contexto: anclar un evento. |
+| **Métodos:** |
+| `+ anchorEvent(event: StepRegisteredEvent): void` |
+
+### **5.3.2. Interface Layer (Input Adapters)**
+
+La "interfaz" de un servicio de fondo no es una API REST, sino los adaptadores que escuchan fuentes de entrada asíncronas. En este caso, es el listener de la cola de mensajes.
+
+| <<Domain Event Handler>> StepRegisteredEventHandler |
+|---|
+| **Descripción:** Es el punto de entrada del servicio. Escucha activamente la `Message Queue`. Cuando recibe un mensaje `StepRegisteredEvent`, lo deserializa y delega su procesamiento al `IAnchoringService` de la capa de aplicación. |
+| **Dependencias:** `IAnchoringService` |
+| **Métodos:** |
+| `+ onMessage(event: StepRegisteredEvent): void` |
+
+### **5.3.3. Application Layer**
+
+La capa de aplicación orquesta el proceso técnico. Recibe el evento y coordina con los componentes de infraestructura para ejecutar la tarea.
+
+| <<Application Service>> AnchoringServiceImpl |
+|---|
+| **Descripción:** Implementación del `IAnchoringService`. Orquesta el flujo: invoca al adaptador de blockchain, maneja los posibles errores y, si tiene éxito, invoca al adaptador de base de datos para actualizar el estado. |
+| **Dependencias:** `IBlockchainAdapter`, `ITraceabilityDbUpdater` |
+| **Métodos (Event Handlers):** |
+| `+ anchorEvent(event: StepRegisteredEvent): void` |
+
+### **5.3.4. Infrastructure Layer (Output Adapters)**
+
+Esta es la capa más importante del worker, ya que contiene toda la lógica de bajo nivel para interactuar con sistemas externos. Su función es implementar las interfaces definidas en la capa de dominio, actuando como adaptadores al mundo exterior.
+
+| <<Adapter Implementation>> BlockchainAdapterImpl |
+|---|
+| **Descripción:** Implementación concreta que se comunica con la red Polygon. Utiliza una librería como **Web3j** para conectarse a un nodo RPC, construir y firmar la transacción que contiene el hash del evento, enviarla y gestionar reintentos en caso de fallo de red. |
+| **Dependencias:** `Web3j`, `Credentials` |
+| **Métodos Implementados:** |
+| `+ anchorHash(hash: String): TransactionReceipt` |
+
+| <<Adapter Implementation>> TraceabilityDbUpdaterImpl |
+|---|
+| **Descripción:** Implementación concreta que se conecta a la `TraceabilityDatabase`. Su única función es ejecutar una sentencia `UPDATE` sobre la tabla `traceability_events` para cambiar el `blockchain_status` a "CONFIRMED" y almacenar el `transaction_hash` recibido del `BlockchainAdapter`. |
+| **Dependencias:** `EntityManager` (JPA) |
+| **Métodos Implementados:** |
+| `+ updateStatusToConfirmed(eventId: UUID, txHash: String): void` |
+
+### **5.3.5. Bounded Context Software Architecture Component Level Diagrams**
+
+El siguiente diagrama de componentes del modelo C4 ilustra la arquitectura interna del `Blockchain Worker`. Muestra claramente el flujo de datos: el `Domain Event Handler` recibe el evento de la cola, lo pasa al `Anchoring Service` para su orquestación, y este a su vez utiliza los adaptadores de infraestructura para interactuar con la red Polygon y actualizar la base de datos de trazabilidad, completando así el ciclo asíncrono.
+
+###### **Figura [N°]: Diagrama de Componentes del Blockchain Worker**
+![Diagrama de Componentes del Blockchain Worker](../assets/img/chapter-5/c4/structurizr-106906-BlockchainWorker_Components.svg)
+
+### **5.3.6. Bounded Context Software Architecture Code Level Diagrams**
+
+#### **5.3.6.1. Bounded Context Domain Layer Class Diagrams**
+
+El diagrama de clases para este contexto es simple, reflejando su naturaleza de orquestador técnico. Se centra en las interfaces (`IAnchoringService`, `IBlockchainAdapter`, etc.) para demostrar la inversión de dependencias, y en el objeto de datos `StepRegisteredEvent` que actúa como el contrato de comunicación.
+
+###### **Figura [N°]: Diagrama de Clases del Blockchain Worker**
+*(Placeholder para el diagrama de clases UML)*
+
+#### **5.3.6.2. Bounded Context Database Design Diagram**
+
+Este Bounded Context **no posee su propia base de datos**. En su lugar, interactúa con la `TraceabilityDatabase`, que es propiedad del `Traceability Service`. Esta es una decisión de diseño deliberada para arquitecturas basadas en eventos. El worker tiene permisos de escritura limitados para actualizar columnas específicas (`blockchain_status`, `transaction_hash`) en la tabla `traceability_events`. Por lo tanto, el diagrama de base de datos aplicable es el mismo que el definido en la sección `5.2.6.2`.
+
+###### **Referencia a Figura [N° de la BD de Traceability]: Diagrama de Base de Datos de Traceability**
+
+## **5.4. Bounded Context: Identity Service (IAM)**
+
+Este Bounded Context es un servicio de soporte genérico. Su única responsabilidad es gestionar la **identidad y el acceso** de los usuarios de la plataforma FoodChain. Se encarga de la autenticación (verificar quién es un usuario) y la autorización (qué puede hacer ese usuario). Actúa como la única fuente de verdad para la identidad del usuario, emitiendo tokens JWT que los demás servicios pueden verificar.
+
+### **5.4.1. Domain Layer**
+
+La capa de dominio contiene el agregado `User`, que encapsula toda la lógica y las reglas de negocio relacionadas con la cuenta de un usuario, sus credenciales y sus roles.
+
+| <<Aggregate Root>> User |
+|---|
+| **Descripción:** Representa a un usuario del sistema. Es la raíz del agregado y el único punto de entrada para modificar su estado, garantizando reglas como la complejidad de la contraseña o la unicidad del email. |
+| **Atributos:** |
+| `- userId: UserId (Value Object)` |
+| `- enterpriseId: UUID` |
+| `- email: Email (Value Object)` |
+| `- hashedPassword: HashedPassword (Value Object)` |
+| `- roles: Set<Role>` |
+| `- isActive: boolean` |
+| **Métodos:** |
+| `+ static register(email: Email, plainTextPassword: String, enterpriseId: UUID): User` |
+| `+ changePassword(oldPassword: String, newPassword: String): void` |
+| `+ assignRole(role: Role): void` |
+| `+ deactivate(): void` |
+
+| <<Value Object>> HashedPassword |
+|---|
+| **Descripción:** Representa una contraseña de forma segura. Encapsula la lógica para hashear una contraseña en texto plano y para verificar si una contraseña entrante coincide con el hash almacenado. Nunca expone el hash. |
+| **Atributos:** |
+| `- hash: String` |
+| **Métodos:** |
+| `+ create(plainTextPassword: String): HashedPassword` |
+| `+ matches(plainTextPassword: String): boolean` |
+
+| <<Repository Interface>> IUserRepository |
+|---|
+| **Descripción:** Define el contrato para la persistencia del agregado `User`. Desacopla la lógica de dominio de los detalles de la base de datos. |
+| **Métodos:** |
+| `+ save(user: User): void` |
+| `+ findById(userId: UserId): Optional<User>` |
+| `+ findByEmail(email: Email): Optional<User>` |
+| `+ nextIdentity(): UserId` |
+
+### **5.4.2. Interface Layer**
+
+La capa de interfaces expone los endpoints REST para que los usuarios puedan registrarse, iniciar sesión y gestionar sus perfiles.
+
+| <<Controller>> AuthenticationController |
+|---|
+| **Descripción:** Punto de entrada para las operaciones de autenticación. Recibe las credenciales del usuario y devuelve un token JWT si son válidas. |
+| **Dependencias:** `AuthenticationService` |
+| **Métodos (Endpoints):** |
+| `+ POST /api/v1/iam/auth/register (resource: RegisterUserResource): ResponseEntity<Void>` |
+| `+ POST /api/v1/iam/auth/login (resource: LoginResource): ResponseEntity<JwtResponse>` |
+| `+ POST /api/v1/iam/auth/validate (token: String): ResponseEntity<UserDetailsResponse>` |
+
+| Resource DTOs (Data Transfer Objects) |
+|---|
+| **Descripción:** Objetos planos para la comunicación. Se utilizan para recibir datos de registro y login, y para devolver el token JWT o los detalles del usuario. |
+| `RegisterUserResource (Request)` |
+| `LoginResource (Request)` |
+| `JwtResponse (Response)` |
+| `UserDetailsResponse (Response)` |
+
+### **5.4.3. Application Layer**
+
+La capa de aplicación orquesta los casos de uso relacionados con la identidad. Se comunica con el dominio para ejecutar la lógica de negocio y con la infraestructura para tareas como el envío de emails o la generación de tokens.
+
+| <<Application Service>> AuthenticationService |
+|---|
+| **Descripción:** Implementa los casos de uso de registro y autenticación de usuarios. |
+| **Dependencias:** `IUserRepository`, `IJwtProvider`, `IEmailServiceAdapter` |
+| **Métodos (Command Handlers):** |
+| `+ handle(command: RegisterUserCommand): UserId` |
+| `+ handle(command: AuthenticateUserCommand): String (JWT)` |
+| `+ handle(query: ValidateTokenQuery): UserDetails` |
+
+### **5.4.4. Infrastructure Layer**
+
+La capa de infraestructura contiene las implementaciones concretas para la persistencia, la generación de tokens y la comunicación con servicios externos como el envío de correos.
+
+| <<Repository Implementation>> UserRepositoryImpl |
+|---|
+| **Descripción:** Implementación de la interfaz `IUserRepository` utilizando **JPA/Hibernate**. Se encarga de mapear el agregado `User` y sus `Value Objects` a la tabla `users` en la `UserDatabase`. |
+| **Dependencias:** `EntityManager` (JPA) |
+| **Métodos Implementados:** |
+| `+ save(user: User): void` |
+| `+ findById(userId: UserId): Optional<User>` |
+| `+ findByEmail(email: Email): Optional<User>` |
+| `+ nextIdentity(): UserId` |
+
+| <<Token Provider>> JwtProviderImpl |
+|---|
+| **Descripción:** Implementación de la interfaz `IJwtProvider`. Utiliza una librería como **JJWT** para generar y validar JSON Web Tokens. Se configura con una clave secreta y tiempos de expiración para asegurar los tokens emitidos. |
+| **Dependencias:** `JJWT Library` |
+| **Métodos Implementados:** |
+| `+ generateToken(userDetails: UserDetails): String` |
+| `+ validateAndGetUserDetails(token: String): UserDetails` |
+
+| <<Adapter Implementation>> EmailServiceAdapterImpl |
+|---|
+| **Descripción:** Implementación del adaptador que se comunica con un servicio de correo externo (como SendGrid o AWS SES). Realiza una llamada **HTTP REST** para solicitar el envío de correos transaccionales, como el email de bienvenida tras el registro. |
+| **Dependencias:** `RestTemplate` o `WebClient` (Spring) |
+| **Métodos Implementados:** |
+| `+ sendWelcomeEmail(email: Email): void` |
+
+### **5.4.5. Bounded Context Software Architecture Component Level Diagrams**
+
+El diagrama de componentes para el `Identity Service` ilustra el flujo interno para un caso de uso típico, como la autenticación. La petición llega al `Authentication Controller`, que delega la orquestación al `Application Service`. Este servicio utiliza el `UserRepository` para cargar el agregado `User`, invoca la lógica de validación de contraseña en el propio agregado y, si es exitoso, utiliza el `JwtProvider` para generar el token de respuesta.
+
+###### **Figura [N°]: Diagrama de Componentes del Identity Service**
+![Diagrama de Componentes del Identity Service](../assets/img/chapter-5/c4/structurizr-106906-IdentityService_Components.svg)
+
+### **5.4.6. Bounded Context Software Architecture Code Level Diagrams**
+
+#### **5.4.6.1. Bounded Context Domain Layer Class Diagrams**
+
+El diagrama de clases UML para el `Identity Service` se centra en el agregado `User`. Muestra cómo `User` es la raíz que encapsula `Value Objects` como `UserId`, `Email` y `HashedPassword`, protegiendo las reglas de negocio. La relación con la interfaz `IUserRepository` demuestra la inversión de dependencias para desacoplar el dominio de la persistencia.
+
+###### **Figura [N°]: Diagrama de Clases del Dominio de Identity Service**
+*(Placeholder para el diagrama de clases UML)*
+
+#### **5.4.6.2. Bounded Context Database Design Diagram**
+
+El diagrama de base de datos para este contexto muestra la tabla `users`, que es propiedad exclusiva del `Identity Service`. Se detallan las columnas que persisten el estado del agregado `User`, como `user_id` (Primary Key), `email` (con un constraint `UNIQUE`), y `hashed_password`. También se podría incluir una tabla `user_roles` para gestionar la autorización, vinculada a la tabla `users` mediante una clave foránea.
+
+###### **Figura [N°]: Diagrama de Base de Datos de Identity Service**
+*(Placeholder para el diagrama de la base de datos)*
