@@ -334,7 +334,7 @@ Esta sección presenta el diagrama de componentes correspondiente al Bounded Con
 Este diagrama permite comprender cómo están organizados los distintos módulos dentro del contexto, cómo se comunican entre ellos, y cómo interactúan con los Actores y Sistemas Externos.
 
 
-![boundedContextTraceability.png](../assets/img/bcTraceability.png)
+![boundedContextTraceability.png](../assets/img/chapter-5/bcTraceability.png)
 
 ### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
 
