@@ -40,13 +40,13 @@ En particular, se han seleccionado cinco historias críticas que definen el cicl
 **Introducción.**  
 Esta sección presenta la primera versión de los **escenarios de atributos de calidad** que más impactan la arquitectura de FoodChain. Son una guía práctica para el diseño, priorizando **integridad de la trazabilidad**, **disponibilidad** y **rendimiento** de la consulta pública por QR, además de **seguridad de acceso** y **resiliencia offline** en campo. A continuación, se especifican los escenarios usando el cuadro solicitado.
 
-| Atributo | Fuente | Estímulo | Artefacto | Entorno | Respuesta | Medida |
-|---|---|---|---|---|---|---|
-| **QA-01 Integridad** | Actor autorizado | Registrar un paso (o una rectificación) de un lote | Registro de Eventos + Módulo de Hash y Anclaje | Operación normal | Se guarda el evento, se calcula el hash y se ancla en blockchain; se muestra el sello/tx-hash al usuario | **100%** de pasos con hash; **≥ 99%** con tx-hash confirmado en **≤ 5 min**; **0** alteraciones sin rastro |
-| **QA-02 Disponibilidad** | Consumidor | Escanear un QR y abrir el historial del lote | API pública de historial + Frontend público | Pico de uso o falla parcial | El servicio sigue disponible y responde (con caché/failover) sin perder datos | **99.9%** de disponibilidad mensual; reanudación de lectura **≤ 15 min** tras fallos |
-| **QA-03 Rendimiento** | Consumidor | Consultar el historial de un lote con muchos eventos | Frontend público (timeline) + API | Operación normal y horas pico | Se muestra la **primera pantalla** rápido y el resto carga de forma progresiva (paginado/scroll) | Primera vista **≤ 2 s**; desplazamiento fluido; errores **5xx < 0.5%** |
-| **QA-04 Seguridad (acceso)** | Atacante | Repetir intentos de inicio de sesión con credenciales inválidas | Servicio de Autenticación | Operación normal | La cuenta se bloquea temporalmente y se notifica; queda registro del incidente | Bloqueo tras **5** intentos fallidos en **5 min** por **30 min**; alerta enviada; evento registrado |
-| **QA-05 Resiliencia Offline** | Actor de campo | Registrar un paso sin conexión a internet | App (móvil/web) + almacenamiento local + sincronizador | Sin conectividad o intermitente | El paso se guarda como borrador y se sincroniza automáticamente al reconectar, manteniendo la hora original | **≥ 99%** de borradores sincronizados al reconectar; sync típica **≤ 60 s**; **0** pérdida de datos |
+| Atributo                      | Fuente           | Estímulo                                                        | Artefacto                                              | Entorno                         | Respuesta                                                                                                   | Medida                                                                                                     |
+|-------------------------------|------------------|-----------------------------------------------------------------|--------------------------------------------------------|---------------------------------|-------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| **QA-01 Integridad**          | Actor autorizado | Registrar un paso (o una rectificación) de un lote              | Registro de Eventos + Módulo de Hash y Anclaje         | Operación normal                | Se guarda el evento, se calcula el hash y se ancla en blockchain; se muestra el sello/tx-hash al usuario    | **100%** de pasos con hash; **≥ 99%** con tx-hash confirmado en **≤ 5 min**; **0** alteraciones sin rastro |
+| **QA-02 Disponibilidad**      | Consumidor       | Escanear un QR y abrir el historial del lote                    | API pública de historial + Frontend público            | Pico de uso o falla parcial     | El servicio sigue disponible y responde (con caché/failover) sin perder datos                               | **99.9%** de disponibilidad mensual; reanudación de lectura **≤ 15 min** tras fallos                       |
+| **QA-03 Rendimiento**         | Consumidor       | Consultar el historial de un lote con muchos eventos            | Frontend público (timeline) + API                      | Operación normal y horas pico   | Se muestra la **primera pantalla** rápido y el resto carga de forma progresiva (paginado/scroll)            | Primera vista **≤ 2 s**; desplazamiento fluido; errores **5xx < 0.5%**                                     |
+| **QA-04 Seguridad (acceso)**  | Atacante         | Repetir intentos de inicio de sesión con credenciales inválidas | Servicio de Autenticación                              | Operación normal                | La cuenta se bloquea temporalmente y se notifica; queda registro del incidente                              | Bloqueo tras **5** intentos fallidos en **5 min** por **30 min**; alerta enviada; evento registrado        |
+| **QA-05 Resiliencia Offline** | Actor de campo   | Registrar un paso sin conexión a internet                       | App (móvil/web) + almacenamiento local + sincronizador | Sin conectividad o intermitente | El paso se guarda como borrador y se sincroniza automáticamente al reconectar, manteniendo la hora original | **≥ 99%** de borradores sincronizados al reconectar; sync típica **≤ 60 s**; **0** pérdida de datos        |
 
 ---
 
@@ -71,61 +71,60 @@ Esta sección presenta la primera versión de los **escenarios de atributos de c
 
 En esta sección se incluyen las **restricciones** que no pueden negociarse y que son impuestas por el cliente o el propio negocio como guía para elaborar la solución. La sección inicia con una introducción donde se resume los principales constraints a considerar.
 
-| ID | Título | Descripción | Aceptación | EPIC |
-|---|---|---|---|---|
-| **CON-01** | Uso de arquitectura monolítica modular | La solución debe implementarse con una arquitectura monolítica modular, con un único despliegue pero separando responsabilidades en módulos (gestión de lotes, pasos, usuarios, etc.). | **Escenario 1:** Dado que se revisa la estructura del proyecto backend, cuando se analiza el código, entonces se observa una separación clara en módulos. <br> **Escenario 2:** Dado que se despliega la aplicación en un entorno de pruebas, cuando se ejecuta el backend, entonces todos los módulos están presentes y operativos dentro de una sola unidad. | |
-| **CON-02** | Backend en Spring Boot | El backend de la solución debe desarrollarse en Spring Boot, aprovechando su soporte para APIs REST, modularidad y gestión de dependencias. | **Escenario 1:** Dado que se revisa el código fuente del backend, cuando se inspeccionan las dependencias, entonces se encuentran configuraciones propias de Spring Boot. <br> **Escenario 2:** Dado que el backend está en ejecución, cuando se accede a un endpoint, entonces se recibe la respuesta desde un controlador Spring. | |
-| **CON-03** | Frontend web con Angular | La aplicación web debe desarrollarse con Angular, siguiendo buenas prácticas modernas de frontend y arquitectura de componentes. | **Escenario 1:** Dado que se revisa el código de la interfaz web, cuando se exploran los archivos fuente, entonces se encuentran componentes y módulos característicos de Angular. <br> **Escenario 2:** Dado que se lanza la aplicación en un navegador, cuando se accede al servidor frontend, entonces se carga una SPA con rutas gestionadas por Angular Router. | |
-| **CON-04** | Landing Page en HTML | Debe desarrollarse una página de aterrizaje estática con HTML, CSS y opcionalmente JavaScript, enfocada en explicar el modelo de negocio y redirigir a la aplicación. | **Escenario 1:** Dado que un usuario accede a la URL de la landing page, cuando se carga el contenido, entonces se muestran elementos informativos y enlaces funcionales. <br> **Escenario 2:** Dado que el usuario hace clic en un call-to-action, cuando se redirige, entonces llega al destino correspondiente según su plataforma. | |
-| **CON-05** | Base de datos relacional MySQL | El sistema debe usar una base de datos relacional (MySQL), permitiendo integridad referencial y consultas SQL estándar. | **Escenario 1:** Dado que se inspecciona la base de datos, cuando se visualiza el esquema, entonces se encuentran tablas relacionadas con claves primarias y foráneas. <br> **Escenario 2:** Dado que se realiza una consulta, cuando se recuperan datos relacionados, entonces se obtienen resultados válidos según la lógica definida. | |
-| **CON-06** | Repositorio de código en GitHub | El código fuente del proyecto debe estar versionado y publicado en un repositorio en GitHub, con control de versiones y colaboración en equipo. | **Escenario 1:** Dado que se accede al repositorio, cuando se inspeccionan los archivos, entonces se encuentra una estructura clara y organizada. <br> **Escenario 2:** Dado que se revisa el historial de commits, cuando se observan ramas y mensajes, entonces se evidencia un uso de buenas prácticas como Gitflow o commits semánticos. | |
-| **CON-07** | Uso de RESTful APIs internas | La comunicación entre productos debe realizarse mediante APIs REST internas, cumpliendo con principios de diseño REST (recursos, verbos HTTP y respuestas estandarizadas). | **Escenario 1:** Dado que se documentan los endpoints, cuando se inspeccionan las rutas, entonces se evidencia el uso de verbos HTTP adecuados (GET, POST, PUT, DELETE). <br> **Escenario 2:** Dado que un cliente consume un servicio, cuando se realiza una solicitud, entonces se recibe una respuesta JSON estructurada. | |
-| **CON-08** | Anclaje en blockchain pública (solo hashes) | Cada evento de trazabilidad debe registrarse en una blockchain pública, almacenando únicamente hashes para proteger los datos sensibles. | **Escenario 1:** Dado que se registra un paso en la trazabilidad, cuando se confirma el evento, entonces se genera un hash y se ancla en blockchain. <br> **Escenario 2:** Dado que un usuario consulta el hash en un explorador, cuando se revisa, entonces solo se observa el identificador, sin datos sensibles. | |
-| **CON-09** | QR firmado y único por lote | Cada lote debe tener un código QR único firmado por el backend, evitando duplicados. | **Escenario 1:** Dado que un productor crea un lote, cuando solicita el QR, entonces el sistema genera un código único y firmado. <br> **Escenario 2:** Dado que se intenta emitir un QR duplicado, cuando el backend valida, entonces rechaza la operación. | |
-| **CON-10** | Diseño impulsado por el dominio (DDD) | La solución debe desarrollarse siguiendo principios de Domain-Driven Design, donde el modelo de dominio guía la estructura y la lógica. | **Escenario 1:** Dado que se revisa la organización del backend, cuando se inspeccionan los paquetes, entonces se observan divisiones por contexto de dominio. <br> **Escenario 2:** Dado que los desarrolladores y stakeholders revisan el código, cuando leen los nombres de clases y métodos, entonces encuentran un lenguaje común alineado al negocio. | |
+| ID         | Título                                      | Descripción                                                                                                                                                                                           | Aceptación                                                                                                                                                                                                                                                                                                                                                           | EPIC |
+|------------|---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------|
+| **CON-01** | Uso de arquitectura de microservicios       | La solución debe implementarse con una arquitectura de microservicios, con multiples despliegues y separando responsabilidades por cada servicio levantado (gestión de lotes, pasos, usuarios, etc.). | **Escenario 1:** Dado que se revisa la estructura del proyecto backend, cuando se analiza el código, entonces se observa una separación clara en módulos. <br> **Escenario 2:** Dado que se despliega la aplicación en un entorno de pruebas, cuando se ejecuta el backend, entonces todos los módulos están presentes y operativos dentro de una sola unidad.       |      |
+| **CON-02** | Backend en Spring Boot                      | El backend de la solución debe desarrollarse en Spring Boot, aprovechando su soporte para APIs REST, modularidad y gestión de dependencias.                                                           | **Escenario 1:** Dado que se revisa el código fuente del backend, cuando se inspeccionan las dependencias, entonces se encuentran configuraciones propias de Spring Boot. <br> **Escenario 2:** Dado que el backend está en ejecución, cuando se accede a un endpoint, entonces se recibe la respuesta desde un controlador Spring.                                  |      |
+| **CON-03** | Frontend web con Angular                    | La aplicación web debe desarrollarse con Angular, siguiendo buenas prácticas modernas de frontend y arquitectura de componentes.                                                                      | **Escenario 1:** Dado que se revisa el código de la interfaz web, cuando se exploran los archivos fuente, entonces se encuentran componentes y módulos característicos de Angular. <br> **Escenario 2:** Dado que se lanza la aplicación en un navegador, cuando se accede al servidor frontend, entonces se carga una SPA con rutas gestionadas por Angular Router. |      |
+| **CON-04** | Landing Page en HTML                        | Debe desarrollarse una página de aterrizaje estática con HTML, CSS y opcionalmente JavaScript, enfocada en explicar el modelo de negocio y redirigir a la aplicación.                                 | **Escenario 1:** Dado que un usuario accede a la URL de la landing page, cuando se carga el contenido, entonces se muestran elementos informativos y enlaces funcionales. <br> **Escenario 2:** Dado que el usuario hace clic en un call-to-action, cuando se redirige, entonces llega al destino correspondiente según su plataforma.                               |      |
+| **CON-05** | Base de datos relacional MySQL              | El sistema debe usar una base de datos relacional (MySQL), permitiendo integridad referencial y consultas SQL estándar.                                                                               | **Escenario 1:** Dado que se inspecciona la base de datos, cuando se visualiza el esquema, entonces se encuentran tablas relacionadas con claves primarias y foráneas. <br> **Escenario 2:** Dado que se realiza una consulta, cuando se recuperan datos relacionados, entonces se obtienen resultados válidos según la lógica definida.                             |      |
+| **CON-06** | Repositorio de código en GitHub             | El código fuente del proyecto debe estar versionado y publicado en un repositorio en GitHub, con control de versiones y colaboración en equipo.                                                       | **Escenario 1:** Dado que se accede al repositorio, cuando se inspeccionan los archivos, entonces se encuentra una estructura clara y organizada. <br> **Escenario 2:** Dado que se revisa el historial de commits, cuando se observan ramas y mensajes, entonces se evidencia un uso de buenas prácticas como Gitflow o commits semánticos.                         |      |
+| **CON-07** | Uso de RESTful APIs internas                | La comunicación entre productos debe realizarse mediante APIs REST internas, cumpliendo con principios de diseño REST (recursos, verbos HTTP y respuestas estandarizadas).                            | **Escenario 1:** Dado que se documentan los endpoints, cuando se inspeccionan las rutas, entonces se evidencia el uso de verbos HTTP adecuados (GET, POST, PUT, DELETE). <br> **Escenario 2:** Dado que un cliente consume un servicio, cuando se realiza una solicitud, entonces se recibe una respuesta JSON estructurada.                                         |      |
+| **CON-08** | Anclaje en blockchain pública (solo hashes) | Cada evento de trazabilidad debe registrarse en una blockchain pública, almacenando únicamente hashes para proteger los datos sensibles.                                                              | **Escenario 1:** Dado que se registra un paso en la trazabilidad, cuando se confirma el evento, entonces se genera un hash y se ancla en blockchain. <br> **Escenario 2:** Dado que un usuario consulta el hash en un explorador, cuando se revisa, entonces solo se observa el identificador, sin datos sensibles.                                                  |      |
+| **CON-09** | QR firmado y único por lote                 | Cada lote debe tener un código QR único firmado por el backend, evitando duplicados.                                                                                                                  | **Escenario 1:** Dado que un productor crea un lote, cuando solicita el QR, entonces el sistema genera un código único y firmado. <br> **Escenario 2:** Dado que se intenta emitir un QR duplicado, cuando el backend valida, entonces rechaza la operación.                                                                                                         |      |
+| **CON-10** | Diseño impulsado por el dominio (DDD)       | La solución debe desarrollarse siguiendo principios de Domain-Driven Design, donde el modelo de dominio guía la estructura y la lógica.                                                               | **Escenario 1:** Dado que se revisa la organización del backend, cuando se inspeccionan los paquetes, entonces se observan divisiones por contexto de dominio. <br> **Escenario 2:** Dado que los desarrolladores y stakeholders revisan el código, cuando leen los nombres de clases y métodos, entonces encuentran un lenguaje común alineado al negocio.          |      |
 
 ### 4.1.3. Architectural Drivers Backlog.
 
 Tras nuestro Quality Attribute Workshop, acordamos el conjunto de drivers que guiarán el diseño de FoodChain. El backlog incluye Functional Drivers, Quality Attribute Drivers y los constraints clave. A continuación se listan en orden de mayor importancia para stakeholders y mayor impacto en la complejidad técnica de arquitectura.
 
-| Driver ID | Título de Driver                | Descripción                                                                                                                                          | Importancia para Stakeholders | Impacto en Architecture Technical Complexity |
-|-----------|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|----------------------------------------------|
-| DR-01     | Integridad e inmutabilidad      | Cada paso de trazabilidad genera un hash y se ancla en blockchain pública, habilitando verificación externa y evitando alteraciones del historial.    | Alta                          | Alta                                         |
-| DR-02     | Seguridad y control de acceso   | Gestión de identidades, autenticación, control de acceso por roles y firma digital de eventos para autoría y no repudio en toda la cadena.            | Alta                          | Alta                                         |
-| DR-03     | Autenticidad y unicidad del QR  | Código QR firmado por el backend y único por lote, con detección y bloqueo de duplicados para disuadir la clonación de empaques.                       | Alta                          | Media                                        |
-| DR-04     | Registro de pasos confiable     | Idempotencia, manejo de reintentos y sincronización offline a online para asegurar registro sin duplicados en escenarios de conectividad variable.     | Alta                          | Media                                        |
-| DR-05     | Disponibilidad del canal público| La vista pública del historial por QR debe permanecer operativa en tienda, con mínimos tiempos de caída y recuperación rápida.                        | Alta                          | Media                                        |
-| DR-06     | Desempeño del historial público | Carga inicial rápida del historial con paginación y virtualización para lotes con gran volumen de eventos.                                            | Alta                          | Media                                        |
-| DR-07     | Captura de ubicación verificada | En pasos de movimiento la ubicación GPS se captura automáticamente y no es editable, reforzando evidencia de lugar y hora.                            | Alta                          | Media                                        |
-| DR-08     | Alineación con DDD              | Estructura del sistema por bounded contexts de lotes, eventos y usuarios, con entidades y agregados alineados al lenguaje del dominio.                 | Alta                          | Alta                                         |
-| DR-09     | Integración con servicios externos | Exposición y consumo de APIs REST; conexión a nodo blockchain y servicios de soporte con tolerancia a fallos y manejo de errores.                   | Media                         | Alta                                         |
-| DR-10     | Arquitectura monolítica modular | Un único despliegue con separación interna por dominios para simplificar go-live y mantener orden en la evolución inicial.                             | Media                         | Media                                        |
+| Driver ID | Título de Driver                   | Descripción                                                                                                                                                                  | Importancia para Stakeholders | Impacto en Architecture Technical Complexity |
+|-----------|------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|----------------------------------------------|
+| DR-01     | Integridad e inmutabilidad         | Cada paso de trazabilidad genera un hash y se ancla en blockchain pública, habilitando verificación externa y evitando alteraciones del historial.                           | Alta                          | Alta                                         |
+| DR-02     | Seguridad y control de acceso      | Gestión de identidades, autenticación, control de acceso por roles y firma digital de eventos para autoría y no repudio en toda la cadena.                                   | Alta                          | Alta                                         |
+| DR-03     | Autenticidad y unicidad del QR     | Código QR firmado por el backend y único por lote, con detección y bloqueo de duplicados para disuadir la clonación de empaques.                                             | Alta                          | Media                                        |
+| DR-04     | Registro de pasos confiable        | Idempotencia, manejo de reintentos y sincronización offline a online para asegurar registro sin duplicados en escenarios de conectividad variable.                           | Alta                          | Media                                        |
+| DR-05     | Disponibilidad del canal público   | La vista pública del historial por QR debe permanecer operativa en tienda, con mínimos tiempos de caída y recuperación rápida.                                               | Alta                          | Media                                        |
+| DR-06     | Desempeño del historial público    | Carga inicial rápida del historial con paginación y virtualización para lotes con gran volumen de eventos.                                                                   | Alta                          | Media                                        |
+| DR-07     | Captura de ubicación verificada    | En pasos de movimiento la ubicación GPS se captura automáticamente y no es editable, reforzando evidencia de lugar y hora.                                                   | Alta                          | Media                                        |
+| DR-08     | Alineación con DDD                 | Estructura del sistema por bounded contexts de lotes, eventos y usuarios, con entidades y agregados alineados al lenguaje del dominio.                                       | Alta                          | Alta                                         |
+| DR-09     | Integración con servicios externos | Exposición y consumo de APIs REST; conexión a nodo blockchain y servicios de soporte con tolerancia a fallos y manejo de errores.                                            | Media                         | Alta                                         |
+| DR-10     | Arquitectura microservicios        | Varios despliegues con separación externa por modulos para mantener la confiabilidad y la interdependencia entre todos los modulos y mantener orden en la evolución inicial. | Media                         | Media                                        |
 
 ### 4.1.4. Architectural Design Decisions.
 
 #### Candidate Pattern Evaluation Matrix
 
-| Driver ID | Título de Driver | Monolito Modular (DDD) – Pro | Monolito Modular (DDD) – Con | Microservicios – Pro | Microservicios – Con |
-|---|---|---|---|---|---|
-| DR-01 | Integridad e inmutabilidad | Trazabilidad y hashing centralizados; anclaje on-chain controlado. | Escalado del anclaje atado al proceso central. | Servicio de notarización escalable. | Orquestación distribuida para orden e idempotencia. |
-| DR-02 | Seguridad y control de acceso | RBAC y firma digital uniformes; menos puntos a endurecer. | Una brecha impacta más superficie si no se segmenta bien. | Aislamiento por dominio. | Gestión de identidades y políticas distribuida. |
-| DR-03 | Registro de pasos confiable | Idempotencia y reintentos simples; depuración directa. | Posible cuello en picos extremos. | Escalado granular del servicio de eventos. | Duplicados y orden entre servicios más complejos. |
-| DR-04 | Autenticidad y unicidad del QR | Emisión y firma en un módulo único; control de colisiones. | Menor elasticidad si crece mucho la emisión. | Servicio “QR authority” escalable. | Coherencia de unicidad distribuida más difícil. |
-| DR-05 | Disponibilidad del canal público | Menos piezas; rollback y caché simples. | Un fallo crítico puede afectar todo si no se aísla. | Fallo de un servicio no derriba otros. | Requiere gateways, balanceo y más operación. |
-| DR-06 | Desempeño del historial | Consultas en un solo store; paginación/virtualización. | Límite vertical si el histórico crece demasiado. | Lectura separada con réplicas/stores. | Latencias y consistencia eventual afectan UX. |
-| DR-07 | Captura de ubicación verificada | Validación y regla de no-edición central. | Acopla la validación al backend. | Servicio dedicado de validación de señales. | Más saltos y políticas distribuidas. |
-| DR-08 | Integraciones externas | Adaptadores centrales; circuit breakers en un borde. | Menos flexibilidad para paralelizar integraciones. | Integraciones por servicio. | Más contratos y puntos a observar. |
-| DR-09 | Auditoría administrativa | Log central y exportación completa. | Filtros finos requieren buena segmentación interna. | Auditoría por servicio más granular. | Trazas extremo a extremo más costosas. |
+| Driver ID | Título de Driver                 | Monolito Modular (DDD) – Pro                                       | Monolito Modular (DDD) – Con                              | Microservicios – Pro                        | Microservicios – Con                                |
+|-----------|----------------------------------|--------------------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------|-----------------------------------------------------|
+| DR-01     | Integridad e inmutabilidad       | Trazabilidad y hashing centralizados; anclaje on-chain controlado. | Escalado del anclaje atado al proceso central.            | Servicio de notarización escalable.         | Orquestación distribuida para orden e idempotencia. |
+| DR-02     | Seguridad y control de acceso    | RBAC y firma digital uniformes; menos puntos a endurecer.          | Una brecha impacta más superficie si no se segmenta bien. | Aislamiento por dominio.                    | Gestión de identidades y políticas distribuida.     |
+| DR-03     | Registro de pasos confiable      | Idempotencia y reintentos simples; depuración directa.             | Posible cuello en picos extremos.                         | Escalado granular del servicio de eventos.  | Duplicados y orden entre servicios más complejos.   |
+| DR-04     | Autenticidad y unicidad del QR   | Emisión y firma en un módulo único; control de colisiones.         | Menor elasticidad si crece mucho la emisión.              | Servicio “QR authority” escalable.          | Coherencia de unicidad distribuida más difícil.     |
+| DR-05     | Disponibilidad del canal público | Menos piezas; rollback y caché simples.                            | Un fallo crítico puede afectar todo si no se aísla.       | Fallo de un servicio no derriba otros.      | Requiere gateways, balanceo y más operación.        |
+| DR-06     | Desempeño del historial          | Consultas en un solo store; paginación/virtualización.             | Límite vertical si el histórico crece demasiado.          | Lectura separada con réplicas/stores.       | Latencias y consistencia eventual afectan UX.       |
+| DR-07     | Captura de ubicación verificada  | Validación y regla de no-edición central.                          | Acopla la validación al backend.                          | Servicio dedicado de validación de señales. | Más saltos y políticas distribuidas.                |
+| DR-08     | Integraciones externas           | Adaptadores centrales; circuit breakers en un borde.               | Menos flexibilidad para paralelizar integraciones.        | Integraciones por servicio.                 | Más contratos y puntos a observar.                  |
+| DR-09     | Auditoría administrativa         | Log central y exportación completa.                                | Filtros finos requieren buena segmentación interna.       | Auditoría por servicio más granular.        | Trazas extremo a extremo más costosas.              |
 
 #### Decisión
 
-**Arquitectura seleccionada: Monolito Modular con DDD.**  
+**Arquitectura seleccionada: Microservicio con DDD.**  
 Elegimos esta opción porque:
 
-- **Cumple los drivers clave** (integridad, seguridad, disponibilidad del canal público, desempeño del historial).
-- **Reduce la complejidad operativa**, adecuada para el tamaño actual del equipo.
-- **Permite aplicar DDD** segmentando el sistema por dominios dentro de una sola unidad desplegable.
-- **Evita sobreingeniería**: microservicios no aportan beneficios claros en esta etapa.
+Escalabilidad Selectiva y Rendimiento: Permite la escalabilidad granular de las partes críticas del sistema. Servicios de alta demanda como el registro de eventos (DR-03) o la notarización en blockchain (DR-01) pueden escalar de forma independiente, optimizando el uso de recursos y asegurando el rendimiento de lectura del historial (DR-06) sin necesidad de escalar toda la aplicación.
+Resiliencia y Aislamiento de Fallos: Aumenta la resiliencia del sistema. Un fallo en un servicio no esencial (por ejemplo, el servicio de gestión de usuarios) no afectará la disponibilidad de las funcionalidades críticas como la consulta pública del historial (DR-05). Este aislamiento de fallos es fundamental para garantizar una alta disponibilidad del canal orientado al consumidor.
+Autonomía y Evolución a Largo Plazo: Fomenta la autonomía y la evolución del sistema. Cada microservicio, alineado con un Bounded Context de DDD (DR-08), puede ser desarrollado, desplegado y mantenido de forma independiente. Esto acelera los ciclos de entrega, facilita la adopción de nuevas tecnologías por servicio y reduce el acoplamiento, haciendo que el sistema sea más fácil de modificar y extender en el futuro.
 
 ### 4.1.5. Quality Attribute Scenario Refinements.
 
@@ -334,75 +333,77 @@ En esta sección se realiza el Context Mapping, es una técnica de modelado visu
 
 ## **4.3. Software Architecture**
 
-La visión general de la arquitectura describe la estructura fundamental de un sistema, abarcando sus componentes principales y la interacción entre ellos. Para FoodChain, una plataforma de confianza digital, una arquitectura sólida es el pilar fundamental para garantizar que el sistema sea seguro, escalable y auditable. Este enfoque permite una implementación ordenada, donde cada componente tiene una responsabilidad clara y bien definida, facilitando la integración de nuevas funcionalidades sin comprometer la integridad de la trazabilidad (Richards & Ford, 2021).
+La visión general de la arquitectura describe la estructura fundamental de un sistema. Para FoodChain, una plataforma de confianza digital, una arquitectura robusta es el pilar para garantizar que el sistema sea seguro, resiliente y escalable. Este enfoque permite una implementación ordenada, donde cada componente tiene una responsabilidad clara y bien definida, facilitando la evolución del sistema sin comprometer la integridad de la trazabilidad (Richards & Ford, 2021).
 
-El diseño arquitectónico de FoodChain se basa en una arquitectura de microservicios distribuida, donde cada componente está desacoplado y se comunica a través de APIs bien definidas. Para el backend, se ha seleccionado el framework **SpringBoot (Java)**, conocido por su robustez para aplicaciones empresariales. La separación de preocupaciones se logra mediante patrones de diseño como el **Modelo-Vista-Controlador (MVC)** y la **Inyección de Dependencias**. El sistema se integra con servicios externos clave: una **blockchain pública (Polygon)** para el anclaje de hashes y un proveedor de almacenamiento de archivos para los comprobantes.
+El diseño arquitectónico de FoodChain se basa en una **arquitectura de microservicios orientada a dominio**. Cada Bounded Context identificado en la fase de diseño estratégico se implementa como un servicio desplegable de forma independiente. Esta separación de responsabilidades se logra con patrones como **base de datos por servicio** para garantizar una autonomía real. La comunicación entre los servicios se maneja a través de dos patrones principales:
+1.  **Comunicación Síncrona:** A través de un **API Gateway** que actúa como punto de entrada único para las aplicaciones cliente.
+2.  **Comunicación Asíncrona:** Mediante una **cola de mensajes (Message Queue)** para desacoplar procesos de larga duración, como el anclaje en la blockchain, garantizando la resiliencia y el rendimiento del sistema.
 
-La seguridad es un aspecto central de nuestra arquitectura. Se implementa en múltiples capas: desde el cifrado de datos en tránsito (HTTPS) y en reposo, hasta la validación de firmas digitales para los códigos QR y la gestión de identidades y accesos (IAM). La arquitectura está diseñada para ser resiliente, manejando fallos de conexión con la blockchain y garantizando que ningún dato de trazabilidad se pierda.
+Para el backend, se ha seleccionado el framework **SpringBoot (Java)** por su robustez para aplicaciones empresariales. La seguridad es un aspecto central, implementada desde el cifrado en tránsito (HTTPS) hasta la gestión de identidades y accesos (IAM) mediante tokens JWT.
 
-De acuerdo con Brown (2023), el **modelo C4** para la diagramación de la arquitectura de software ofrece un enfoque estructurado que permite describir el sistema en diferentes niveles de abstracción. Al dividir la arquitectura en cuatro niveles —**Contexto, Contenedores, Componentes y Código**—, se facilita una comprensión clara tanto para el equipo técnico como para los stakeholders no técnicos. Utilizaremos este modelo para visualizar y comunicar el diseño de FoodChain de manera efectiva.
+De acuerdo con Brown (2023), el **modelo C4** ofrece un enfoque estructurado para visualizar la arquitectura en diferentes niveles de abstracción. Utilizaremos este modelo para comunicar el diseño de FoodChain de manera efectiva, desde el contexto general hasta los componentes internos.
 
-### **4.3.1. Software Architecture System Landscape Diagram**
+### **4.3.1. Software Architecture System Context Diagram (Nivel 1)**
 
-El diagrama de paisaje (*landscape*), correspondiente al nivel más alto del modelo C4, ofrece una visión integral de FoodChain dentro de su ecosistema tecnológico. Este diagrama mapea los sistemas de software internos y externos, así como los flujos de información que los conectan, lo cual es clave para entender cómo nuestra plataforma crea valor al interactuar con el mundo exterior (Brown, 2023).
+El diagrama de contexto clarifica los límites del sistema FoodChain, mostrándolo como una única caja negra e ilustrando cómo interactúa con sus usuarios y con otros sistemas de software. Este nivel es fundamental para definir el alcance del proyecto, identificando quién usa el sistema y qué dependencias externas son críticas para su funcionamiento (Brown, 2023).
 
-En el caso de FoodChain, el diagrama de paisaje ilustra la interacción entre nuestra plataforma central y los sistemas de los diversos actores de la cadena de suministro, así como con sistemas externos críticos como la **red blockchain de Polygon** y APIs de certificación de terceros.
+El diagrama muestra a los actores principales (Enterprise User, Enterprise Admin, Consumer) y las interacciones con sistemas externos clave como la Red Blockchain de Polygon, un Servicio de Email y una API de Mapas.
 
 ###### **Figura 1**
-*_Diagrama de Paisaje del Sistema FoodChain_*
-![Diagrama de Paisaje del Sistema FoodChain](../assets/img/chapter-4/c4/structurizr-106397-SystemLandscape.png)
+*_Diagrama de Contexto de la Plataforma FoodChain_*
+![Diagrama de Contexto de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106906-SystemContext.svg)
+
+### **4.3.2. Software Architecture Container Level Diagram (Nivel 2)**
+
+El diagrama de contenedores descompone el sistema FoodChain en sus principales bloques ejecutables. Este nivel ofrece la visión principal de la arquitectura de microservicios, mostrando las responsabilidades de cada servicio (`Identity Service`, `Batch Management Service`, etc.), sus bases de datos dedicadas, y cómo se comunican entre sí a través de llamadas síncronas al API Gateway y eventos asíncronos a través de la Cola de Mensajes.
 
 ###### **Figura 2**
-*_Leyenda para el Diagrama de Paisaje_*
-![Leyenda para el Diagrama de Paisaje](../assets/img/chapter-4/c4/structurizr-106397-SystemLandscape-key.png)
-
-### **4.3.2. Software Architecture Context Level Diagram**
-
-El diagrama de contexto clarifica los límites del sistema FoodChain, mostrando cómo interactúa con sus usuarios y con otros sistemas de software. Este nivel de abstracción del modelo C4 es fundamental para definir el alcance del proyecto, identificando quién usa el sistema y qué dependencias externas son críticas para su funcionamiento (Brown, 2023).
-
-Para FoodChain, el diagrama de contexto muestra a los actores principales (Usuario de Empresa, Consumidor) y las interacciones con sistemas externos clave como la Red Blockchain de Polygon, un Servicio de Email y una API de Mapas.
+*_Diagrama de Contenedores de la Plataforma FoodChain_*
+![Diagrama de Contenedores de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106906-Containers.svg)
 
 ###### **Figura 3**
-*_Diagrama de Contexto de la Plataforma FoodChain_*
-![Diagrama de Contexto de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106397-SystemContext.png)
+*_Leyenda para el Diagrama de Contenedores_*
+![Leyenda para el Diagrama de Contenedores](../assets/img/chapter-4/c4/structurizr-106906-Containers-key.svg)
 
-### **4.3.3. Software Architecture Container Level Diagram**
+### **4.3.3. Software Architecture Component Level Diagrams (Nivel 3)**
 
-El diagrama de contenedores descompone el sistema FoodChain en sus principales bloques ejecutables o "contenedores". Este nivel del modelo C4 ofrece una visión de la arquitectura de alto nivel, mostrando las responsabilidades de cada parte del sistema (la SPA en Angular, la PWA del consumidor, el Backend en SpringBoot y la base de datos en SQL Server) y cómo se comunican entre sí (Brown, 2023).
+Este nivel hace zoom en los microservicios más importantes para mostrar sus componentes internos. Estos diagramas son cruciales para que el equipo de desarrollo entienda la estructura interna de cada servicio y cómo se aplican los patrones de Domain-Driven Design (DDD).
+
+#### **Identity Service Components**
+El diagrama de componentes para el `Identity Service` ilustra su estructura interna, responsable de la autenticación y autorización. Muestra cómo los controladores exponen la API, que es orquestada por el `Application Service` para ejecutar la lógica de negocio sobre el `User Aggregate`.
 
 ###### **Figura 4**
-*_Diagrama de Contenedores de la Plataforma FoodChain_*
-![Diagrama de Contenedores de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106397-Containers.png)
+*_Diagrama de Componentes del Identity Service_*
+![Diagrama de Componentes del Identity Service](../assets/img/chapter-4/c4/structurizr-106906-IdentityService_Components.svg)
 
-#### **4.3.3.1. Software Architecture Component Level Diagrams**
-
-Este nivel hace zoom en los contenedores individuales para mostrar sus componentes internos. Estos diagramas son cruciales para que el equipo de desarrollo entienda la estructura interna de cada aplicación y cómo se dividen las responsabilidades.
-
-**API Backend Components**
-
-El diagrama de componentes para el API Backend ilustra la estructura interna de nuestra aplicación SpringBoot. Se organiza en Bounded Contexts, siguiendo principios de Domain-Driven Design (DDD), para separar claramente el dominio central de la trazabilidad de las funcionalidades genéricas como la gestión de identidades (IAM).
+#### **Batch Management Service Components**
+Este diagrama detalla la estructura interna del `Batch Management Service`. Se observa el flujo de un comando desde el `Batch Controller`, pasando por la validación de seguridad en la capa `ACL`, hasta el `Application Service` que utiliza el `Batch Aggregate` para ejecutar las reglas de negocio del ciclo de vida de un lote.
 
 ###### **Figura 5**
-*_Diagrama de Componentes del API Backend_*
-![Diagrama de Componentes del API Backend](../assets/img/chapter-4/c4/structurizr-106397-BackendComponents.png)
+*_Diagrama de Componentes del Batch Management Service_*
+![Diagrama de Componentes del Batch Management Service](../assets/img/chapter-4/c4/structurizr-106906-BatchManagementService_Components.svg)
+
+#### **Traceability Service Components**
+El diagrama de componentes para el `Traceability Service` muestra cómo se gestiona el registro de eventos. El `Application Service`, tras persistir un nuevo evento, utiliza el `Domain Event Publisher` para enviar un mensaje a la cola, iniciando así el flujo de anclaje asíncrono.
 
 ###### **Figura 6**
-*_Leyenda para el Diagrama de Componentes del Backend_*
-![Leyenda para el Diagrama de Componentes del Backend](../assets/img/chapter-4/c4/structurizr-106397-BackendComponents-key.png)
+*_Diagrama de Componentes del Traceability Service_*
+![Diagrama de Componentes del Traceability Service](../assets/img/chapter-4/c4/structurizr-106906-TraceabilityService_Components.svg)
 
-**Consumer PWA Components**
-
-Este diagrama muestra los componentes simples que conforman la aplicación web progresiva para el consumidor. Su responsabilidad principal es escanear y mostrar el historial de un producto.
+#### **Blockchain Worker Components**
+Este diagrama ilustra la arquitectura del servicio asíncrono `Blockchain Worker`. El `Domain Event Handler` (Listener) actúa como punto de entrada, consumiendo mensajes de la cola e invocando al `Blockchain Adapter` para interactuar con la red Polygon. Finalmente, el `DB Status Updater` cierra el ciclo actualizando la base de datos.
 
 ###### **Figura 7**
-*_Diagrama de Componentes de la PWA del Consumidor_*
-![Diagrama de Componentes de la PWA del Consumidor](../assets/img/chapter-4/c4/structurizr-106397-ConsumerPWAComponents.png)
+*_Diagrama de Componentes del Blockchain Worker_*
+![Diagrama de Componentes del Blockchain Worker](../assets/img/chapter-4/c4/structurizr-106906-BlockchainWorker_Components.svg)
 
 ### **4.3.4. Software Architecture Deployment Diagram**
 
-El diagrama de despliegue ilustra cómo se mapean los contenedores de software a la infraestructura de hardware en un entorno de producción. Este diagrama es esencial para entender cómo se ejecutará el sistema, considerando aspectos como la escalabilidad, la disponibilidad y la seguridad de la red en un entorno cloud.
+El diagrama de despliegue ilustra cómo se mapean los contenedores de la arquitectura a una infraestructura de nube en un entorno de producción. Este diagrama es esencial para entender cómo se ejecutará el sistema, mostrando que cada microservicio se despliega de forma independiente en un clúster de orquestación, cada uno conectado a su propia base de datos gestionada.
 
 ###### **Figura 8**
 *_Diagrama de Despliegue de la Plataforma FoodChain_*
-![Diagrama de Despliegue de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106397-Deployment-001.png)
+![Diagrama de Despliegue de la Plataforma FoodChain](../assets/img/chapter-4/c4/structurizr-106906-Deployment.svg)
 
+
+Para visualizar los diagramas C4 interactivos, visite el siguiente enlace: [FoodChain C4 Model](https://structurizr.com/share/106906/8650e607-a8b0-42d5-b993-00d8f0fc8b34).
