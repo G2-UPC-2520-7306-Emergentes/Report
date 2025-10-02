@@ -305,7 +305,36 @@ En esta capa se definen los Servicios de Aplicación que modelan los Casos de Us
 
 ### 5.1.4. Infrastructure Layer
 
+Esta capa es la encargada de resolver los detalles técnicos y de persistencia para el Bounded Context Trazabilidad. Esta capa implementa las interfaces de Repositorio y los Adaptadores de Servicios Externos definidos en la Capa de Dominio, sirviendo como el puente que conecta la lógica de negocio con las tecnologías de almacenamiento y la red Blockchain en FoodChain.
+
+| LoteDeTrazabilidadRepository      |
+|--------------------------------------------------------------------|
+| +save(lote: LoteDeTrazabilidad): LoteDeTrazabilidad                 |
+| +findById(loteId: String): Optional<LoteDeTrazabilidad>             |
+| +findByIdentificadorQR(qrId: String): Optional<LoteDeTrazabilidad>  |
+| +findAllEventosByLoteId(loteId: String): List<EventoDeTrazabilidad> |
+| +delete(lote: LoteDeTrazabilidad): void                             
+
+| ServicioDeAnclajeBlockchain|
+|--------------------------------------------------------------------|
+| +anclarEvento(evento: EventoDeTrazabilidad): HashTransaccion       |
+| +consultarTransaccion(hash: String): JsonData                      |
+| +verificarHash(hash: String): Boolean                              |
+
+| Data Mappers                                                                |
+|-------------------------------------------------------------------------------|
+| LoteDataMapper (Mapea entre LoteDeTrazabilidad y LoteData/LoteEntity)         |
+| EventoDataMapper (Mapea entre EventoDeTrazabilidad y EventoData/EventoEntity) |
+
+
 ### 5.1.5. Bounded Context Software Architecture Component Level Diagrams 
+
+Esta sección presenta el diagrama de componentes correspondiente al Bounded Context Trazabilidad, donde se visualizan las principales dependencias entre el Controller REST, los Servicios de Aplicación (Commands y Queries), las Interfaces del Dominio y los Adaptadores de Infraestructura.
+
+Este diagrama permite comprender cómo están organizados los distintos módulos dentro del contexto, cómo se comunican entre ellos, y cómo interactúan con los Actores y Sistemas Externos.
+
+
+![boundedContextTraceability.png](../assets/img/bcTraceability.png)
 
 ### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
 
