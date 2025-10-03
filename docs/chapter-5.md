@@ -129,7 +129,7 @@ En esta sección se presenta y explica el Database Diagram que incluye los objet
 
 ###### **Figura [N°]: Diagrama de Base de Datos de Batch Management**
 
-![Diagrama de Clases del Dominio de Batch Management](../assets/img/chapter-5/batch_management_database.png)
+![Diagrama de Base de Datos de Batch Management](../assets/img/chapter-5/batch_management_database.png)
 
 ## **5.2. Bounded Context: Traceability**
 
@@ -261,14 +261,16 @@ En esta sección, se presentan y explican los diagramas que ofrecen un mayor det
 El siguiente diagrama de clases UML modela las clases del Domain Layer para el `Traceability Context`. El foco principal es la entidad `TraceabilityEvent`, que es inmutable una vez creada. Se detallan sus atributos y los `Value Objects` que la componen, como `Location` y `EventId`. También se muestra la interfaz del `ITraceabilityRepository`, que define el contrato de persistencia y desacopla el dominio de la infraestructura.
 
 ###### **Figura [N°]: Diagrama de Clases del Dominio de Traceability**
-*(Placeholder para el diagrama de clases UML)*
+
+![Diagrama de Clases del dominio de Traceability](../assets/img/chapter-5/traceability_classdiagram.png)
 
 #### **5.2.6.2. Bounded Context Database Design Diagram**
 
 Este diagrama de base de datos ilustra el esquema para la persistencia del `Traceability Context`. La tabla principal, `traceability_events`, almacena cada evento como un registro inmutable. Se especifican sus columnas (que se mapean a los atributos de la entidad `TraceabilityEvent`), los tipos de datos, la clave primaria (`event_id`), y una clave foránea (`batch_id`) que la vincula lógicamente con la información del `Batch Management Context`. También se incluye una columna `blockchain_status` para gestionar el estado del anclaje asíncrono.
 
 ###### **Figura [N°]: Diagrama de Base de Datos de Traceability**
-*(Placeholder para el diagrama de la base de datos)*
+
+![Diagrama de Base de Datos de Traceability](../assets/img/chapter-5/traceability_database.png)
 
 ## **5.3. Bounded Context: Blockchain Worker**
 
@@ -348,7 +350,8 @@ El siguiente diagrama de componentes del modelo C4 ilustra la arquitectura inter
 El diagrama de clases para este contexto es simple, reflejando su naturaleza de orquestador técnico. Se centra en las interfaces (`IAnchoringService`, `IBlockchainAdapter`, etc.) para demostrar la inversión de dependencias, y en el objeto de datos `StepRegisteredEvent` que actúa como el contrato de comunicación.
 
 ###### **Figura [N°]: Diagrama de Clases del Blockchain Worker**
-*(Placeholder para el diagrama de clases UML)*
+
+![Diagrama de Clases del Blockchain Worker](../assets/img/chapter-5/blockchainWorker_classdiagram.png)
 
 #### **5.3.6.2. Bounded Context Database Design Diagram**
 
