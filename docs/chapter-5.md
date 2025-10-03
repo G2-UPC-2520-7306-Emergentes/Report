@@ -472,11 +472,14 @@ El diagrama de componentes para el `Identity Service` ilustra el flujo interno p
 El diagrama de clases UML para el `Identity Service` se centra en el agregado `User`. Muestra cómo `User` es la raíz que encapsula `Value Objects` como `UserId`, `Email` y `HashedPassword`, protegiendo las reglas de negocio. La relación con la interfaz `IUserRepository` demuestra la inversión de dependencias para desacoplar el dominio de la persistencia.
 
 ###### **Figura [N°]: Diagrama de Clases del Dominio de Identity Service**
-*(Placeholder para el diagrama de clases UML)*
+
+![](../assets/img/chapter-5/Identity_uml.png)
 
 #### **5.4.6.2. Bounded Context Database Design Diagram**
 
 El diagrama de base de datos para este contexto muestra la tabla `users`, que es propiedad exclusiva del `Identity Service`. Se detallan las columnas que persisten el estado del agregado `User`, como `user_id` (Primary Key), `email` (con un constraint `UNIQUE`), y `hashed_password`. También se podría incluir una tabla `user_roles` para gestionar la autorización, vinculada a la tabla `users` mediante una clave foránea.
 
 ###### **Figura [N°]: Diagrama de Base de Datos de Identity Service**
-*(Placeholder para el diagrama de la base de datos)*
+
+
+![](../assets/img/chapter-5/Identify_bd.png)
