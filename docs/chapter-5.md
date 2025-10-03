@@ -119,14 +119,17 @@ En esta sección, se presentan y explican los diagramas que ofrecen un mayor det
 En esta sección se presenta el Class Diagram de UML para las clases del Domain Layer en el `Batch Management Context`. El diagrama modela las clases, interfaces y enumeraciones clave, detallando sus atributos, métodos y visibilidad (private, public). Se evidencian las relaciones fundamentales de DDD: el `Batch Aggregate Root` encapsula su estado y expone métodos de negocio, utilizando el `BatchId Value Object` como su identificador. La interfaz `IBatchRepository` define el contrato de persistencia, desacoplando el dominio de la infraestructura.
 
 ###### **Figura [N°]: Diagrama de Clases del Dominio de Batch Management**
-*(Placeholder para el diagrama de clases UML)*
+
+
+![Diagrama de Clases del Dominio de Batch Management](../assets/img/chapter-5/batch_management_classdiagram.png)
 
 #### **5.1.6.2. Bounded Context Database Design Diagram**
 
 En esta sección se presenta y explica el Database Diagram que incluye los objetos de base de datos que permitirán la persistencia de información para el `Batch Management Context`. Dado que este Bounded Context sigue el patrón "Database-per-Service", posee su propio esquema aislado. El diagrama muestra la tabla `batches`, que es la representación relacional del agregado `Batch`. Se especifican sus columnas, tipos de datos y constraints (Primary Key), reflejando cómo el estado del agregado es persistido.
 
 ###### **Figura [N°]: Diagrama de Base de Datos de Batch Management**
-*(Placeholder para el diagrama de la base de datos)*
+
+![Diagrama de Clases del Dominio de Batch Management](../assets/img/chapter-5/batch_management_database.png)
 
 ## **5.2. Bounded Context: Traceability**
 
