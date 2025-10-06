@@ -329,7 +329,7 @@ Miro: https://miro.com/welcomeonboard/ZTZMcy9zWURYSjNrZ1FSK3lnRjZLZU1OUzdIT2VrT3
 
 En esta sección se realiza el Context Mapping, es una técnica de modelado visual que proporciona una visión de alto nivel de la arquitectura de la solución. Permite identificar y documentar las relaciones explícitas entre los Bounded Contexts del sistema, revelando las dependencias y la dirección del flujo de comunicación.
 
-![Context Mapping](../assets/img/chapter-4/DiagramContx.png)
+<img src="../assets/img/chapter-4/DiagramContx.png" alt="Context Mapping" style="width:50%; height:auto;">
 
 ## **4.3. Software Architecture**
 
