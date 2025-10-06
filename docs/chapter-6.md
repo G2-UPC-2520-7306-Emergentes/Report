@@ -265,20 +265,62 @@ El diseño de la aplicación móvil de FoodChain se centra en la simplicidad, la
 
 ### **6.2 Information Architecture**
 
-
-#### 6.2.1 Organization Systems
-
-
-#### 6.2.2 Labeling Systems
+La Arquitectura de la Información (AI) define la estructura subyacente de nuestro ecosistema digital, asegurando que el contenido esté organizado de manera lógica, sea fácil de encontrar y comprensible para nuestros distintos segmentos de usuario. Para FoodChain, una AI sólida es fundamental para traducir la complejidad de la trazabilidad en una experiencia de usuario clara y transparente, tanto para los productores que gestionan datos como para los consumidores que los consultan.
 
 
-#### 6.2.3 Searching Systems
+#### 6.2.1 Organization Systems (Sistemas de Organización)
+
+Los sistemas de organización determinan cómo se agrupa y estructura la información dentro de nuestras plataformas. Hemos adoptado esquemas específicos para cada aplicación, alineados con los objetivos de sus usuarios.
+
+* **Aplicación Web (Productores):** Se emplea un **esquema de organización jerárquico y por temas**. La estructura está diseñada para la gestión de datos, permitiendo al usuario navegar desde un nivel general (el Dashboard) hacia niveles cada vez más específicos (la lista de "Mis Lotes" y, finalmente, el "Detalle del Lote"). Las secciones del menú lateral ("Dashboard", "Mis Lotes", "Reportes") actúan como los temas principales, agrupando la información de manera lógica y predecible para un entorno de trabajo profesional.
+
+* **Aplicación Móvil (Consumidores):** El sistema principal es **secuencial y cronológico**. La pantalla de trazabilidad, que es el corazón de la experiencia del consumidor, presenta la historia del producto como una secuencia de eventos ordenados por fecha, desde el origen hasta el punto de venta. Este enfoque narrativo facilita que el consumidor siga la "historia" del producto de una manera intuitiva y visualmente atractiva.
 
 
-#### 6.2.4 SEO Tags and Meta Tags
+#### 6.2.2 Labeling Systems (Sistemas de Etiquetado)
+
+El sistema de etiquetado se refiere a la selección de palabras y frases para representar la información. Las etiquetas de FoodChain han sido elegidas para ser claras, consistentes y para hablar el idioma de nuestros usuarios, evitando la jerga técnica innecesaria.
+
+A continuación, se presenta una tabla con las etiquetas más importantes y la justificación de su elección:
+
+| Etiqueta | Plataforma | Justificación |
+| :--- | :--- | :--- |
+| **Mis Lotes** | Web | Se eligió esta etiqueta porque es clara, directa y genera un sentido de pertenencia para el productor, indicando que son *sus* registros y su área de gestión principal. |
+| **Escanear QR** | Mobile | Es una llamada a la acción directa y universalmente entendida que no deja lugar a dudas sobre la función principal de la aplicación para el consumidor. |
+| **Historial de Eventos** | Web | Describe de forma precisa el contenido de la tabla de trazabilidad, utilizando un lenguaje profesional adecuado para el entorno de gestión de datos del productor. |
+| **Cerrar Lote** | Web | Es una etiqueta de acción clara que indica el final del ciclo de vida de la trazabilidad de un producto, una acción de negocio importante para el productor. |
+| **Generar QR** | Web | Indica de manera inequívoca la función de crear el código QR que se asociará físicamente al producto, un paso crucial en el proceso. |
 
 
-#### 6.2.5 Navigation Systems
+#### 6.2.3 Searching Systems (Sistemas de Búsqueda)
+
+Los sistemas de búsqueda permiten a los usuarios encontrar información específica de manera rápida y eficiente. Para FoodChain, esto es crucial en la aplicación web para la gestión de un gran volumen de datos.
+
+* **Aplicación Web:** En la pantalla de "Mis Lotes", se implementará un sistema de búsqueda robusto que incluirá:
+    * Una **barra de búsqueda** prominente en la parte superior de la tabla, que permitirá al productor encontrar un lote específico por su nombre o ID.
+    * Un sistema de **filtros avanzados** para visualizar lotes según su "Estado" (Activo, Cerrado, En Revisión) o por un rango de "Fecha de Creación", permitiendo una gestión más eficiente y segmentada de sus registros.
+
+* **Aplicación Móvil:** Dado que el objetivo es la consulta simple, la función de búsqueda se limita a un **listado cronológico en el "Historial"**, donde el usuario puede hacer scroll para encontrar escaneos previos.
+
+
+#### 6.2.4 SEO Tags and Meta Tags (Etiquetas SEO y Metaetiquetas)
+
+Estas etiquetas son fundamentales para la visibilidad de nuestro **Landing Page** en los motores de búsqueda, permitiendo que potenciales clientes (productores y empresas) nos encuentren.
+
+| Etiqueta | Valor |
+| :--- | :--- |
+| **Title (Título)** | `FoodChain: Trazabilidad Blockchain para la Industria Alimentaria` |
+| **Meta Description (Descripción)** | `Restaura la confianza en tus productos con FoodChain. Nuestra plataforma blockchain ofrece trazabilidad total desde el campo hasta la mesa. ¡Asegura tu cadena de suministro y protege tu marca!` |
+| **Keywords (Palabras Clave)** | `trazabilidad alimentaria, blockchain en alimentos, seguridad alimentaria, software para agronegocios, foodchain, qr para alimentos, food traceability` |
+
+
+#### 6.2.5 Navigation Systems (Sistemas de Navegación)
+
+Los sistemas de navegación son los componentes de la interfaz que guían al usuario a través de las diferentes pantallas. Hemos elegido patrones de navegación estándar y reconocibles para cada plataforma.
+
+* **Aplicación Web:** El sistema de navegación principal es una **Barra Lateral persistente (Sidebar)**. Esta elección es ideal para una aplicación de gestión, ya que mantiene las secciones principales ("Dashboard", "Mis Lotes", etc.) siempre visibles y a un solo clic de distancia, permitiendo al productor moverse de manera eficiente entre los diferentes módulos sin perder el contexto.
+
+* **Aplicación Móvil:** Se utiliza una **Barra de Pestañas Inferior (Tab Bar)** como sistema de navegación principal. Este patrón es el estándar de oro en aplicaciones móviles por ser ergonómico, fácil de alcanzar con el pulgar y familiar para la gran mayoría de los usuarios. Permite al consumidor cambiar rápidamente entre las funciones clave ("Historial", "Escanear", "Empresas") de manera intuitiva.
 
 ### **6.3 Landing Page UI Design**
 
