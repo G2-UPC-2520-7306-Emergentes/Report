@@ -262,9 +262,9 @@ Finalmente, con base en este análisis, se delimitaron los siguientes cuatro Bou
 
  - Gestión de Lotes (Batch Management): Es el Core Domain. Se encarga de la creación, gestión, edición y cierre de los lotes de productos.
 
- - Trazabilidad del Lote (Batch Traceability): También un Core Domain. Su única responsabilidad es registrar y validar cada paso (evento) en el historial de un lote, así como gestionar la lógica de auditoría y cumplimiento.
+ - Trazabilidad del Lote (Batch Traceability): Su única responsabilidad es registrar y validar cada paso (evento) en el historial de un lote, así como gestionar la lógica de auditoría y cumplimiento.
 
- - Consulta del Consumidor (Consumer Inquiry): Se encarga de la experiencia del consumidor final. Responde al escaneo de un código QR, valida su autenticidad y presenta el historial completo y verificado del producto de una manera clara y comprensible.
+ - Trabajador de Blockchain (Blockchain Worker): Responsabilidad única de consumir los eventos de registro, calcular el hash final, interactuar con la red blockchain pública (Polygon), gestionar la resiliencia (reintentos) y actualizar el estado de la transacción en las bases de datos relevantes.
 
 ### **4.2.3. Domain Message Flows Modeling**
 
@@ -276,13 +276,13 @@ Enfoque Utilizado
 
 - Se partió del modelo general construido en el EventStorming.
 
-- Se seleccionaron los casos de uso más relevantes del negocio, como la creación de un nuevo lote, el registro de un paso de trazabilidad y la consulta de un producto por el consumidor.
+-  Se seleccionaron los casos de uso más relevantes del negocio, como la creación de un nuevo lote, el registro de un paso de trazabilidad, el cual incluye el flujo asíncrono de anclaje de datos, y la consulta de un producto por el consumidor.
 
 - Se describieron los pasos que sigue el sistema en cada flujo, detallando:
 
- - Actores involucrados: productores, transportistas, consumidores, y los procesos automáticos del sistema.
+ - Actores involucrados: productores, transportistas y los procesos automáticos del sistema.
 
- - Bounded Contexts que colaboran en cada historia (Gestión de Lotes, Trazabilidad, Consulta del Consumidor, etc.).
+ - Bounded Contexts que colaboran en cada historia.
 
  - Los comandos disparados por los actores (ej: "crear lote", "registrar paso").
 
@@ -319,7 +319,7 @@ Resultados
 
 ![BCC Auth](../assets/img/chapter-4/BCC3.jpg)
 
-- Consumer Inquiry
+- Blockchain Worker
 
 ![BCC Auth](../assets/img/chapter-4/BCC4.jpg)
 
