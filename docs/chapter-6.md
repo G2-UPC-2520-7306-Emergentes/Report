@@ -334,7 +334,62 @@ La landing page constituye el primer punto de interacción con los usuarios, por
 ![wireframe-landing page.jpeg](../assets/mockups/Landing%20page-mck.png)
 
 ### **6.4 Applications UX/UI Design**
+Esta sección detalla el diseño de experiencia (UX) e interfaz de usuario (UI) de la aplicación web y móvil de FoodChain. Mediante el uso de wireframes, wireflows, mock-ups y diagramas de flujo, se abordan los elementos visuales y funcionales necesarios para garantizar una experiencia de usuario fluida, accesible y altamente intuitiva. Cada pantalla ha sido cuidadosamente diseñada para responder a las necesidades específicas de los usuarios, optimizando flujos de tareas esenciales como crear actores, gestionar lotes, registrar pasos, etc. El diseño prioriza la simplicidad, la claridad visual y la accesibilidad, asegurando que los usuarios puedan navegar y completar sus objetivos con el menor esfuerzo posible.
+
 #### 6.4.1 Applications Wireframes
+
+- Web Application Wireframes
+
+Sign In
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/US26%20-%20Login.png)
+
+Sign Up
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Register.png)
+
+Home
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/US03.png)
+
+Register role
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/US25%20–%20Registrar%20usuario%20·%20Paso%201_%20Datos%20básicos.png)
+
+Register Step
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Registrar%20Paso%20en%20Lote%20(Éxito).png)
+
+Lot Detail
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Detalle%20del%20lote.png)
+
+- Mobile Application Wireframes
+
+Home
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Home.png)
+
+Timeline
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Timeline.png)
+
+Featuring Companies
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Empresas%20participantes.png)
+
+Company detail
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/US24.png)
+
+Lot Route
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/US22.png)
+
+Blockchain Verification
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/US21.png)
+
 #### 6.4.2 Applications Wireflow Diagrams
 #### 6.4.3 Applications Mock-ups
 #### 6.4.4 Applications User Flow Diagrams
