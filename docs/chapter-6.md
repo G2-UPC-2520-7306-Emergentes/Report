@@ -323,13 +323,15 @@ Los sistemas de navegación son los componentes de la interfaz que guían al usu
 * **Aplicación Móvil:** Se utiliza una **Barra de Pestañas Inferior (Tab Bar)** como sistema de navegación principal. Este patrón es el estándar de oro en aplicaciones móviles por ser ergonómico, fácil de alcanzar con el pulgar y familiar para la gran mayoría de los usuarios. Permite al consumidor cambiar rápidamente entre las funciones clave ("Historial", "Escanear", "Empresas") de manera intuitiva.
 
 ### **6.3 Landing Page UI Design**
-
+La landing page constituye el primer punto de interacción con los usuarios, por lo que su diseño visual y funcional es fundamental para generar una experiencia memorable. En esta sección se detallan las decisiones adoptadas para el wireframe y mock-up de la página principal, priorizando una estructura intuitiva, visualmente atractiva y optimizada para la conversión. El diseño está orientado a captar la atención del usuario desde el primer instante, comunicar de forma clara y concisa los beneficios clave del producto y guiarlo de manera efectiva hacia la acción principal.
 
 #### 6.3.1 Landing Page Wireframe
 
+![wireframe-landing page.jpeg](../assets/wireframes/Landing%20page.png)
 
 #### 6.3.2 Landing Page Mock-up
 
+![wireframe-landing page.jpeg](../assets/mockups/Landing%20page-mck.png)
 
 ### **6.4 Applications UX/UI Design**
 #### 6.4.1 Applications Wireframes
