@@ -438,5 +438,31 @@ El consumidor abre la aplicación y activa el escáner de QR. Enfoca el código 
 
 #### 6.4.3 Applications Mock-ups
 #### 6.4.4 Applications User Flow Diagrams
+User Flow es una representación gráfica que representa el camino completo que sigue un usuario para completar una tarea específica en una aplicación o sitio web.
+
+- **User Goal: Iniciar sesión**
+<br>
+![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Iniciar%20sesión.png)
+<br>
+
+- **User Goal: Crear lote**
+<br>
+![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Crear%20lote.png)
+<br>
+
+- **User Goal: Cerrar lote**
+<br>
+![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Cerrar%20lote.png)
+<br>
+
+- **User Goal: Registrar paso**
+<br>
+![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Registrar%20paso.png)
+<br>
+
+- **User Goal: Escanear QR**
+<br>
+![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Escanear%20QR.png)
+<br>
 
 ### 6.5 Applications Prototyping  
