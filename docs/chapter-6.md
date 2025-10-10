@@ -391,6 +391,51 @@ Blockchain Verification
 ![wireframe-landing page.jpeg](../assets/wireframes/US21.png)
 
 #### 6.4.2 Applications Wireflow Diagrams
+Los wireflows fusionan wireframes con diagramas de flujo para representar la forma en que los usuarios navegan e interactúan con la aplicación a través de múltiples pantallas. Esto facilita la comprensión del trayecto integral del usuario y verifica que los flujos diseñados alineen con los objetivos establecidos para procesos como el acceso al sistema, la administración de grupos, la consulta de gastos y la ejecución de pagos.
+
+- **User Goal: Crear cuenta de usuario**
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Crear%20cuenta.png)
+<br>
+El usuario accede a la aplicación y, al no tener cuenta, hace clic en "Registrarse". Esto lo redirige a la vista "Sign Up" donde encuentra un formulario para completar sus datos. Una vez llenados los campos requeridos, presiona el botón "Registrarse" y, si el registro es exitoso, el sistema muestra una vista de confirmación o redirige al dashboard principal de la aplicación.
+
+
+- **User Goal: Restablecer contraseña**
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Restablecer%20contraseña.png)
+<br>
+El usuario ha olvidado su contraseña y hace clic en "¿Olvidó su contraseña?" en la pantalla de inicio de sesión. Se le redirige a una vista donde ingresa su correo electrónico para recibir un enlace de restablecimiento. Al hacer clic en el enlace del correo, se le dirige a una vista para ingresar una nueva contraseña. Después de establecer la nueva contraseña, se muestra una confirmación y se le redirige al inicio de sesión.
+
+- **User Goal: Crear lote**
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20%20-%20Crear%20lote.png)
+<br>
+El productor, después de iniciar sesión, accede al dashboard y hace clic en "Crear Lote". Se le presenta un formulario con campos obligatorios (nombre, finca, fecha de cosecha, variedad). Al completar el formulario y hacer clic en "Crear Lote", el sistema valida los datos. Si son correctos, se crea el lote y se redirige al productor a la página de detalle del lote con un mensaje de confirmación.
+
+- **User Goal: Cerrar lote**
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Cerrar%20lote.png)
+<br>
+El productor selecciona un lote activo y hace clic en "Cerrar Lote". El sistema verifica que el lote esté en estado activo y muestra una confirmación. Al confirmar, el lote cambia a estado "Cerrado" y se registra un evento en la blockchain. Si el lote ya está cerrado, se muestra un error.
+
+- **User Goal: Generar QR para lote**
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Generar%20QR.png)
+<br>
+El productor selecciona un lote existente y hace clic en "Generar QR". El sistema genera un código QR único para ese lote y muestra una vista previa. El productor tiene opciones para descargar o imprimir el código QR.
+
+- **User Goal: Registrar paso**
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20%20Registrar%20paso.png)
+<br>
+Un actor (productor, transportista, etc.) inicia sesión y selecciona un lote activo. Luego, hace clic en "Registrar Paso". Se le presenta un formulario con campos específicos según su rol (tipo de paso, fecha, hora, ubicación GPS automática, etc.). Al completar el formulario y hacer clic en "Registrar Paso", el sistema valida la información y registra el paso en la blockchain. Se muestra una confirmación con el ID del evento y el hash de la transacción.
+
+- **User Goal: Escanear QR**
+<br>
+![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20%20Escanear%20QR.png)
+<br>
+El consumidor abre la aplicación y activa el escáner de QR. Enfoca el código QR del producto con la cámara y el sistema lo reconoce automáticamente. Inmediatamente se muestra el historial completo de trazabilidad del lote, incluyendo: fecha y hora de cada paso del proceso, empresas participantes en la cadena de suministro, ubicaciones verificadas con GPS, certificaciones de calidad, mapa interactivo del recorrido, sellos de verificación en blockchain.El usuario puede navegar por la línea de tiempo, ver detalles de cada evento y verificar la autenticidad de la información mediante los hashes de blockchain.
+
 #### 6.4.3 Applications Mock-ups
 #### 6.4.4 Applications User Flow Diagrams
 
