@@ -118,7 +118,6 @@ Durante la preparación de esta entrega, se desarrollaron las siguientes activid
 - Se realizaron sesiones colaborativas para validar la coherencia entre el **diseño técnico (Capítulo 5)** y el **diseño de experiencia de usuario (Capítulo 6)**, asegurando la alineación entre la arquitectura del sistema y la interfaz de interacción.
 
 Esta entrega **TP** representa un avance significativo hacia la versión final del proyecto, evidenciando la capacidad del equipo para **integrar diseño estratégico, diseño táctico y experiencia de usuario** en un único marco coherente de ingeniería de software.  
-Asimismo, permite demostrar competencias vinculadas al **Student Outcome 2 (ABET – EAC)**, relacionadas con la capacidad para **diseñar soluciones de ingeniería que satisfacen necesidades específicas considerando aspectos sociales, ambientales y tecnológicos**, y al **Student Outcome 3**, que refuerza la **comunicación efectiva y la documentación técnica profesional**.
 
 ![ramas.jpeg](assets/images/ramas.jpeg)
 
