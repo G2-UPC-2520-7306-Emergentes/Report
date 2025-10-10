@@ -466,3 +466,13 @@ User Flow es una representación gráfica que representa el camino completo que 
 <br>
 
 ### 6.5 Applications Prototyping  
+
+- **Prototype Web Application**
+<br>
+![wireframe-landing page.jpeg](../assets/mockups/prototype-web.png)
+<br>
+
+- **Prototype Mobile Application**
+<br>
+![wireframe-landing page.jpeg](../assets/mockups/prototype-mobile.png)
+<br>
