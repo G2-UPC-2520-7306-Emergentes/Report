@@ -265,62 +265,194 @@ El diseño de la aplicación móvil de FoodChain se centra en la simplicidad, la
 
 ### **6.2 Information Architecture**
 
-La Arquitectura de la Información (AI) define la estructura subyacente de nuestro ecosistema digital, asegurando que el contenido esté organizado de manera lógica, sea fácil de encontrar y comprensible para nuestros distintos segmentos de usuario. Para FoodChain, una AI sólida es fundamental para traducir la complejidad de la trazabilidad en una experiencia de usuario clara y transparente, tanto para los productores que gestionan datos como para los consumidores que los consultan.
+La **Arquitectura de la Información (AI)** define cómo se organiza, estructura y presenta el contenido dentro del ecosistema digital de **FoodChain**, que incluye la Landing Page, la Aplicación Web (para productores) y la Aplicación Móvil (para consumidores).  
+Su propósito es garantizar que los usuarios puedan **localizar, comprender y navegar** la información de manera intuitiva y eficiente, traduciendo la complejidad técnica de la trazabilidad alimentaria en una experiencia clara, accesible y confiable.
 
+#### **6.2.1 Organization Systems (Sistemas de Organización)**
 
-#### 6.2.1 Organization Systems (Sistemas de Organización)
+Los **sistemas de organización** determinan cómo se agrupa y jerarquiza la información. En **FoodChain**, cada producto digital aplica un esquema adaptado a su propósito y tipo de usuario.
 
-Los sistemas de organización determinan cómo se agrupa y estructura la información dentro de nuestras plataformas. Hemos adoptado esquemas específicos para cada aplicación, alineados con los objetivos de sus usuarios.
+**Landing Page:**  
+Se implementa una **estructura jerárquica tradicional**, que guía al visitante desde los elementos más generales hasta los más específicos.
+- **Inicio:** Presenta el nombre, logotipo y mensaje principal de la startup.
+- **Acerca de la solución:** Expone la misión de FoodChain y la tecnología blockchain que respalda su propuesta.
+- **Beneficios:** Enumera las ventajas de la trazabilidad para consumidores, productores y distribuidores.
+- **Planes:** Detalla las modalidades del servicio y los niveles de suscripción.
+- **Testimonios:** Muestra opiniones reales de usuarios que fortalecen la confianza en la plataforma.
+- **Contacto:** Sección ubicada en el pie de página con dirección, correo y enlaces a redes sociales oficiales.
 
-* **Aplicación Web (Productores):** Se emplea un **esquema de organización jerárquico y por temas**. La estructura está diseñada para la gestión de datos, permitiendo al usuario navegar desde un nivel general (el Dashboard) hacia niveles cada vez más específicos (la lista de "Mis Lotes" y, finalmente, el "Detalle del Lote"). Las secciones del menú lateral ("Dashboard", "Mis Lotes", "Reportes") actúan como los temas principales, agrupando la información de manera lógica y predecible para un entorno de trabajo profesional.
+**Aplicación Web (Productores):**  
+Adopta un **sistema jerárquico por temas**, optimizado para la gestión de datos.
+- **Dashboard:** Visión general con métricas clave y accesos directos a secciones prioritarias.
+- **Mis Lotes:** Listado principal de lotes activos, cerrados o en revisión.
+- **Reportes:** Módulo que permite generar y descargar informes detallados sobre trazabilidad.  
+  Este modelo facilita la operación diaria y la administración eficiente de la información.
 
-* **Aplicación Móvil (Consumidores):** El sistema principal es **secuencial y cronológico**. La pantalla de trazabilidad, que es el corazón de la experiencia del consumidor, presenta la historia del producto como una secuencia de eventos ordenados por fecha, desde el origen hasta el punto de venta. Este enfoque narrativo facilita que el consumidor siga la "historia" del producto de una manera intuitiva y visualmente atractiva.
+**Aplicación Móvil (Consumidores):**  
+Aplica un **sistema secuencial y cronológico**, donde la experiencia se organiza según el recorrido del producto.
+- **Escanear QR:** Punto de inicio para consultar un producto.
+- **Trazabilidad:** Línea de tiempo del recorrido desde la cosecha hasta el punto de venta.
+- **Empresas:** Muestra las entidades que intervinieron en el proceso, con detalles y certificaciones.
+- **Historial:** Registro cronológico de productos escaneados previamente.
 
+Este enfoque secuencial refuerza la **narrativa de confianza**, permitiendo que el consumidor siga la “historia” de cada alimento.
 
-#### 6.2.2 Labeling Systems (Sistemas de Etiquetado)
+#### **6.2.2 Labeling Systems (Sistemas de Etiquetado)**
 
-El sistema de etiquetado se refiere a la selección de palabras y frases para representar la información. Las etiquetas de FoodChain han sido elegidas para ser claras, consistentes y para hablar el idioma de nuestros usuarios, evitando la jerga técnica innecesaria.
-
-A continuación, se presenta una tabla con las etiquetas más importantes y la justificación de su elección:
+El **sistema de etiquetado** define la manera en que se nombran los elementos, secciones y acciones dentro de la interfaz.  
+En **FoodChain**, se prioriza un lenguaje **simple, coherente y familiar**, adaptado a cada tipo de usuario, evitando tecnicismos que dificulten la comprensión.
 
 | Etiqueta | Plataforma | Justificación |
 | :--- | :--- | :--- |
-| **Mis Lotes** | Web | Se eligió esta etiqueta porque es clara, directa y genera un sentido de pertenencia para el productor, indicando que son *sus* registros y su área de gestión principal. |
-| **Escanear QR** | Mobile | Es una llamada a la acción directa y universalmente entendida que no deja lugar a dudas sobre la función principal de la aplicación para el consumidor. |
-| **Historial de Eventos** | Web | Describe de forma precisa el contenido de la tabla de trazabilidad, utilizando un lenguaje profesional adecuado para el entorno de gestión de datos del productor. |
-| **Cerrar Lote** | Web | Es una etiqueta de acción clara que indica el final del ciclo de vida de la trazabilidad de un producto, una acción de negocio importante para el productor. |
-| **Generar QR** | Web | Indica de manera inequívoca la función de crear el código QR que se asociará físicamente al producto, un paso crucial en el proceso. |
+| **Mis Lotes** | Web | Refiere a la sección principal de gestión del productor. Transmite propiedad y control sobre los registros. |
+| **Generar QR** | Web | Indica de manera directa la acción de crear el identificador del lote para trazabilidad. |
+| **Escanear Producto** | Mobile | Acción principal, reconocida universalmente, asociada al uso del dispositivo móvil. |
+| **Historial** | Mobile | Representa la lista cronológica de productos escaneados, fácil de recordar y acceder. |
+| **Ver Detalle** | Web / Mobile | Etiqueta corta, común en plataformas modernas, para profundizar en información específica. |
 
+Este conjunto de etiquetas mantiene la **consistencia semántica** entre las plataformas, reduciendo la carga cognitiva y mejorando la usabilidad.
 
-#### 6.2.3 Searching Systems (Sistemas de Búsqueda)
+#### **6.2.3 Searching Systems (Sistemas de Búsqueda)**
 
-Los sistemas de búsqueda permiten a los usuarios encontrar información específica de manera rápida y eficiente. Para FoodChain, esto es crucial en la aplicación web para la gestión de un gran volumen de datos.
+Los **sistemas de búsqueda** permiten localizar información dentro de los productos digitales de manera rápida y eficiente. En **FoodChain**, la implementación varía según la complejidad y el propósito de cada plataforma.
 
-* **Aplicación Web:** En la pantalla de "Mis Lotes", se implementará un sistema de búsqueda robusto que incluirá:
-    * Una **barra de búsqueda** prominente en la parte superior de la tabla, que permitirá al productor encontrar un lote específico por su nombre o ID.
-    * Un sistema de **filtros avanzados** para visualizar lotes según su "Estado" (Activo, Cerrado, En Revisión) o por un rango de "Fecha de Creación", permitiendo una gestión más eficiente y segmentada de sus registros.
+**Landing Page:**  
+No cuenta con un buscador debido a su estructura simple y lineal. El contenido se presenta de forma directa, facilitando la navegación mediante los menús superiores e inferiores.
 
-* **Aplicación Móvil:** Dado que el objetivo es la consulta simple, la función de búsqueda se limita a un **listado cronológico en el "Historial"**, donde el usuario puede hacer scroll para encontrar escaneos previos.
+**Aplicación Web:**  
+Integra un **buscador contextual** en la sección *Mis Lotes*, permitiendo filtrar por nombre, ID o fecha de creación.  
+Además, se incorporan **filtros avanzados** por:
+- **Estado del lote:** Activo, Cerrado o En Revisión.
+- **Rango de fechas:** Permite visualizar los lotes según el periodo de producción o registro.  
+  Este sistema mejora la eficiencia y control en la gestión de información del productor.
 
+**Aplicación Móvil:**  
+Ofrece un **listado cronológico** de los productos escaneados recientemente. El usuario puede desplazarse con desplazamiento infinito (scroll) para acceder a consultas anteriores sin necesidad de búsqueda textual.
+
+Estos mecanismos garantizan una experiencia **ágil y centrada en el contexto**, evitando que el usuario se sienta perdido entre grandes volúmenes de datos.
 
 #### 6.2.4 SEO Tags and Meta Tags (Etiquetas SEO y Metaetiquetas)
 
-Estas etiquetas son fundamentales para la visibilidad de nuestro **Landing Page** en los motores de búsqueda, permitiendo que potenciales clientes (productores y empresas) nos encuentren.
+Las **SEO Tags (Search Engine Optimization Tags)** y **Meta Tags** optimizan la visibilidad de FoodChain en los motores de búsqueda y garantizan que los usuarios encuentren fácilmente la plataforma.  
+Estas etiquetas describen el contenido, los valores y la estructura técnica del sitio, alineadas con los principios de accesibilidad y coherencia visual de la marca.
 
-| Etiqueta | Valor |
-| :--- | :--- |
-| **Title (Título)** | `FoodChain: Trazabilidad Blockchain para la Industria Alimentaria` |
-| **Meta Description (Descripción)** | `Restaura la confianza en tus productos con FoodChain. Nuestra plataforma blockchain ofrece trazabilidad total desde el campo hasta la mesa. ¡Asegura tu cadena de suministro y protege tu marca!` |
-| **Keywords (Palabras Clave)** | `trazabilidad alimentaria, blockchain en alimentos, seguridad alimentaria, software para agronegocios, foodchain, qr para alimentos, food traceability` |
+A continuación se presentan las configuraciones completas que deben incluirse dentro del `<head>` del sitio y las aplicaciones.
 
+    <!-- Título de la página -->
+    <title>FoodChain – Transparencia y trazabilidad alimentaria con blockchain</title>
+
+    <!-- Descripción del sitio -->
+    <meta name="description" content="FoodChain es una plataforma que permite verificar el origen, recorrido y autenticidad de los alimentos mediante tecnología blockchain. Promovemos transparencia, confianza y sostenibilidad en toda la cadena alimentaria.">
+
+    <!-- Palabras clave -->
+    <meta name="keywords" content="FoodChain, trazabilidad alimentaria, blockchain, seguridad alimentaria, QR alimentos, cadena de suministro, sostenibilidad, transparencia, productos orgánicos, tecnología alimentaria">
+
+    <!-- Configuración responsive para móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Autoría -->
+    <meta name="author" content="Equipo FoodChain – © 2025. Todos los derechos reservados.">
+    
+    <!-- Color del tema para navegadores -->
+    <meta name="theme-color" content="#0FA573">
+    
+    <!-- Canonical link -->
+    <link rel="canonical" href="https://www.foodchain.example/">
+    
+    <!-- Open Graph (Facebook / LinkedIn / WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FoodChain – Trazabilidad alimentaria con blockchain">
+    <meta property="og:description" content="Transparencia total del campo a tu mesa. Verifica la historia real de tus alimentos.">
+    <meta property="og:url" content="https://www.foodchain.example/">
+    <meta property="og:image" content="https://www.foodchain.example/assets/og-cover.png">
+    <meta property="og:locale" content="es_PE">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FoodChain – Transparencia alimentaria con blockchain">
+    <meta name="twitter:description" content="Confianza y trazabilidad verificadas en cada producto.">
+    <meta name="twitter:image" content="https://www.foodchain.example/assets/og-cover.png">
+    
+    <!-- Progressive Web App (PWA) -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="FoodChain">
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+####  Aplicación Web (Zona Autenticada / No Indexable)
+
+En la Aplicación Web de FoodChain, las metaetiquetas se utilizan para mantener coherencia visual, compatibilidad técnica y accesibilidad en navegadores, sin ser indexadas públicamente por los motores de búsqueda.
+Su objetivo es identificar la aplicación en pestañas y marcadores, reforzar la identidad corporativa y garantizar una experiencia homogénea para los productores y administradores que gestionan la trazabilidad de los lotes.
+Estas configuraciones mejoran la integración en entornos de trabajo y permiten mantener la coherencia de la marca dentro del ecosistema digital.
+
+    <meta name="application-name" content="FoodChain Web App">
+    <meta name="description" content="Gestión de lotes, generación de QR y reportes de trazabilidad verificados en blockchain.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0FA573">
+
+#### Aplicación Móvil (ASO Elements)
+
+La Aplicación Móvil de FoodChain no utiliza metaetiquetas HTML tradicionales, ya que su posicionamiento depende del sistema de publicación de las tiendas digitales.
+En su lugar, se emplean elementos de App Store Optimization (ASO) que definen el título, subtítulo, descripción y palabras clave para mejorar su visibilidad en plataformas como Google Play y App Store.
+Estos elementos garantizan que los consumidores puedan identificar fácilmente la aplicación, comprender su función principal y confiar en su valor de transparencia y sostenibilidad alimentaria.
+
+Estos campos se configuran directamente en las consolas de publicación (Google Play / App Store).
+
+	•	App Title: FoodChain – Verificación Alimentaria
+	•	App Subtitle: Escanea, verifica y confía en el origen de tus alimentos
+	•	App Description: Escanea el código QR de un producto y conoce su trazabilidad completa con tecnología blockchain. Transparencia, confianza y sostenibilidad en tu consumo diario.
+	•	App Keywords: trazabilidad, blockchain, alimentos, QR, seguridad alimentaria, transparencia, sostenibilidad
+	•	Developer Name: FoodChain Team
+	•	Category: Productividad / Sostenibilidad
 
 #### 6.2.5 Navigation Systems (Sistemas de Navegación)
 
-Los sistemas de navegación son los componentes de la interfaz que guían al usuario a través de las diferentes pantallas. Hemos elegido patrones de navegación estándar y reconocibles para cada plataforma.
+Los **Sistemas de Navegación** son los mecanismos que permiten a los usuarios orientarse, explorar y desplazarse dentro de la experiencia digital de FoodChain.  
+Su función principal es guiar de manera intuitiva a los consumidores y productores a través de las diferentes secciones del ecosistema —Landing Page, Aplicación Web y Aplicación Móvil— asegurando una experiencia fluida, coherente y centrada en los objetivos del usuario.
 
-* **Aplicación Web:** El sistema de navegación principal es una **Barra Lateral persistente (Sidebar)**. Esta elección es ideal para una aplicación de gestión, ya que mantiene las secciones principales ("Dashboard", "Mis Lotes", etc.) siempre visibles y a un solo clic de distancia, permitiendo al productor moverse de manera eficiente entre los diferentes módulos sin perder el contexto.
+#### **Landing Page**
 
-* **Aplicación Móvil:** Se utiliza una **Barra de Pestañas Inferior (Tab Bar)** como sistema de navegación principal. Este patrón es el estándar de oro en aplicaciones móviles por ser ergonómico, fácil de alcanzar con el pulgar y familiar para la gran mayoría de los usuarios. Permite al consumidor cambiar rápidamente entre las funciones clave ("Historial", "Escanear", "Empresas") de manera intuitiva.
+La **Landing Page** de FoodChain emplea un sistema de navegación jerárquico y lineal que facilita el acceso rápido a la información esencial.  
+Se prioriza la claridad visual, el orden descendente de contenido y la reducción de clics innecesarios.
+
+- **Menú de navegación superior:** Ubicado en la parte superior, contiene los accesos principales a “Inicio”, “Acerca de”, “Beneficios”, “Planes” y “Contacto”.
+- **Botón de acción principal (CTA):** Un botón visible “Descúbrelo ahora” dirige directamente al entorno de la aplicación.
+- **Navegación en el pie de página:** Incluye enlaces rápidos a secciones clave, redes sociales y términos legales.
+- **Desplazamiento suave:** Se implementa un efecto *smooth scroll* que permite transiciones fluidas entre secciones al hacer clic en los enlaces del menú.
+- **Navegación adaptativa:** El menú se transforma en un menú hamburguesa en dispositivos móviles para garantizar la accesibilidad en cualquier tamaño de pantalla.
+
+Este sistema guía al visitante desde la introducción hasta la acción final (ingresar o explorar la app), fortaleciendo el flujo natural del recorrido informativo.
+
+#### **Aplicación Web (Productores)**
+
+En la **Aplicación Web**, dirigida a los productores, se adopta un sistema de navegación **lateral persistente (sidebar)**, ideal para entornos de trabajo con múltiples módulos.  
+La interfaz mantiene un equilibrio entre eficiencia, claridad y jerarquía funcional.
+
+- **Barra lateral fija:** Contiene accesos a “Dashboard”, “Mis Lotes”, “Reportes” y “Configuración”.
+- **Encabezado contextual:** Muestra el título de la sección activa y accesos directos a ayuda o perfil.
+- **Breadcrumbs:** Indican la ruta de navegación actual, permitiendo retroceder sin perder contexto.
+- **Navegación jerárquica:** El usuario puede pasar fácilmente de un nivel general (vista de lotes) a uno específico (detalle del lote).
+- **Retroalimentación visual:** Los elementos activos del menú cambian de color para indicar la ubicación actual.
+
+Este enfoque proporciona **eficiencia y continuidad**, permitiendo que el productor se mueva sin fricción entre las tareas más importantes de su flujo operativo.
+
+
+#### **Aplicación Móvil (Consumidores)**
+
+La **Aplicación Móvil de FoodChain** prioriza la navegación táctil, ergonómica y secuencial, adaptada a las necesidades del consumidor que consulta la trazabilidad de un producto.
+
+- **Barra de pestañas inferior (Tab Bar):** Permite el acceso directo a las secciones “Inicio”, “Escanear”, “Historial” y “Empresas”.
+- **Navegación secuencial:** El flujo natural sigue el recorrido “Escanear → Verificación → Detalle del producto → Historial”.
+- **Gestos de deslizamiento:** Facilitan el movimiento entre pantallas sin necesidad de regresar al menú principal.
+- **Botones flotantes (FAB):** Accesos rápidos a funciones principales, como volver a escanear o actualizar información.
+- **Indicadores visuales:** Iconos activos y transiciones animadas refuerzan la orientación dentro de la app.
+
+Este sistema permite que el usuario mantenga una experiencia **ágil y continua**, con una curva de aprendizaje mínima y una interacción fluida en dispositivos móviles.
+
+#### **Conclusión**
+
+Los sistemas de navegación de **FoodChain** están diseñados bajo principios de **usabilidad, consistencia y accesibilidad**, garantizando que los usuarios puedan cumplir sus objetivos sin esfuerzo.  
+La integración de patrones visuales coherentes (sidebar, tab bar, CTA y smooth scroll) asegura una experiencia transversal entre plataformas, fortaleciendo la identidad del producto y la confianza del usuario en la trazabilidad alimentaria digital.
 
 ### **6.3 Landing Page UI Design**
 La landing page constituye el primer punto de interacción con los usuarios, por lo que su diseño visual y funcional es fundamental para generar una experiencia memorable. En esta sección se detallan las decisiones adoptadas para el wireframe y mock-up de la página principal, priorizando una estructura intuitiva, visualmente atractiva y optimizada para la conversión. El diseño está orientado a captar la atención del usuario desde el primer instante, comunicar de forma clara y concisa los beneficios clave del producto y guiarlo de manera efectiva hacia la acción principal.
@@ -394,85 +526,120 @@ Blockchain Verification
 Los wireflows fusionan wireframes con diagramas de flujo para representar la forma en que los usuarios navegan e interactúan con la aplicación a través de múltiples pantallas. Esto facilita la comprensión del trayecto integral del usuario y verifica que los flujos diseñados alineen con los objetivos establecidos para procesos como el acceso al sistema, la administración de grupos, la consulta de gastos y la ejecución de pagos.
 
 - **User Goal: Crear cuenta de usuario**
-<br>
-![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Crear%20cuenta.png)
-<br>
+
+![Wireflows - Crear cuenta.png](../assets/wireframes/Wireflows%20-%20Crear%20cuenta.png)
+
 El usuario accede a la aplicación y, al no tener cuenta, hace clic en "Registrarse". Esto lo redirige a la vista "Sign Up" donde encuentra un formulario para completar sus datos. Una vez llenados los campos requeridos, presiona el botón "Registrarse" y, si el registro es exitoso, el sistema muestra una vista de confirmación o redirige al dashboard principal de la aplicación.
 
-
 - **User Goal: Restablecer contraseña**
-<br>
-![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Restablecer%20contraseña.png)
-<br>
+
+![Wireflows - Restablecer contraseña.png](../assets/wireframes/Wireflows%20-%20Restablecer%20contrase%C3%B1a.png)
+
 El usuario ha olvidado su contraseña y hace clic en "¿Olvidó su contraseña?" en la pantalla de inicio de sesión. Se le redirige a una vista donde ingresa su correo electrónico para recibir un enlace de restablecimiento. Al hacer clic en el enlace del correo, se le dirige a una vista para ingresar una nueva contraseña. Después de establecer la nueva contraseña, se muestra una confirmación y se le redirige al inicio de sesión.
 
 - **User Goal: Crear lote**
-<br>
-![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20%20-%20Crear%20lote.png)
-<br>
+
+![Wireflows - Cerrar lote.png](../assets/wireframes/Wireflows%20-%20Cerrar%20lote.png)
+
 El productor, después de iniciar sesión, accede al dashboard y hace clic en "Crear Lote". Se le presenta un formulario con campos obligatorios (nombre, finca, fecha de cosecha, variedad). Al completar el formulario y hacer clic en "Crear Lote", el sistema valida los datos. Si son correctos, se crea el lote y se redirige al productor a la página de detalle del lote con un mensaje de confirmación.
 
 - **User Goal: Cerrar lote**
-<br>
-![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Cerrar%20lote.png)
-<br>
+
+![Wireflows - Cerrar lote.png](../assets/wireframes/Wireflows%20-%20Cerrar%20lote.png)
+
 El productor selecciona un lote activo y hace clic en "Cerrar Lote". El sistema verifica que el lote esté en estado activo y muestra una confirmación. Al confirmar, el lote cambia a estado "Cerrado" y se registra un evento en la blockchain. Si el lote ya está cerrado, se muestra un error.
 
 - **User Goal: Generar QR para lote**
-<br>
-![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20Generar%20QR.png)
-<br>
+
+![Wireflows - Generar QR.png](../assets/wireframes/Wireflows%20-%20Generar%20QR.png)
+
 El productor selecciona un lote existente y hace clic en "Generar QR". El sistema genera un código QR único para ese lote y muestra una vista previa. El productor tiene opciones para descargar o imprimir el código QR.
 
 - **User Goal: Registrar paso**
-<br>
-![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20%20Registrar%20paso.png)
-<br>
+
+![Wireflows -  Registrar paso.png](../assets/wireframes/Wireflows%20-%20%20Registrar%20paso.png)
+
 Un actor (productor, transportista, etc.) inicia sesión y selecciona un lote activo. Luego, hace clic en "Registrar Paso". Se le presenta un formulario con campos específicos según su rol (tipo de paso, fecha, hora, ubicación GPS automática, etc.). Al completar el formulario y hacer clic en "Registrar Paso", el sistema valida la información y registra el paso en la blockchain. Se muestra una confirmación con el ID del evento y el hash de la transacción.
 
 - **User Goal: Escanear QR**
-<br>
-![wireframe-landing page.jpeg](../assets/wireframes/Wireflows%20-%20%20Escanear%20QR.png)
-<br>
+
+![Wireflows -  Escanear QR.png](../assets/wireframes/Wireflows%20-%20%20Escanear%20QR.png)
+
 El consumidor abre la aplicación y activa el escáner de QR. Enfoca el código QR del producto con la cámara y el sistema lo reconoce automáticamente. Inmediatamente se muestra el historial completo de trazabilidad del lote, incluyendo: fecha y hora de cada paso del proceso, empresas participantes en la cadena de suministro, ubicaciones verificadas con GPS, certificaciones de calidad, mapa interactivo del recorrido, sellos de verificación en blockchain.El usuario puede navegar por la línea de tiempo, ver detalles de cada evento y verificar la autenticidad de la información mediante los hashes de blockchain.
 
 #### 6.4.3 Applications Mock-ups
+
+La sección de mock-ups de la aplicación FoodChain muestra las pantallas clave diseñadas para el usuario consumidor, destacando una interfaz limpia, intuitiva y centrada en la transparencia alimentaria. Se ilustran los flujos de escaneo del código QR, la visualización del historial de trazabilidad y la ficha detallada del producto, donde se evidencia el compromiso del sistema con la confianza y la sostenibilidad.
+
+#####  Home
+Pantalla principal que permite al usuario escanear el código QR del producto para iniciar la verificación de su trazabilidad. Presenta un diseño minimalista, con versión clara y oscura, centrado en la acción principal.
+
+![home.jpeg](../assets/images/home.jpeg)
+
+#####  Validation
+Flujo de validación del código donde se confirma la conexión y autenticidad de los datos registrados. El usuario visualiza el progreso en tiempo real de forma segura y transparente.
+
+![validation.jpeg](../assets/images/validation.jpeg)
+
+#####  Timeline
+Vista cronológica del recorrido del producto, mostrando los eventos desde la cosecha hasta la llegada al punto de venta, con detalle de fechas y estados verificados.
+
+![timeline.jpeg](../assets/images/timeline.jpeg)
+
+#####  Lot Journey
+Mapa interactivo que muestra las ubicaciones de los procesos logísticos del lote. Permite visualizar los puntos clave como procesamiento, transporte y almacenamiento.
+
+![mapainteractivo.jpeg](../assets/images/mapainteractivo.jpeg)
+
+#####  Participant Company
+Ficha informativa de las empresas involucradas en la cadena, con su logo, certificaciones de calidad y datos de verificación, promoviendo confianza y transparencia.
+
+![lista1.jpeg](../assets/images/lista1.jpeg)
+
+#####  Blockchain Verification
+Pantalla de verificación en blockchain que muestra los estados de validación del lote: verificado, en proceso o inconsistencia detectada, diferenciados por colores y mensajes claros.
+
+![verificado1.jpeg](../assets/images/verificado1.jpeg)
+
+![verificado2.jpeg](../assets/images/verificado2.jpeg)
+
+![verificado3.jpeg](../assets/images/verificado3.jpeg)
+
+#####  Participants List
+Lista general de productores, distribuidores y exportadores certificados dentro del ecosistema FoodChain, con acceso a sus registros de trazabilidad y verificación.
+
+![lista.jpeg](../assets/images/lista.jpeg)
+
 #### 6.4.4 Applications User Flow Diagrams
 User Flow es una representación gráfica que representa el camino completo que sigue un usuario para completar una tarea específica en una aplicación o sitio web.
 
 - **User Goal: Iniciar sesión**
-<br>
-![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Iniciar%20sesión.png)
-<br>
+![User flows - foodchain-wireflows Iniciar sesión.png](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Iniciar%20sesi%C3%B3n.png)
+
 
 - **User Goal: Crear lote**
-<br>
-![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Crear%20lote.png)
-<br>
+
+![User flows - foodchain-wireflows Crear lote.png](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Crear%20lote.png)
 
 - **User Goal: Cerrar lote**
-<br>
-![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Cerrar%20lote.png)
-<br>
+
+![User flows - foodchain-wireflows Cerrar lote.png](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Cerrar%20lote.png)
 
 - **User Goal: Registrar paso**
-<br>
-![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Registrar%20paso.png)
-<br>
+
+![User flows - foodchain-wireflows Registrar paso.png](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Registrar%20paso.png)
 
 - **User Goal: Escanear QR**
-<br>
-![wireframe-landing page.jpeg](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Escanear%20QR.png)
-<br>
+
+![User flows - foodchain-wireflows Escanear QR.png](../assets/mockups/User%20flows%20-%20foodchain-wireflows%20Escanear%20QR.png)
 
 ### 6.5 Applications Prototyping  
 
 - **Prototype Web Application**
-<br>
-![wireframe-landing page.jpeg](../assets/mockups/prototype-web.png)
-<br>
+
+![prototype-web.png](../assets/mockups/prototype-web.png)
+
 
 - **Prototype Mobile Application**
-<br>
-![wireframe-landing page.jpeg](../assets/mockups/prototype-mobile.png)
-<br>
+
+![prototype-mobile.png](../assets/mockups/prototype-mobile.png)
