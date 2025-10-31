@@ -30,38 +30,21 @@
 
 **RF09:** El sistema deberá asociar cada evento al lote y al actor responsable, manteniendo un historial cronológico completo sin sobrescritura del evento original.
 
-
-**RF10:** El sistema deberá admitir eventos de rectificación que añadan correcciones sin eliminar el evento previo, manteniendo un vínculo explícito entre ambos.
-
-
-**RF11:** El sistema deberá anclar de forma asíncrona cada evento en blockchain, estableciendo el campo blockchain_status y, cuando corresponda, transaction_hash.
+**RF10:** El sistema deberá anclar de forma asíncrona cada evento en blockchain, estableciendo el campo blockchain_status y, cuando corresponda, transaction_hash.
 
 
-**RF12:** El sistema deberá reintentar el anclaje en caso de fallo; si se agotan los intentos, el evento permanecerá en estado FAILED y se registrará el último error.
+**RF11:** El sistema deberá permitir adjuntar certificados o documentos a un lote, registrando emisor, tipo, fechas de emisión/expiración y el hash criptográfico del documento.
 
 
-**RF13:** El sistema deberá permitir adjuntar certificados o documentos a un lote, registrando emisor, tipo, fechas de emisión/expiración y el hash criptográfico del documento.
+**RF12:** El sistema deberá exponer una consulta pública del historial de un lote al escanear su QR, sin requerir autenticación y sin exponer datos sensibles.
 
 
-**RF14:** El sistema deberá exponer una consulta pública del historial de un lote al escanear su QR, sin requerir autenticación y sin exponer datos sensibles.
+**RF13:** El sistema deberá ofrecer una vista geográfica del historial de un lote utilizando las coordenadas almacenadas en cada evento.
 
 
-**RF15:** El sistema deberá mostrar en la consulta pública el estado de verificación de cada evento (pendiente, confirmado, fallido) e incluir el enlace de verificación on‑chain cuando exista.
+**RF14:** El sistema deberá proveer paginación o virtualización en la vista de historial para lotes con alto número de eventos.
 
-
-**RF16:** El sistema deberá ofrecer una vista geográfica del historial de un lote utilizando las coordenadas almacenadas en cada evento.
-
-
-**RF17:** El sistema deberá proveer paginación o virtualización en la vista de historial para lotes con alto número de eventos.
-
-
-**RF18:** El sistema deberá permitir exportar listados de lotes y eventos en formatos CSV o JSON, respetando los permisos del usuario.
-
-
-**RF19:** El sistema deberá mantener un registro de auditoría de acciones críticas (alta/baja de usuario, cambios de rol, cierre de lote) incluyendo usuario, fecha y resultado.
-
-
-**RF20:** El sistema deberá exponer APIs REST internas para IAM, Batch y Traceability con versionado y documentación OpenAPI, y publicar eventos asíncronos para procesos de anclaje.
+**RF15:** El sistema deberá exponer APIs REST internas para IAM, Batch y Traceability con versionado y documentación OpenAPI, y publicar eventos asíncronos para procesos de anclaje.
 
 
 ### Requisitos no Funcionales
