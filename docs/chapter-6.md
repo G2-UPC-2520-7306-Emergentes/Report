@@ -90,7 +90,7 @@ Los neutrales proporcionan el lienzo sobre el cual nuestros colores de marca pue
 
 ![secundario5.jpeg](../assets/images/secundario5.jpeg)
 
-### Spacing**
+### **Spacing**
 
 El sistema de espaciado de **FoodChain** se fundamenta en una cuadrícula modular de **10 px**, utilizada como guía base para la ubicación, proporción y alineación de todos los elementos visuales.  
 Esta estructura asegura uniformidad, equilibrio y legibilidad en las interfaces, manteniendo coherencia entre versiones web y móviles.
@@ -569,34 +569,40 @@ El consumidor abre la aplicación y activa el escáner de QR. Enfoca el código 
 
 #### 6.4.3 Applications Mock-ups
 
-La sección de mock-ups de la aplicación FoodChain muestra las pantallas clave diseñadas para el usuario consumidor, destacando una interfaz limpia, intuitiva y centrada en la transparencia alimentaria. Se ilustran los flujos de escaneo del código QR, la visualización del historial de trazabilidad y la ficha detallada del producto, donde se evidencia el compromiso del sistema con la confianza y la sostenibilidad.
+La sección de mock-ups de la aplicación FoodChain muestra las pantallas clave diseñadas para el usuario consumidor, destacando una interfaz limpia, intuitiva y centrada en la transparencia alimentaria. Se ilustran los flujos de escaneo del código QR, la visualización del historial de trazabilidad y la ficha detallada del producto, donde se evidencia el compromiso del sistema con la confianza y la sostenibilidad. Asimismo, se incluyen los mock-ups del sitio web, que mantienen la misma coherencia visual y funcional, permitiendo al usuario consultar la trazabilidad y acceder a la información del producto desde cualquier navegador con una experiencia igual de clara y accesible.
 
-#####  Home
+
+
+
+
+### **Mobile App – Mock-ups**
+
+##### Home
 Pantalla principal que permite al usuario escanear el código QR del producto para iniciar la verificación de su trazabilidad. Presenta un diseño minimalista, con versión clara y oscura, centrado en la acción principal.
 
 ![home.jpeg](../assets/images/home.jpeg)
 
-#####  Validation
+##### Validation
 Flujo de validación del código donde se confirma la conexión y autenticidad de los datos registrados. El usuario visualiza el progreso en tiempo real de forma segura y transparente.
 
 ![validation.jpeg](../assets/images/validation.jpeg)
 
-#####  Timeline
+##### Timeline
 Vista cronológica del recorrido del producto, mostrando los eventos desde la cosecha hasta la llegada al punto de venta, con detalle de fechas y estados verificados.
 
 ![timeline.jpeg](../assets/images/timeline.jpeg)
 
-#####  Lot Journey
+##### Lot Journey
 Mapa interactivo que muestra las ubicaciones de los procesos logísticos del lote. Permite visualizar los puntos clave como procesamiento, transporte y almacenamiento.
 
 ![mapainteractivo.jpeg](../assets/images/mapainteractivo.jpeg)
 
-#####  Participant Company
+##### Participant Company
 Ficha informativa de las empresas involucradas en la cadena, con su logo, certificaciones de calidad y datos de verificación, promoviendo confianza y transparencia.
 
 ![lista1.jpeg](../assets/images/lista1.jpeg)
 
-#####  Blockchain Verification
+##### Blockchain Verification
 Pantalla de verificación en blockchain que muestra los estados de validación del lote: verificado, en proceso o inconsistencia detectada, diferenciados por colores y mensajes claros.
 
 ![verificado1.jpeg](../assets/images/verificado1.jpeg)
@@ -605,10 +611,74 @@ Pantalla de verificación en blockchain que muestra los estados de validación d
 
 ![verificado3.jpeg](../assets/images/verificado3.jpeg)
 
-#####  Participants List
+##### Participants List
 Lista general de productores, distribuidores y exportadores certificados dentro del ecosistema FoodChain, con acceso a sus registros de trazabilidad y verificación.
 
 ![lista.jpeg](../assets/images/lista.jpeg)
+
+### **Sitio Web – Mock-ups**
+
+Los mock-ups del sitio web de FoodChain muestran la versión web equivalente de las principales funcionalidades presentes en la aplicación móvil, manteniendo coherencia visual, diseño centrado en la transparencia alimentaria y una experiencia accesible desde cualquier navegador. El usuario puede consultar la trazabilidad del producto, revisar los eventos del historial, validar información y acceder a los detalles del lote con la misma claridad, estructura y enfoque de confianza que en la aplicación móvil.
+
+### Sign In – FoodChain
+
+Pantalla de inicio de sesión donde el usuario ingresa su correo y contraseña para acceder. Incluye opción de mostrar la clave, recuperar contraseña y crear una nueva cuenta. Diseño minimalista y centrado en autenticación.
+
+![login.jpeg](../assets/images/login.jpeg)
+
+### Create Account – FoodChain
+
+Pantalla de registro donde el usuario crea su cuenta ingresando datos personales y de empresa. Permite elegir si se unirá a una compañía existente o creará una nueva. Incluye validación de contraseña, selección de rol propuesto, aceptación de términos y verificación reCAPTCHA.
+
+![register.jpeg](../assets/images/register.jpeg)
+
+### Create New Lot – FoodChain
+
+Pantalla para registrar un nuevo lote de producto. Permite ingresar nombre del lote, nombre de la granja, variedad, fecha de cosecha y una descripción opcional. Incluye la opción de subir una imagen y finalizar el registro mediante el botón “Create Lot”.
+
+![lote.jpeg](../assets/images/lote.jpeg)
+
+### Lot Detail – FoodChain
+
+Pantalla que muestra los detalles completos de un lote específico. Incluye información de la granja, variedad, fecha de cosecha, estado y una imagen del producto. Permite generar y gestionar códigos QR para su trazabilidad e incluye un historial de versiones generadas.
+
+![detalle de lote .jpeg](../assets/images/detalle%20de%20lote%20.jpeg)
+
+### Detalle del Lote – FoodChain
+
+Pantalla que muestra la información completa del lote seleccionado, incluyendo su ID, imagen, estado y un historial de eventos registrados. Desde aquí se puede cerrar el lote y visualizar todas las etapas realizadas, como creación, cosecha y empaquetado.
+
+![loteadmin.jpeg](../assets/images/loteadmin.jpeg)
+
+### Editar información de lote – FoodChain
+
+Pantalla para actualizar los datos principales de un lote activo. Permite modificar nombre del lote, finca, variedad, fecha de cosecha y añadir notas. También ofrece la opción de subir una imagen representativa y guardar los cambios registrados en blockchain.
+
+![editarlote.jpeg](../assets/images/editarlote.jpeg)
+
+### Duplicar Lote – FoodChain
+
+Pantalla que muestra una lista de lotes existentes para seleccionar y duplicar. Cada tarjeta presenta la información esencial del lote —fecha de creación, variedad, finca y estado— junto con una imagen representativa y un botón para crear una copia rápida del lote elegido.
+
+![duplicarlote.jpeg](../assets/images/duplicarlote.jpeg)
+
+### Eliminar Lote – FoodChain
+
+Pantalla que muestra todos los lotes disponibles para eliminación. Incluye información clave como fecha de creación, variedad, finca y estado. Permite eliminar lotes sin pasos registrados y bloquea aquellos que tienen historial asociado, mostrando un aviso correspondiente.
+
+![eliminarlote.jpeg](../assets/images/eliminarlote.jpeg)
+
+### Lot History – FoodChain
+
+Pantalla que muestra el historial completo de un lote, organizado por línea de tiempo, actor o fase. Permite filtrar por fases, actores y ubicaciones. Incluye los eventos clave del lote, como cosecha, procesamiento y envío, junto con la información del responsable y la ubicación de cada acción.
+
+![loteadmin.jpeg](../assets/images/loteadmin.jpeg)
+
+### Dashboard Administrador – FoodChain
+
+Pantalla principal de administración que resume la actividad del sistema en tiempo real. Muestra métricas clave como lotes activos, pasos registrados, usuarios en línea y verificaciones blockchain. Incluye filtros por rango de tiempo, actividad por fase, estado global de los lotes y una tabla con los eventos más recientes.
+
+![dashboardadmin.jpeg](../assets/images/dashboardadmin.jpeg)
 
 #### 6.4.4 Applications User Flow Diagrams
 User Flow es una representación gráfica que representa el camino completo que sigue un usuario para completar una tarea específica en una aplicación o sitio web.
@@ -643,3 +713,5 @@ User Flow es una representación gráfica que representa el camino completo que 
 - **Prototype Mobile Application**
 
 ![prototype-mobile.png](../assets/mockups/prototype-mobile.png)
+
+
