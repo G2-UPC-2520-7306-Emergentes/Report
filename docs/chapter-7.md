@@ -2481,4 +2481,4 @@ Enfocado en transparencia, facilidad de búsqueda y confianza en la trazabilidad
 
 Enlace de video del video about the product: https://youtu.be/jRmTd9-Ih1I?si=W35ovGkzpnB1hI2_
 
-## Avance de Conclusiones, Bibliografía y Anexos.
+
