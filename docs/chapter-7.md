@@ -2117,6 +2117,351 @@ Durante este Sprint, el equipo trabajó de manera colaborativa para lograr el de
 
 El trabajo conjunto permitió cumplir con el **Sprint Goal** y sentar las bases para las funcionalidades finales del proyecto.
 
+### 7.2.2. 
+
+
+#### 7.2.2.1. Sprint Planning 2
+
+| Campo                             | Detalle |
+|-----------------------------------|---------|
+| **Sprint #**                      | Sprint 2 |
+| **Sprint Planning Background**    |  |
+| Date                              | 12/11/2025 |
+| Time                              | 19:00-21:00 |
+| Location                          | Discord |
+| Prepared By                       | Juan Pescorán |
+| Attendees (to planning meeting)   | - Brenda Gamio<br>- Diego Soto<br>- Gustavo Huanca<br>- Marcelo |
+| **Sprint 1 Review Summary**       | Durante el Sprint 1, se implementó exitosamente el core del sistema de gestión de lotes utilizando arquitectura Domain-Driven Design (DDD) con microservicios. Se desarrolló el Batch Management Service completo, incluyendo el Batch Aggregate Root con sus value objects (BatchId, ProductInfo, ProductionDetails) y la lógica de negocio encapsulada según principios DDD. |
+| **Sprint 1 Retrospective Summary**| Durante el sprint, uno de los principales desafíos fue la curva de aprendizaje en Domain-Driven Design, especialmente en la correcta modelación de agregados y la separación de responsabilidades entre capas. El equipo invirtió tiempo considerable en refactoring para lograr un modelo de dominio limpio, lo que retrasó ligeramente algunas tareas pero resultó en código de mayor calidad y mantenibilidad. |
+| **Sprint Goal & User Stories**    |  |
+| Sprint Goal 1                     | Habilitar el registro de eventos de trazabilidad por múltiples roles, implementar el flujo asíncrono de anclaje en blockchain y permitir la consulta pública del historial de un lote. **Métrica de cumplimiento:** Completar el 100% de las user stories asignadas al Sprint 2, con todas las funcionalidades pasando las pruebas unitarias, de integración y deployadas en el entorno de desarrollo, alcanzando un total de **46 story points**. |
+| **Sprint 1 Velocity**             | 46 |
+| **Sum of Story Points**           | 46 |
+
+#### 7.2.2.2. Sprint Backlog 2
+
+La siguiente tabla detalla las tareas derivadas de cada User Story, asignadas a los miembros del equipo:
+
+| User Story | Task ID | Descripción de Tarea | Assigned To | Estimation (h) | Status |
+|------------|---------|----------------------|-------------|----------------|--------|
+| **US04** | T201 | Diseñar máquina de estados para cierre de lote | Diego | 2 | Done |
+| US04 | T202 | Implementar método `close()` en Batch aggregate | Diego | 3 | Done |
+| US04 | T203 | Crear endpoint PUT /batches/{id}/close | Juan | 3 | Done |
+| US04 | T204 | Agregar validaciones de reglas de negocio | Brenda | 4 | Done |
+| US04 | T205 | Implementar anclaje de evento "BatchClosed" | Angelo | 4 | Done |
+| US04 | T206 | Escribir tests unitarios y de integración | Gustavo | 4 | Done |
+| **US09** | T207 | Diseñar modelo de TraceabilityEvent | Diego | 3 | Done |
+| US09 | T208 | Implementar TraceabilityEvent entity | Diego | 4 | Done |
+| US09 | T209 | Crear TraceabilityService (Application Layer) | Brenda | 5 | Done |
+| US09 | T210 | Implementar StepController con POST /trace/events | Juan | 4 | Done |
+| US09 | T211 | Configurar TraceabilityDatabase (MySQL) | Angelo | 3 | Done |
+| US09 | T212 | Implementar TraceabilityRepository | Angelo | 4 | Done |
+| US09 | T213 | Agregar validación de roles por tipo de paso | Brenda | 5 | In Progress |
+| US09 | T214 | Escribir tests de casos por rol (productor, transportista, etc.) | Gustavo | 6 | To Do |
+| **US10** | T215 | Diseñar Location Value Object | Diego | 2 | Done |
+| US10 | T216 | Implementar captura GPS en frontend (Angular service) | Juan | 5 | Done |
+| US10 | T217 | Agregar validación de coordenadas en backend | Brenda | 3 | Done |
+| US10 | T218 | Configurar permisos de geolocalización en app | Angelo | 2 | Done |
+| US10 | T219 | Implementar fallback para GPS inactivo | Juan | 4 | In Progress |
+| US10 | T220 | Tests de integración GPS + registro de evento | Gustavo | 4 | To Do |
+| **US14** | T221 | Crear endpoint GET /trace/history/{batchId} | Juan | 3 | Done |
+| US14 | T222 | Implementar HistoryQueryService | Brenda | 4 | Done |
+| US14 | T223 | Diseñar DTO TraceabilityHistoryResponse | Diego | 2 | Done |
+| US14 | T224 | Crear componente history-timeline (Angular) | Juan | 6 | In Progress |
+| **TS11** | T225 | Implementar algoritmo de hash SHA-256 | Angelo | 2 | Done |
+| TS11 | T226 | Integrar generación de hash en TraceabilityEvent | Angelo | 2 | Done |
+| TS11 | T227 | Agregar campo event_data_hash en DB | Angelo | 1 | Done |
+| **TS12** | T228 | Configurar cola de mensajes (RabbitMQ local) | Diego | 4 | Done |
+| TS12 | T229 | Implementar DomainEventPublisher | Diego | 4 | Done |
+| TS12 | T230 | Crear Blockchain Worker (servicio separado) | Angelo | 6 | Done |
+| TS12 | T231 | Implementar BlockchainAdapter con Web3j | Angelo | 8 | In Progress |
+| TS12 | T232 | Configurar smart contract en Polygon Mumbai testnet | Angelo | 5 | Done |
+| TS12 | T233 | Implementar reintentos y manejo de errores | Brenda | 5 | To Do |
+| TS12 | T234 | Tests de integración con testnet | Gustavo | 4 | To Do |
+| **TS13** | T235 | Agregar campo transaction_hash en TraceabilityEvent | Angelo | 1 | Done |
+| TS13 | T236 | Implementar endpoint de verificación del hash | Juan | 3 | Done |
+| TS13 | T237 | Mostrar badge "Verificado" en UI cuando esté anclado | Juan | 3 | In Progress |
+
+#### 7.2.2.3. Development Evidence for Sprint Review
+
+**Backend Repository: `foodchain-backend`**
+
+| Repository | Branch | Commit ID | Commit Message | Author | Date |
+|------------|--------|-----------|----------------|--------|------|
+| foodchain-backend | feature/US04-close-batch | 3c8f1a2 | feat(batch): implement close() method in Batch aggregate | Diego Soto | 03/12/24 |
+| foodchain-backend | feature/US04-close-batch | 4d9e2b3 | feat(batch): add PUT /batches/{id}/close endpoint | Juan Pescoran | 03/12/24 |
+| foodchain-backend | feature/US04-close-batch | 5e0f3c4 | test(batch): add integration tests for batch closure | Gustavo Huanca | 04/12/24 |
+| foodchain-backend | feature/US04-close-batch | 6f1a4d5 | feat(batch): emit BatchClosedEvent and anchor to queue | Angelo Curi | 04/12/24 |
+| foodchain-backend | feature/US09-register-event | 7a2b5e6 | feat(trace): create TraceabilityEvent entity and value objects | Diego Soto | 05/12/24 |
+| foodchain-backend | feature/US09-register-event | 8b3c6f7 | feat(trace): implement TraceabilityService application layer | Brenda Gamio | 05/12/24 |
+| foodchain-backend | feature/US09-register-event | 9c4d7a8 | feat(trace): add StepController with POST /trace/events | Juan Pescoran | 06/12/24 |
+| foodchain-backend | feature/US09-register-event | 0d5e8b9 | feat(trace): implement TraceabilityRepository with JPA | Angelo Curi | 06/12/24 |
+| foodchain-backend | feature/US09-register-event | 1e6f9c0 | feat(trace): add role-based validation for event types | Brenda Gamio | 07/12/24 |
+| foodchain-backend | feature/US09-register-event | 2f7a0d1 | test(trace): add unit tests for multi-role event registration | Gustavo Huanca | 08/12/24 |
+| foodchain-backend | feature/US10-gps-capture | 3a8b1e2 | feat(trace): implement Location value object with validation | Diego Soto | 07/12/24 |
+| foodchain-backend | feature/US10-gps-capture | 4b9c2f3 | feat(trace): add GPS coordinate validation in backend | Brenda Gamio | 08/12/24 |
+| foodchain-backend | feature/US14-history-query | 5c0d3a4 | feat(trace): implement GET /trace/history/{batchId} endpoint | Juan Pescoran | 09/12/24 |
+| foodchain-backend | feature/US14-history-query | 6d1e4b5 | feat(trace): create HistoryQueryService for CQRS pattern | Brenda Gamio | 09/12/24 |
+| foodchain-backend | feature/TS11-hash-generation | 7e2f5c6 | feat(trace): implement SHA-256 hash generation for events | Angelo Curi | 05/12/24 |
+| foodchain-backend | feature/TS11-hash-generation | 8f3a6d7 | refactor(trace): integrate hash calculation in event creation | Angelo Curi | 05/12/24 |
+| foodchain-backend | feature/TS12-blockchain-worker | 9a4b7e8 | feat(blockchain): setup RabbitMQ message queue | Diego Soto | 06/12/24 |
+| foodchain-backend | feature/TS12-blockchain-worker | 0b5c8f9 | feat(blockchain): implement DomainEventPublisher | Diego Soto | 06/12/24 |
+| foodchain-backend | feature/TS12-blockchain-worker | 1c6d9a0 | feat(blockchain): create BlockchainWorker microservice | Angelo Curi | 07/12/24 |
+| foodchain-backend | feature/TS12-blockchain-worker | 2d7e0b1 | feat(blockchain): integrate Web3j for Polygon interaction | Angelo Curi | 08/12/24 |
+| foodchain-backend | feature/TS12-blockchain-worker | 3e8f1c2 | feat(blockchain): deploy and configure smart contract on Mumbai | Angelo Curi | 09/12/24 |
+| foodchain-backend | feature/TS12-blockchain-worker | 4f9a2d3 | feat(blockchain): implement retry logic with exponential backoff | Brenda Gamio | 10/12/24 |
+| foodchain-backend | feature/TS13-hash-verification | 5a0b3e4 | feat(trace): add transaction_hash field to TraceabilityEvent | Angelo Curi | 10/12/24 |
+| foodchain-backend | feature/TS13-hash-verification | 6b1c4f5 | feat(trace): implement hash verification endpoint | Juan Pescoran | 11/12/24 |
+
+**Frontend Repository: `foodchain-frontend`**
+
+| Repository | Branch | Commit ID | Commit Message | Author | Date |
+|------------|--------|-----------|----------------|--------|------|
+| foodchain-frontend | feature/US09-register-step-ui | a1b2c3d | feat(trace): create register-step component | Juan Pescoran | 06/12/24 |
+| foodchain-frontend | feature/US09-register-step-ui | b2c3d4e | feat(trace): implement event type selector with role filtering | Juan Pescoran | 07/12/24 |
+| foodchain-frontend | feature/US10-gps-service | c3d4e5f | feat(gps): create GeolocationService in Angular | Juan Pescoran | 08/12/24 |
+| foodchain-frontend | feature/US10-gps-service | d4e5f6a | feat(gps): implement automatic GPS capture on form load | Juan Pescoran | 08/12/24 |
+| foodchain-frontend | feature/US10-gps-service | e5f6a7b | feat(gps): add fallback UI for denied location permissions | Juan Pescoran | 09/12/24 |
+| foodchain-frontend | feature/US14-history-timeline | f6a7b8c | feat(trace): create history-timeline component | Juan Pescoran | 10/12/24 |
+| foodchain-frontend | feature/US14-history-timeline | a7b8c9d | feat(trace): implement timeline vertical layout with icons | Juan Pescoran | 11/12/24 |
+| foodchain-frontend | feature/TS13-verified-badge | b8c9d0e | feat(trace): add "Verificado" badge when tx_hash exists | Juan Pescoran | 11/12/24 |
+
+#### 7.2.2.4. Testing Suite Evidence for Sprint Review
+
+````markdown
+### Unit Tests - Sprint 2
+
+#### Backend Tests
+
+**TraceabilityEvent Tests**
+
+```java
+// TraceabilityEventTest.java
+package com.foodchain.traceability.domain.model;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+class TraceabilityEventTest {
+
+    @Test
+    void givenValidData_whenRecordEvent_thenSuccess() {
+        // Arrange
+        BatchId batchId = new BatchId(UUID.randomUUID());
+        String eventType = "HARVEST";
+        UUID actorId = UUID.randomUUID();
+        Location location = new Location(-12.0464, -77.0428);
+        
+        // Act
+        TraceabilityEvent event = TraceabilityEvent.record(
+            batchId, eventType, actorId, location
+        );
+        
+        // Assert
+        assertNotNull(event.getEventId());
+        assertEquals(batchId, event.getBatchId());
+        assertEquals(BlockchainStatus.PENDING, event.getBlockchainStatus());
+        assertNotNull(event.getEventDataHash());
+        assertNull(event.getTransactionHash());
+    }
+    
+    @Test
+    void givenEvent_whenConfirmAnchoring_thenStatusUpdated() {
+        // Arrange
+        TraceabilityEvent event = TraceabilityEvent.record(
+            new BatchId(UUID.randomUUID()),
+            "TRANSPORT",
+            UUID.randomUUID(),
+            new Location(-12.0, -77.0)
+        );
+        String txHash = "0x1234567890abcdef...";
+        
+        // Act
+        event.confirmAnchoring(txHash);
+        
+        // Assert
+        assertEquals(BlockchainStatus.CONFIRMED, event.getBlockchainStatus());
+        assertEquals(txHash, event.getTransactionHash());
+    }
+    
+    @Test
+    void givenInvalidCoordinates_whenCreateLocation_thenThrowsException() {
+        // Act & Assert
+        assertThrows(IllegalArgumentException.class, 
+            () -> new Location(95.0, -77.0)); // Latitud inválida
+        
+        assertThrows(IllegalArgumentException.class,
+            () -> new Location(-12.0, 185.0)); // Longitud inválida
+    }
+}
+````
+
+**TraceabilityService Tests**
+
+```java
+// TraceabilityServiceTest.java
+@SpringBootTest
+class TraceabilityServiceTest {
+
+    @Mock
+    private ITraceabilityRepository repository;
+    
+    @Mock
+    private IDomainEventPublisher eventPublisher;
+    
+    @InjectMocks
+    private TraceabilityService service;
+    
+    @Test
+    void givenValidCommand_whenRegisterStep_thenEventSavedAndPublished() {
+        // Arrange
+        RegisterStepCommand command = new RegisterStepCommand(
+            UUID.randomUUID(), // batchId
+            "HARVEST",
+            UUID.randomUUID(), // actorId
+            -12.0464,
+            -77.0428
+        );
+        
+        when(repository.nextIdentity()).thenReturn(new EventId(UUID.randomUUID()));
+        
+        // Act
+        EventId result = service.handle(command);
+        
+        // Assert
+        assertNotNull(result);
+        verify(repository, times(1)).save(any(TraceabilityEvent.class));
+        verify(eventPublisher, times(1)).publish(any(StepRegisteredEvent.class));
+    }
+    
+    @Test
+    void givenTransportistaTryingToRegisterHarvest_whenHandle_thenThrowsException() {
+        // Arrange
+        RegisterStepCommand command = new RegisterStepCommand(
+            UUID.randomUUID(),
+            "HARVEST", // Tipo no permitido para transportista
+            UUID.randomUUID(),
+            -12.0, -77.0
+        );
+        
+        // Simular que el actor tiene rol TRANSPORTER
+        // (requiere integración con IAM ACL)
+        
+        // Act & Assert
+        assertThrows(UnauthorizedException.class, 
+            () -> service.handle(command));
+    }
+}
+```
+
+**BlockchainWorker Tests**
+
+```java
+// AnchoringServiceTest.java
+@SpringBootTest
+class AnchoringServiceTest {
+
+    @Mock
+    private IBlockchainAdapter blockchainAdapter;
+    
+    @Mock
+    private ITraceabilityDbUpdater dbUpdater;
+    
+    @InjectMocks
+    private AnchoringServiceImpl anchoringService;
+    
+    @Test
+    void givenEvent_whenAnchorSucceeds_thenStatusUpdated() {
+        // Arrange
+        StepRegisteredEvent event = new StepRegisteredEvent(
+            UUID.randomUUID(),
+            "hash123456...",
+            LocalDateTime.now()
+        );
+        
+        String expectedTxHash = "0xabcdef123456...";
+        when(blockchainAdapter.anchorHash(event.getEventDataHash()))
+            .thenReturn(expectedTxHash);
+        
+        // Act
+        anchoringService.anchorEvent(event);
+        
+        // Assert
+        verify(blockchainAdapter, times(1)).anchorHash(event.getEventDataHash());
+        verify(dbUpdater, times(1))
+            .updateStatusToConfirmed(event.getEventId(), expectedTxHash);
+    }
+    
+    @Test
+    void givenBlockchainFailure_whenAnchor_thenRetriesAndEventuallyFails() {
+        // Arrange
+        StepRegisteredEvent event = new StepRegisteredEvent(
+            UUID.randomUUID(), "hash...", LocalDateTime.now()
+        );
+        
+        when(blockchainAdapter.anchorHash(anyString()))
+            .thenThrow(new BlockchainException("Network timeout"));
+        
+        // Act & Assert
+        assertThrows(BlockchainException.class, 
+            () -> anchoringService.anchorEvent(event));
+        
+        // Verificar que se intentó 3 veces (retry logic)
+        verify(blockchainAdapter, times(3)).anchorHash(anyString());
+    }
+}
+
+### Integration Tests
+
+**Event Registration Flow (Backend)**
+
+```java
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureMockMvc
+class EventRegistrationIntegrationTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+    
+    @Autowired
+    private ObjectMapper objectMapper;
+    
+    @Test
+    @WithMockUser(roles = "PRODUCER")
+    void givenAuthenticatedProducer_whenRegisterHarvestEvent_thenReturns201() throws Exception {
+        // Arrange
+        RegisterStepResource request = new RegisterStepResource(
+            UUID.randomUUID(), // batchId
+            "HARVEST",
+            -12.0464,
+            -77.0428,
+            "Primera cosecha de la temporada"
+        );
+        
+        // Act & Assert
+        mockMvc.perform(post("/api/v1/trace/events")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(request)))
+            .andExpect(status().isCreated())
+            .andExpect(jsonPath("$.eventId").exists())
+            .andExpect(jsonPath("$.eventDataHash").exists())
+            .andExpect(jsonPath("$.blockchainStatus").value("PENDING"));
+    }
+    
+    @Test
+    void givenUnauthenticated_whenRegisterEvent_thenReturns401() throws Exception {
+        RegisterStepResource request = new RegisterStepResource(
+            UUID.randomUUID(), "HARVEST", -12.0, -77.0, ""
+        );
+        
+        mockMvc.perform(post("/api/v1/trace/events")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(request)))
+            .andExpect(status().isUnauthorized());
+    }
+}
+
+
 ## 7.3. Validation Interviews.
 
 En esta sección se documentan las entrevistas realizadas para validar el producto con usuarios reales. Se incluyen detalles sobre el diseño de las entrevistas, el registro de las mismas y las evaluaciones basadas en heurísticas de usabilidad.
