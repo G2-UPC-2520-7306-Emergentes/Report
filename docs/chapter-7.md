@@ -2228,7 +2228,7 @@ La siguiente tabla detalla las tareas derivadas de cada User Story, asignadas a 
 
 #### 7.2.2.4. Testing Suite Evidence for Sprint Review
 
-````markdown
+
 ### Unit Tests - Sprint 2
 
 #### Backend Tests
@@ -2460,7 +2460,7 @@ class EventRegistrationIntegrationTest {
             .andExpect(status().isUnauthorized());
     }
 }
-
+```
 
 ## 7.3. Validation Interviews.
 
@@ -2826,4 +2826,28 @@ Enfocado en transparencia, facilidad de búsqueda y confianza en la trazabilidad
 
 Enlace de video del video about the product: https://youtu.be/jRmTd9-Ih1I?si=W35ovGkzpnB1hI2_
 
+## 7.5. Aplicabilidad de Software Emergente.
 
+La incorporación de la tecnología Blockchain en la arquitectura de FoodChain no es meramente instrumental, sino que constituye el pilar fundamental para erradicar la opacidad sistémica que afecta a la cadena de suministro alimentaria actual. A diferencia de los sistemas de registro tradicionales, centralizados y vulnerables a la manipulación, Blockchain introduce una capa de inmutabilidad criptográfica que actúa como un notario digital descentralizado. Al anclar el hash de cada Evento de Trazabilidad en la red pública, se transforma cada paso logístico en una evidencia matemáticamente irrefutable, garantizando que la historia del producto una vez registrada no pueda ser alterada, eliminada ni falsificada por ningún actor, ni siquiera por los administradores de la propia plataforma.
+Esta característica resuelve directamente el problema de la desconfianza entre actores desconectados y mitiga los riesgos de fraude alimentario y seguridad sanitaria. Para el consumidor, el escaneo del código QR deja de ser un acto de fe para convertirse en una verificación de integridad auditable en tiempo real. Para la industria, la arquitectura propuesta permite aislar problemas con precisión quirúrgica durante crisis alimentarias (recalls), reduciendo costos y protegiendo la reputación de marca. En definitiva, Blockchain aporta la certeza técnica necesaria para construir un ecosistema donde la transparencia es un atributo inherente al producto y no solo una promesa de marketing.
+
+## 7.6 Lenguaje Ubicuo.
+
+AquÃ tienes la tabla corregida con la ortografÃa y acentuaciÃ³n adecuadas:
+
+### Tabla de Lenguaje Ubicuo (Ubiquitous Language)
+
+| Term (Término)         | Equivalente en Español   | Definición Rigurosa de FoodChain                                                                                                                                                                                           |
+|:-----------------------|:-------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Batch**              | Lote de Origen           | Unidad fundamental de trazabilidad. Conjunto de productos con origen, fecha de producción y atributos comunes.                                                                                                             |
+| **Batch Status**       | Estado del Lote          | Condición actual del Lote: *Active* (Abierto a registros), *Cancelled* (Anulado por error), *Closed* (Finalizado, no acepta más eventos).                                                                                  |
+| **Traceability Event** | Evento de Trazabilidad   | Registro inmutable de una acción que ocurre sobre un Lote (ej. *Harvest, Processing, Transport*). Contiene fecha, ubicación y Actor Responsable.                                                                           |
+| **Actor**              | Actor (de la Cadena)     | Entidad o Usuario de Empresa autorizado para registrar un Evento de Trazabilidad (ej. Productor, Transportista, Procesador).                                                                                               |
+| **Event Hash**         | Hash del Evento          | Código único (SHA-256) generado por el sistema a partir de todos los datos de un Evento de Trazabilidad. Es la huella digital que garantiza la integridad de los datos.                                                    |
+| **Blockchain Anchor**  | Anclaje en Blockchain    | Proceso de escribir el Hash del Evento en el Smart Contract de la red Polygon. No almacena datos sensibles; solo genera la prueba de inmutabilidad.                                                                        |
+| **Transaction Hash**   | Hash de Transacción      | El recibo único emitido por la red Polygon que prueba que el Anclaje en Blockchain se realizó con éxito. Es el vínculo que verifica el Consumidor.                                                                         |
+| **QR Identifier**      | Identificador QR         | El código único y digitalmente firmado que se imprime en el empaque. Permite al Consumidor iniciar una Consulta de Trazabilidad.                                                                                           |
+| **Correction Event**   | Evento de Rectificación  | Un Evento de Trazabilidad especial que se registra para corregir un error en un evento anterior. No borra el evento original, sino que lo referencia y explica la corrección, manteniendo la inmutabilidad de la historia. |
+| **Consumer Query**     | Consulta de Trazabilidad | Acción pública, no autenticada, realizada por el consumidor al escanear el Identificador QR para visualizar el Historial de Trazabilidad.                                                                                  |
+| **Role**               | Rol de Empresa           | Nivel de permiso asignado a un Usuario de Empresa (ej. *Creator, Transporter, Auditor*). Determina a qué tipos de Evento de Trazabilidad tiene acceso para registrar.                                                      |
+| **Audit Log**          | Log de Auditoría         | Registro interno, no en blockchain, que registra todas las acciones administrativas críticas del sistema (login, logout, cambios de permisos).                                                                             |
